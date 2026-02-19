@@ -1,0 +1,35 @@
+services:
+  # Vector Database
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: genshin-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_nk_data:/qdrant/storage
+    restart: unless-stopped
+
+  # Graph Database
+  neo4j:
+    image: neo4j:5-community
+    container_name: genshin-neo4j
+    ports:
+      - "7474:7474"  # HTTP Browser
+      - "7687:7687"  # Bolt Protocol
+    environment:
+      - NEO4J_AUTH=neo4j/genshin_story_qa
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+    volumes:
+      - neo4j_nk_data:/data
+      - neo4j_nk_logs:/logs
+    restart: unless-stopped
+
+# v0.0.0 (Natlan) volumes preserved as:
+#   amberproject_qdrant_data, amberproject_neo4j_data, amberproject_neo4j_logs
+# v0.1.0 (Nodkrai) uses new volumes below:
+volumes:
+  qdrant_nk_data:
+  neo4j_nk_data:
+  neo4j_nk_logs:

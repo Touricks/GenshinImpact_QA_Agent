@@ -1,0 +1,52 @@
+# Environment
+.env
+.env.local
+.env.*.local
+.env.template
+# Project internal (not for version control)
+.claude/
+.project/
+.devkit/
+.cache/
+docs_internal/
+Research/
+
+# Data (large files, stored externally)
+logger/
+Data/*
+!Data/exports/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/
+temporary/
+
+# Qdrant data (if local)
+qdrant_data/
+
+# Jupyter
+.ipynb_checkpoints/
