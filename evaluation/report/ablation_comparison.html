@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ablation Comparison — KG+Vector vs Vector-Only</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #232734;
+    --border: #2e3345;
+    --text: #e0e0e6;
+    --text-dim: #8b8fa3;
+    --accent: #6c8aff;
+    --kg-win: #4ecdc4;
+    --tie: #6c8aff;
+    --vec-win: #f7b731;
+    --both-off: #fc5c65;
+    --green: #4ecdc4;
+    --red: #fc5c65;
+    --orange: #f7b731;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem;
+  }
+  .container { max-width: 1300px; margin: 0 auto; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+  header p { color: var(--text-dim); font-size: 0.95rem; }
+  .meta-badges { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .meta-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 0.25rem 0.75rem; font-size: 0.8rem; color: var(--text-dim); }
+  .meta-badge strong { color: var(--text); }
+
+  /* Stats Bar */
+  .stats-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .stat-card { flex: 1; min-width: 140px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; text-align: center; }
+  .stat-card .num { font-size: 1.6rem; font-weight: 700; }
+  .stat-card .label { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .stat-card .sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.15rem; }
+  .num-green { color: var(--green); }
+  .num-red { color: var(--red); }
+  .num-accent { color: var(--accent); }
+  .num-orange { color: var(--orange); }
+
+  /* Aggregate Table */
+  .agg-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2rem; }
+  .agg-section h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .agg-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .agg-table th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-dim); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .agg-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #1e2230; }
+  .agg-table tr:last-child td { border-bottom: none; }
+  .better { color: var(--green); font-weight: 600; }
+  .worse { color: var(--red); font-weight: 600; }
+  .neutral { color: var(--text-dim); }
+
+  /* Filter Buttons */
+  .filters { margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .filter-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 1rem; font-size: 0.8rem; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .filter-btn[data-v="kg"].active { background: var(--kg-win); border-color: var(--kg-win); color: #000; }
+  .filter-btn[data-v="tie"].active { background: var(--tie); border-color: var(--tie); color: #fff; }
+  .filter-btn[data-v="vec"].active { background: var(--vec-win); border-color: var(--vec-win); color: #000; }
+  .filter-btn[data-v="off"].active { background: var(--both-off); border-color: var(--both-off); color: #fff; }
+
+  /* Question Cards */
+  .question-list { display: grid; gap: 1.25rem; }
+  .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; transition: border-color 0.15s; }
+  .q-card:hover { border-color: #444; }
+  .q-card.hidden { display: none; }
+
+  .q-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .q-id { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.8rem; font-weight: 600; color: var(--text-dim); background: var(--surface2); border-radius: 4px; padding: 0.15rem 0.5rem; }
+  .verdict-badge { font-size: 0.7rem; font-weight: 600; border-radius: 4px; padding: 0.15rem 0.6rem; letter-spacing: 0.03em; }
+  .verdict-kg { background: rgba(78,205,196,0.15); color: var(--kg-win); border: 1px solid rgba(78,205,196,0.3); }
+  .verdict-tie { background: rgba(108,138,255,0.15); color: var(--tie); border: 1px solid rgba(108,138,255,0.3); }
+  .verdict-vec { background: rgba(247,183,49,0.15); color: var(--vec-win); border: 1px solid rgba(247,183,49,0.3); }
+  .verdict-off { background: rgba(252,92,101,0.15); color: var(--both-off); border: 1px solid rgba(252,92,101,0.3); }
+
+  .complexity-dots { display: flex; gap: 3px; align-items: center; margin-left: auto; }
+  .complexity-dots span { font-size: 0.7rem; color: var(--text-dim); margin-right: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .dot.filled { background: var(--accent); }
+
+  .q-question { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.75rem; }
+
+  /* Metrics Bar */
+  .metrics-bar { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .metric { background: var(--surface2); border-radius: 6px; padding: 0.35rem 0.65rem; font-size: 0.75rem; display: flex; gap: 0.5rem; align-items: center; }
+  .metric .metric-label { color: var(--text-dim); }
+  .metric .metric-kg { color: var(--green); font-weight: 600; }
+  .metric .metric-vec { color: var(--orange); font-weight: 600; }
+
+  /* Answer Tabs */
+  .answer-tabs { display: flex; gap: 0; margin-bottom: 0; }
+  .tab-btn { background: var(--surface2); border: 1px solid var(--border); border-bottom: none; border-radius: 6px 6px 0 0; padding: 0.35rem 0.9rem; font-size: 0.78rem; color: var(--text-dim); cursor: pointer; transition: all 0.15s; }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { background: var(--surface); border-color: var(--border); color: var(--text); font-weight: 600; }
+  .tab-btn.tab-golden.active { color: #b8b8b8; }
+  .tab-btn.tab-kg.active { color: var(--green); }
+  .tab-btn.tab-vec.active { color: var(--orange); }
+
+  .answer-panels { border: 1px solid var(--border); border-radius: 0 6px 6px 6px; overflow: hidden; }
+  .answer-panel { display: none; padding: 1rem; font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; word-wrap: break-word; color: var(--text-dim); background: var(--surface2); max-height: 400px; overflow-y: auto; }
+  .answer-panel.active { display: block; }
+  .answer-panel::-webkit-scrollbar { width: 6px; }
+  .answer-panel::-webkit-scrollbar-track { background: var(--surface2); }
+  .answer-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* Analysis */
+  .analysis { margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-dim); background: rgba(108,138,255,0.06); border: 1px solid rgba(108,138,255,0.15); border-radius: 6px; padding: 0.65rem 0.85rem; line-height: 1.6; }
+  .analysis strong { color: var(--text); }
+
+  /* Expand/Collapse */
+  .expand-toggle { font-size: 0.8rem; color: var(--accent); cursor: pointer; user-select: none; display: inline-block; margin-bottom: 0.5rem; }
+  .expand-toggle:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    body { padding: 1rem; }
+    .metrics-bar { gap: 0.4rem; }
+    .metric { padding: 0.25rem 0.45rem; font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Ablation Comparison Report</h1>
+  <p>KG+Vector (7 tools) vs Vector-Only (1 tool) &mdash; Answer Quality Comparison with Golden Answers</p>
+  <div class="meta-badges">
+    <span class="meta-badge"><strong>15</strong> Questions</span>
+    <span class="meta-badge">Complexity <strong>1&ndash;5</strong></span>
+    <span class="meta-badge">LLM: <strong>Gemini 2.5 Flash</strong></span>
+    <span class="meta-badge"><strong>2026-02-18</strong></span>
+  </div>
+</header>
+
+<!-- ==================== STATS BAR ==================== -->
+<div class="stats-bar">
+  <div class="stat-card"><div class="num num-green">1.000</div><div class="label">KG Avg Faith</div><div class="sub">15/15 = 1.0</div></div>
+  <div class="stat-card"><div class="num num-red">0.893</div><div class="label">Vec Avg Faith</div><div class="sub">-10.7%</div></div>
+  <div class="stat-card"><div class="num num-accent">46.2s</div><div class="label">KG Avg Time</div><div class="sub">692s total</div></div>
+  <div class="stat-card"><div class="num num-orange">53.1s</div><div class="label">Vec Avg Time</div><div class="sub">+15% slower</div></div>
+  <div class="stat-card"><div class="num" style="color: var(--kg-win);">4</div><div class="label">KG Wins</div></div>
+  <div class="stat-card"><div class="num" style="color: var(--tie);">9</div><div class="label">Tie</div></div>
+  <div class="stat-card"><div class="num" style="color: var(--vec-win);">1</div><div class="label">Vec Wins</div></div>
+</div>
+
+<!-- ==================== AGGREGATE TABLE ==================== -->
+<div class="agg-section">
+  <h2>Aggregate Metrics</h2>
+  <table class="agg-table">
+    <tr><th>Metric</th><th>with_KG</th><th>without_KG</th><th>&Delta;</th></tr>
+    <tr><td>Pass Rate</td><td>15/15 (100%)</td><td>15/15 (100%)</td><td class="neutral">0</td></tr>
+    <tr><td>Avg Faithfulness</td><td class="better">1.000</td><td>0.893</td><td class="worse">-10.7%</td></tr>
+    <tr><td>Avg Completeness</td><td>0.973</td><td class="better">0.993</td><td class="neutral">+2.0%</td></tr>
+    <tr><td>Avg Relevance</td><td>1.000</td><td>1.000</td><td class="neutral">0</td></tr>
+    <tr><td>Avg Tool Calls</td><td>4.27</td><td>3.73</td><td class="neutral">-0.53</td></tr>
+    <tr><td>Avg Duration</td><td class="better">46.2s</td><td>53.1s</td><td class="worse">+15%</td></tr>
+  </table>
+</div>
+
+<!-- ==================== FILTERS ==================== -->
+<div class="filters">
+  <button class="filter-btn active" data-v="all" onclick="filterCards('all')">All (15)</button>
+  <button class="filter-btn" data-v="kg" onclick="filterCards('kg')">KG Wins (4)</button>
+  <button class="filter-btn" data-v="tie" onclick="filterCards('tie')">Tie (9)</button>
+  <button class="filter-btn" data-v="vec" onclick="filterCards('vec')">Vec Wins (1)</button>
+  <button class="filter-btn" data-v="off" onclick="filterCards('off')">Both Off (1)</button>
+</div>
+
+<!-- ==================== QUESTION LIST ==================== -->
+<div class="question-list" id="qList">
+
+<!-- NK-01 -->
+<div class="q-card" data-verdict="kg">
+  <div class="q-header">
+    <span class="q-id">NK-01</span>
+    <span class="verdict-badge verdict-kg">KG Wins</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Nod-Krai 区域目前名义上隶属于哪个国家？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">1</span>/<span class="metric-vec">2</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">24s</span>/<span class="metric-vec">48s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">无隶属状态，处于高度自治（或被视为无政府的流浪之地）。</div>
+    <div class="answer-panel">Nod-Krai (挪德卡莱) 目前处于自治状态，由各方势力成立联合会进行管理。
+
+虽然挪德卡莱是一个独立的地理区域，但有多方势力在此活跃，其中包括：
+- 哥伦比娅（"少女"）：这位原愚人众执行官，现被尊为挪德卡莱的"月神"（三月女神）。
+- 多托雷（"博士"）：他在挪德卡莱最北方的实验室（研究所）制造人造月髓。
+- 西风骑士团：在此设有秘密基地，作为北大陆情报网的接头处。
+- 伏尼契商会：由奈芙尔领导的势力也在此活动。
+
+因此，挪德卡莱在名义上不隶属于提瓦特七国中的任何一国，而是实行自治。</div>
+    <div class="answer-panel">挪德卡莱 (Nod-Krai) 名义上隶属于至冬国 (Snezhnaya)。
+
+关于挪德卡莱，可以从其地理、行政特征及当前局势进行了解。该地名中的"Krai"一词在现实俄语中意为"边疆区"，这与至冬国的地名命名体系相符。挪德卡莱位于边境地区，是一个常年受冷风侵袭、相对荒凉的地方。至冬国的军事力量愚人众在此地活动频繁，设有军官（如拉斯科尔尼科夫中尉）和驻军。
+
+尽管名义上归属至冬国，但挪德卡莱的当前局势较为复杂。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> KG 的 <code>political_status</code> 结构化字段直接给出"自治"精确答案。Vector 搜索只返回叙事段落，其中愚人众活动频繁 + 俄语词源"Krai"（边疆区），LLM 据此推理出"隶属至冬国"——合理但错误的推断。</div>
+</div>
+
+<!-- NK-02 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-02</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">霜月之子 Frostmoon Scions 崇拜的神祇是谁？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">1</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">25s</span>/<span class="metric-vec">48s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">月神（库塔尓/Kuutar）。</div>
+    <div class="answer-panel">霜月之子（Frostmoon Scions）崇拜的神祇是哥伦比娅（Columbina）。她被尊称为月神（Moon Goddess）或三月女神（Goddess of the Three Moons），并且曾是愚人众执行官「少女」。
+
+组织的成员与相关人物包括：
+- 菈乌玛（Rauma）：被称为"咏月使"，是现任领导者之一。
+- 爱依菈（Aila）：霜月的祭司。
+- 维娜（Vina）：执祭，负责引导旅行者。
+- 娄维娅（Lovia）：五百年前的霜月领袖。</div>
+    <div class="answer-panel">霜月之子（Frostmoon Scions）崇拜的核心神祇是名为库塔尔（Khutulun）的存在，而这位"库塔尔"实际上指向愚人众执行官"少女"哥伦比娅（Columbina）。
+
+霜月之子将库塔尔视为他们唯一敬仰的神明，并称呼他们所见的月亮为"库塔尔"。然而，故事揭示"库塔尔"并非独立的月神，而是愚人众执行官"少女"哥伦比娅曾使用的代称或身份。
+
+此外，霜月之子的信仰体系与提瓦特古老的三月女神传说紧密相连。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者核心答案均正确（哥伦比娅=库塔尓=月神）。without_KG 的 faith 下降可能因表述中含推断性声明。</div>
+</div>
+
+<!-- NK-06 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-06</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">帕哈岛 Paha Isle 上的"月矩力实验设计局"实际上是由哪位愚人众执行官建立和控制的？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">8</span>/<span class="metric-vec">1</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">52s</span>/<span class="metric-vec">42s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">愚人众执行官"木偶" (Sandrone)。</div>
+    <div class="answer-panel">位于帕哈岛（Paha Isle）的"月矩力实验设计局"，实际上是由愚人众执行官「木偶」桑多涅（Sandrone）建立和控制的。
+
+作为该设施的最高负责人，桑多涅将此地视为愚人众的重要地盘，并在此部署了大量下属兵力。她明确宣称这是"女皇陛下的试验场所"，并亲自负责其安全与秩序。
+
+值得一提的是，愚人众执行官「博士」多托雷曾为了夺取力量而入侵该设施。</div>
+    <div class="answer-panel">帕哈岛（Paha Isle）上的"月矩力实验设计局"实际上是由愚人众执行官第七席「木偶」（Sandrone / 桑多涅）建立和控制的。
+
+在剧情中，当旅行者和派蒙在挪德卡莱（Natlan 地区的某一区域，包含帕哈岛）探索时，遇到了正在视察工作的「木偶」。面对派蒙关于"奇怪的试验设计局"的质问，「木偶」并未否认。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 核心答案均正确。without_KG 混入了地理错误（<strong>误称挪德卡莱为 "Natlan 地区"</strong>），导致 faith 下降。</div>
+</div>
+
+<!-- NK-07 -->
+<div class="q-card" data-verdict="off">
+  <div class="q-header">
+    <span class="q-id">NK-07</span>
+    <span class="verdict-badge verdict-off">Both Off</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">前代愚人众执行官"少女"Columbina 与月亮女神库塔尓 Kuutar 有什么关系？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">3</span>/<span class="metric-vec">4</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">35s</span>/<span class="metric-vec">52s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">哥伦比娅·希珀塞莱尼娅（Columbina Hyposelenia）是霜月残留意志与提瓦特古老联系中诞生的新月神，被霜月之子发现并尊奉为预言中的"库塔尓"。她本质是三位月亮女神守护之心的延续。</div>
+    <div class="answer-panel">愚人众执行官"少女"Columbina 与月亮女神 Kuutar 实际上是同一位存在。
+
+Columbina（哥伦比娅）不仅是愚人众执行官第三席"少女"，她的实质身份正是月亮女神 Kuutar，也被称为三月女神。她被描述为"原愚人众执行官「少女」，现为挪德卡莱的月神（三月女神）"。
+
+她已在剧情线中脱离了愚人众组织，回到了挪德卡莱。</div>
+    <div class="answer-panel">哥伦比娅（Columbina）与库塔尓（Kuutar）实为同一位存在，即"新生的月神"库塔尓。库塔尓是她在"霜月之子"传说中的名字，而"少女"哥伦比娅则是她在愚人众中的代号。
+
+她被归类为仙灵（Seelie）一族，或是与仙灵高度相关的古老种族。诞生后不久，库塔尓便离开了希汐岛。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 核心关系两者均识别正确（同一存在）。但两者都缺少 golden answer 中"三位女神守护之心延续"的精确表述。without_KG 包含额外推断（"仙灵"分类）。</div>
+</div>
+
+<!-- NK-09 -->
+<div class="q-card" data-verdict="kg">
+  <div class="q-header">
+    <span class="q-id">NK-09</span>
+    <span class="verdict-badge verdict-kg">KG Wins</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">叶洛亚在执灯人军团中担任什么职位？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">2</span>/<span class="metric-vec">1</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">15s</span>/<span class="metric-vec">25s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">调查分队「魇夜之莺」的队长。他是执灯人新一代中实力最强的成员，负责带领分队执行对苦壑崖狂猎的反攻任务。</div>
+    <div class="answer-panel">叶洛亚在执灯人军团中担任「魇夜之莺」调查分队的队长。「魇夜之莺」是执灯人军团旗下的一个调查分队，她率领该分队承担了最为艰巨的任务，例如回收圣物并对抗深渊力量。</div>
+    <div class="answer-panel">叶洛亚在执灯人军团中主要担任灯塔守护者的职位，负责看守纳德里赫特（Nordlicht）的灯塔，确保光芒指引船只。
+
+此外，在重建家园时期，他被老执灯长尼基塔（Nikita）委以重任，接任了「执灯人」驻联合会代表一职。</div>
+  </div>
+  <div class="analysis"><strong>分析 (Grader 盲点):</strong> with_KG 通过 <code>role</code> 结构化字段精确命中"魇夜之莺队长"。without_KG 检索到角色侧写文件中的次要身份"灯塔守护者"，LLM 忠实引用导致 <strong>faith=1.0 但答案偏离 golden answer</strong>。自评无法检测"检索源错误"。</div>
+</div>
+
+<!-- NK-12 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-12</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">描述"三月女神"的历史传说。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">0.8</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">7</span>/<span class="metric-vec">5</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">62s</span>/<span class="metric-vec">57s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">提瓦特曾有三轮月亮，分别为恒月、霜月、虹月，各由一位女神执掌。三月女神由龙王尼伯龙根创造，后因「天理」（法涅斯）降临而陷入夹缝。葬火之战中，尼伯龙根认为月神不忠而将其囚禁，并将月亮改造为武器对抗天理。天理最终击碎恒月与虹月，将霜月抛至天外，三月女神随之衰亡。</div>
+    <div class="answer-panel">关于"三月女神"的传说，其核心脉络围绕着远古的"月亮三姐妹"及其最终的继承者"哥伦比娅"展开。
+
+1. 远古的"月亮三姐妹"
+长姐艾莉亚 (Aria)，尊号"恒月女神"；二姐桑娜妲 (Sonnet)，称为"虹月女神"；三妹卡侬 (Canon)，即"霜月女神"。
+
+2. 天理降临与葬火之战
+龙王尼伯龙根回归，向天理发起"葬火之战"。恒月与虹月破碎，霜月得以保存但被虚假之天阻隔。
+
+3. 权能传承与新任女神
+哥伦比娅·希珀塞莱尼娅获得三月权能，成为世上唯一的"三月女神"。</div>
+    <div class="answer-panel">三月女神的诞生源于龙王尼伯龙根在亘古时期的创造。三位姐妹各自拥有独特的名讳：
+- 艾莉亚 (Aria)，"恒月"女神
+- 卡侬 (Canon)，"霜月"女神
+- 桑娜妲 (Sonada)，"虹月"女神
+
+随着天理降临，三姐妹内部产生分歧。葬火之战中，恒月与虹月破碎。
+赤月王朝的阿蕾奇诺血脉能操控源自虹月与深渊结合的"血火"。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均完整覆盖核心传说脉络。without_KG 额外覆盖了赤月王朝细节（comp=1.0 vs 0.8）。</div>
+</div>
+
+<!-- NK-13 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-13</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">描述"三月女神"与挪德卡莱 Nod-Krai 的联系。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">2</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">28s</span>/<span class="metric-vec">43s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">（1）挪德卡莱前身「亥珀波瑞亚」（黄金国）的居民保留了对月神的信仰，其后裔「霜月之子」延续至今；（2）古月遗骸散落形成了该地区独特的「月矩力」（Kuuvahki）环境；（3）霜月得以保全后，诞生了新月神哥伦比娅（库塔尔），即前愚人众执行官「少女」。</div>
+    <div class="answer-panel">"三月女神"在挪德卡莱地区与原愚人众执行官"少女"——哥伦比娅有着直接且核心的联系。
+
+在挪德卡莱地区，"三月女神"这一称号直接指代的是哥伦比娅。她在此地被尊为"月神"或"三月女神"。</div>
+    <div class="answer-panel">"三月女神"与"挪德卡莱"之间存在着深刻的联系：
+
+1. 历史信仰的根基：霜月之子世代传承着古老月神信仰
+2. "三月现世"的特殊现象：三种月亮的力量同时汇聚于此
+3. 月神（哥伦比娅）与土地的羁绊：她将自身身体化作月矩力洒向大地</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均涵盖三大联系维度。without_KG 在月矩力起源描述上更接近 golden answer。</div>
+</div>
+
+<!-- NK-15 -->
+<div class="q-card" data-verdict="kg">
+  <div class="q-header">
+    <span class="q-id">NK-15</span>
+    <span class="verdict-badge verdict-kg">KG Wins</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">详细梳理"少女"Columbina 在挪德卡莱 Nod-Krai 剧情中的苏醒与行动路线。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">7</span>/<span class="metric-vec">5</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">64s</span>/<span class="metric-vec">68s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">1. 诞生：葬火之战后三月女神衰亡，唯有霜月保全。哥伦比娅在漫长岁月后自霜月中诞生。
+2. 被奉为神：被「霜月之子」发现并尊奉为预言中的"库塔尓"。
+3. 离开与加入愚人众：因对信徒贪婪失望，加入愚人众成为第三席"少女"。
+4. 隐居银月之庭：察觉组织对月神力量觊觎后离开。
+5. 协助旅行者：利用月矩力帮助旅行者看到过去的影像；教授隐蔽月髓气息技巧。
+6. 最终结局：集齐身体、灵魂、三月权能，作为完整的三月女神击败多托雷。战后将月髓分别交由菈乌玛与阿蕾奇诺保管。</div>
+    <div class="answer-panel">1. 身份觉醒与回归：脱离愚人众，以"哥伦比娅·希珀塞莱尼娅"身份回归
+2. 早期行动：星砂滩与那夏镇——施展月矩力救下主角团
+3. 关键转折：祈月之夜——开启月之门，进入"月亮倒影"
+4. 逆流而行：月亮倒影中利用逆向时间留下痕迹
+5. 最终抉择与飞船真相：为旅行者开启通往霜月的通道</div>
+    <div class="answer-panel">1. 身份苏醒：脱离愚人众，掌握霜月权柄
+2. 遭遇"狂猎"与危机：被"猎月人"盯上，力量虚弱
+3. 寻找力量与反击：提议前往月矩力试验设计局
+4. 决战前夕：参加那夏镇"祈月之夜"
+（未包含最终决战结局的具体描述）</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> with_KG 覆盖了更完整的行动路线（5步 vs 4步）。without_KG 缺少最终决战环节，且部分细节为推断，faith 降至 0.8。</div>
+</div>
+
+<!-- NK-19 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-19</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">结合《雷德·米勒传奇》与"大宝藏"的真相，分析雷德·米勒的"无界之世"理想是如何被异化为盗宝团的贪婪信条的？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">4</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">74s</span>/<span class="metric-vec">72s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">雷德·米勒的理想：渴望创造「没有界限的世界」，将盗宝团定义为「互助协调组织」。
+「大宝藏」的真相：并非金银珠宝，而是精神遗产——「让死人埋葬死人吧，然后你们站起来，用高傲者的财富，筑起饥贫之人的乐园！」
+异化过程：领袖陨落 → 精神遗忘 → 组织涣散 → 含义扭曲（「自由」退化为贪婪，「无界」从打破阶级退化为无视法律）。</div>
+    <div class="answer-panel">理想原点：雷德·米勒以"侠盗"身份劫富济贫，渴望建立"属于饥贫之人的乐园"
+大宝藏真相：核心是大量几百年前的"铁钱"，早已不再流通
+信条异化：后世成员只记住"盗宝"手段，遗忘"济贫"初衷</div>
+    <div class="answer-panel">理想的原始面貌：反抗压迫的"乐园"
+异化根源：阴谋与谎言的渗透——"教授"的操纵使理想从源头被污染
+后世扭曲：从"解放"到"掠夺"——将"无界之世"曲解为对财宝的无界占有欲</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均准确把握异化主线。with_KG 提及"铁钱"细节；without_KG 独特地追溯了"教授"操纵这一异化根源。</div>
+</div>
+
+<!-- NK-21 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-21</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">皮拉米达城在挪德卡莱的地位是什么？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">6</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">49s</span>/<span class="metric-vec">35s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">皮拉米达城是挪德卡莱执灯人军团的总部所在地，也是该地区的主要城市，围绕古代武器"德肋庇革劳诺之箭"建造，是抵御狂猎的核心据点。</div>
+    <div class="answer-panel">皮拉米达城在挪德卡莱地区拥有极其重要的战略与人口地位。是关键的人口中心、军事重镇（执灯人军团总部/核心据点）和撤离关键点。明确提及"德肋庇革劳诺之箭"。</div>
+    <div class="answer-panel">皮拉米达城是挪德卡莱地区的核心人口聚居地之一，同时也是战略与撤离节点、执灯人的重要活动区域。
+
+阿蕾奇诺亲自负责了皮拉米达城的撤离工作。安莱夫曾提及，他是为了参加讨伐狂猎行动而赶回皮拉米达城的。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均涵盖核心要素。with_KG 明确提及"德肋庇革劳诺之箭"，更接近 golden answer。</div>
+</div>
+
+<!-- NK-22 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-22</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">执灯人军团是由谁在什么时候创建的？</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">3</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">27s</span>/<span class="metric-vec">28s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">由铸灯者索洛维（Solovi）在约五百年前创建，其使命是守护挪德卡莱免受狂猎的侵袭。</div>
+    <div class="answer-panel">执灯人军团是由索洛维（又称"铸灯者"）在五百年前创建的。目的是对抗"教授"（不死的毒蛇）及其灾厄，并守护德肋庇革劳诺之箭。</div>
+    <div class="answer-panel">执灯人军团是由铸灯者（本名索洛维）在五百年前创建的。他是爱莉厄的旧识，也是封印"教授"的关键人物之一。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 核心答案均与 golden answer 一致。without_KG faith 下降可能因引入了未直接检索到的关联声明。</div>
+</div>
+
+<!-- NK-32 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-32</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">描述三年前苦壑崖事件的经过及其对执灯人军团的影响。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.9</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">5</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">67s</span>/<span class="metric-vec">53s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">三年前，由奥尔松队长率领的调查分队前往苦壑崖调查封印异动。夜间扎营时，分队成员被狂猎的蛊惑能力控制，在浓雾中自相残杀，损失惨重。奥尔松队长勉强保持清醒，强令叶洛亚带着受伤的伊瓦尔撤退求援，自己留下断后后牺牲。狂猎随后蔓延至崖下，造成大量平民伤亡。比约恩因急病未能参加而幸存，一直对替自己上阵的维德之死心怀愧疚。</div>
+    <div class="answer-panel">三年前，奥尔松队长率领执灯人小队在苦壑崖完成调查任务后扎营过夜。夜间营地被狂猎的摄人心智能力笼罩，队员自相残杀。奥尔松断后牺牲，强令伊瓦尔撤退。比约恩因急病缺席而幸存，对维德之死心怀愧疚。安莱夫的妻子和同伴在波及中丧生。战略复仇成为三年后决战的核心动因。</div>
+    <div class="answer-panel">三年前，奥尔松队长率队调查封印异动。夜间被狂猎的摄人心智、制造幻觉能力笼罩，队员自相残杀。奥尔松断后牺牲。维德替补比约恩参加任务，不幸牺牲。安莱夫的同伴和妻子也在崖下遇难。区域被划为禁区，军团固守三年等待反攻时机。</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均完整覆盖事件核心。golden answer 提到"叶洛亚撤退"，with_KG 写的是"伊瓦尔撤退"——细节略有差异。</div>
+</div>
+
+<!-- NK-36 -->
+<div class="q-card" data-verdict="kg">
+  <div class="q-header">
+    <span class="q-id">NK-36</span>
+    <span class="verdict-badge verdict-kg">KG Wins</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">详细梳理从旅行者抵达挪德卡莱到彻底击败"教授"的执灯人主线完整时间线。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">0.8</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">10</span>/<span class="metric-vec">12</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">85s</span>/<span class="metric-vec">97s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">1. 初到皮拉米达城：旅行者目睹执灯士集结，遇到尼基塔，接受寻找"银灯芯"的委托
+2. 厄布拉神柱探索：遇到叶洛亚，净化深渊污染，进入时空夹缝见到爱莉厄
+3. 取回银灯芯：清除高塔污染后取得银灯芯，爱莉厄独自留下
+4. 加入调查分队：正式加入「魇夜之莺」，参加誓师仪式
+5. 苦壑崖反攻：遭遇心智攻击，比约恩重伤，激活苍林之穗，回收螺旋剑
+6. 最终决战：螺旋剑装填为"德肋庇革劳诺之箭"箭头，发射击溃恶卵
+7. 胜利庆典：尼基塔执灯长发表演讲纪念牺牲者</div>
+    <div class="answer-panel">序幕：旅行者邂逅菈乌玛，得知愚人众威胁。多托雷留下诅咒密文。
+
+地上线：西风骑士团（法尔伽、阿贝多）与愚人众达成合作，破解诅咒、疏散居民。
+月上线：哥伦比娅带旅行者通过月之门前往月球，发现飞船。
+
+备战：结识执灯人组织。预言："不死的毒蛇必将两度复活，再被三次击倒"。
+
+决战：德肋庇革劳诺之箭发射，彻底击败教授。
+尾声：庆功宴，叶洛亚致辞缅怀战友。</div>
+    <div class="answer-panel">寻找银灯芯：结识叶洛亚，前往厄布拉神柱
+揭秘历史：进入时空夹缝见到爱莉厄
+内部危机：猎月人浮出水面、多方博弈（菲林斯实为至冬妖精）
+决战准备：取回螺旋剑，装填德肋庇革劳诺之箭
+终局之战：向苦壑崖发起进攻，箭矢发射
+结局善后：庆功宴，阿蕾奇诺确认多托雷被女皇召回</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 此题需要跨多章节时间线综合。with_KG 使用 <code>get_timeline</code> 和 <code>explore_subgraph</code> 高效获取事件链；without_KG 需多次 search_memory 拼凑，faith 降至 0.8。但 without_KG 额外包含猎月人/菲林斯子线（comp=1.0 vs 0.8）。</div>
+</div>
+
+<!-- NK-39 -->
+<div class="q-card" data-verdict="tie">
+  <div class="q-header">
+    <span class="q-id">NK-39</span>
+    <span class="verdict-badge verdict-tie">Tie</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">结合多托雷在 NK 的行动与桑多涅的牺牲，分析愚人众执行官在挪德卡莱剧情中的阵营分化。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">3</span>/<span class="metric-vec">3</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">52s</span>/<span class="metric-vec">65s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">1. 多托雷（博士）：主要反派，试图夺取三月女神全部力量实现自我神化
+2. 桑多涅（木偶）：牺牲自己启动后手，为击败多托雷创造关键条件
+3. 哥伦比娅（少女）：脱离愚人众，集齐力量作为完整三月女神击败多托雷
+4. 阿蕾奇诺：遵从"苍星诏令"介入
+5. 法尔伽与仆人：将霜月拉入虚假之天撞破穹顶
+
+标志着愚人众内部因"目的"分歧而走向瓦解。</div>
+    <div class="answer-panel">多托雷（毁灭派）：制造人造月髓，试图焚毁挪德卡莱
+桑多涅（守护/牺牲者）：构建「世界式」对抗多托雷，最终牺牲
+哥伦比娅（神性转化）：脱离愚人众，觉醒为月神
+阿蕾奇诺（务实反对）：组织撤离，反对无意义毁灭
+流浪者：善后清理</div>
+    <div class="answer-panel">多托雷（篡神派）：利用月矩力、收集雷利尔碎片，意图造神
+桑多涅（反抗派）：发现多托雷真面目后反叛，牺牲启动后手
+哥伦比娅（独立/神性）：脱离组织，成为多托雷猎物
+阿蕾奇诺（执行者）：以个人身份参战，协调达达利亚
+达达利亚（协助者）：听从阿蕾奇诺指挥
+
+冰之女皇下达"特许专断之权"，授权清理门户</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> 两者均清晰描述五方阵营分化。without_KG 额外包含达达利亚和女皇态度，覆盖更全面。</div>
+</div>
+
+<!-- NK-41 -->
+<div class="q-card" data-verdict="vec">
+  <div class="q-header">
+    <span class="q-id">NK-41</span>
+    <span class="verdict-badge verdict-vec">Vec Wins</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">结合所有 rawdata，分析"三宝磨"（Sampo）在挪德卡莱历史中扮演的角色及其与各势力的关系。</div>
+  <div class="metrics-bar">
+    <div class="metric"><span class="metric-label">Faith</span><span class="metric-kg">1.0</span>/<span class="metric-vec">0.8</span></div>
+    <div class="metric"><span class="metric-label">Comp</span><span class="metric-kg">1.0</span>/<span class="metric-vec">1.0</span></div>
+    <div class="metric"><span class="metric-label">TC</span><span class="metric-kg">2</span>/<span class="metric-vec">5</span></div>
+    <div class="metric"><span class="metric-label">Time</span><span class="metric-kg">34s</span>/<span class="metric-vec">64s</span></div>
+  </div>
+  <div class="answer-tabs">
+    <div class="tab-btn tab-golden active" onclick="switchTab(this, 0)">Golden Answer</div>
+    <div class="tab-btn tab-kg" onclick="switchTab(this, 1)">with_KG</div>
+    <div class="tab-btn tab-vec" onclick="switchTab(this, 2)">without_KG</div>
+  </div>
+  <div class="answer-panels">
+    <div class="answer-panel active">1. 本质：古代装置，能汲取大地力量并转化。需拥有"圣嗣之血"才能命令其臣服。
+2. "教授"的利用：约五百年前，利用三宝磨汲取大地力量通往"乐园"。
+3. 爱莉厄的牺牲：用"圣嗣之血"引燃三宝磨，使其拒绝"教授"控制。
+4. 教授复活被拒：三宝磨"又一次拒绝了他"，具有意志或判断机制。
+5. 最终决战：结合"德肋庇革劳诺之箭"和三件圣物，彻底埋葬教授。</div>
+    <div class="answer-panel">"三宝磨"是一件拥有毁灭性力量的圣物或装置，具备"焚毁世界"的恐怖机能。
+
+- 霍德望教授：三宝磨的主要控制者
+- 拉乌斯万格：也与其起源紧密相关
+- 圣嗣之血：只有身怀特殊血统的人才能命令其力量
+- 挪德卡莱：直接受害者和目标
+
+（缺少爱莉厄牺牲和教授复活被拒的关键细节）</div>
+    <div class="answer-panel">"三宝磨"是一种能够被"点燃"并"汲取大地力量"的媒介，具有某种意志或排他性。
+
+与各势力关系：
+- "教授"：主要控制者，利用三宝磨尝试飞升
+- 霜月之子：三宝磨最初属于他们的圣物
+- 铸灯者/执灯人：历史上的封印者
+- 爱莉厄：投身三宝磨引燃，牺牲自己挫败教授
+- 教授复活："三宝磨又一次拒绝了我"</div>
+  </div>
+  <div class="analysis"><strong>分析:</strong> with_KG 偏重实体关系描述，缺少"爱莉厄牺牲"和"教授复活被拒"关键环节。without_KG 通过多次搜索更完整地覆盖了 golden answer 中的核心事件链，尽管 faith 略低。</div>
+</div>
+
+</div><!-- end question-list -->
+
+<!-- ==================== CONCLUSION ==================== -->
+<div class="agg-section" style="margin-top: 2rem;">
+  <h2>Conclusion</h2>
+  <table class="agg-table">
+    <tr><th>Verdict</th><th>Count</th><th>Questions</th></tr>
+    <tr><td style="color: var(--tie);">Tie (both correct)</td><td>9</td><td>NK-02, NK-06, NK-12, NK-13, NK-19, NK-21, NK-22, NK-32, NK-39</td></tr>
+    <tr><td style="color: var(--kg-win);">KG Wins</td><td>4</td><td><strong>NK-01</strong> (自治 vs 至冬国), <strong>NK-09</strong> (队长 vs 灯塔守护者), NK-15 (更完整路线), NK-36 (更高 faith)</td></tr>
+    <tr><td style="color: var(--vec-win);">Vec Wins</td><td>1</td><td>NK-41 (覆盖了爱莉厄牺牲细节)</td></tr>
+    <tr><td style="color: var(--both-off);">Both Off</td><td>1</td><td>NK-07 (均缺少"三位女神守护之心延续"的精确表述)</td></tr>
+  </table>
+  <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.7;">
+    <strong style="color: var(--text);">Key Findings:</strong><br>
+    &bull; <strong>KG 不可替代场景:</strong> 精确属性查询 (NK-01)、关系链追踪 (NK-09)、时间线构建 (NK-36)<br>
+    &bull; <strong>Vector 足够场景:</strong> 叙事综合类/开放式分析 (NK-12, NK-19, NK-39, NK-41)<br>
+    &bull; <strong>自评系统局限:</strong> NK-09 揭示 faithfulness grader 无法检测"检索源错误"，需 Golden Answer 交叉验证<br>
+    &bull; <strong>综合评价:</strong> KG+Vector 在 faithfulness (+10.7%) 和 speed (-15%) 上显著优于 vector-only
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function switchTab(el, idx) {
+  const card = el.closest('.q-card');
+  card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  const panels = card.querySelectorAll('.answer-panel');
+  panels.forEach((p, i) => { p.classList.toggle('active', i === idx); });
+}
+
+function filterCards(verdict) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.filter-btn[data-v="${verdict}"]`).classList.add('active');
+  document.querySelectorAll('.q-card').forEach(c => {
+    if (verdict === 'all' || c.dataset.verdict === verdict) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

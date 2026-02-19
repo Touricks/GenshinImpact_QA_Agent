@@ -1,0 +1,181 @@
+{
+  "霜月之子": {
+    "canonical_zh": "霜月之子",
+    "canonical_en": "Frostmoon Scions",
+    "aliases": [
+      "霜月之子",
+      "Frostmoon Scions"
+    ],
+    "type": "Faction",
+    "note": "崇拜月神库塔尓的原住民，亥珀波瑞亚后裔"
+  },
+  "伏尼契商会": {
+    "canonical_zh": "伏尼契商会",
+    "canonical_en": "Voynich Guild",
+    "aliases": [
+      "伏尼契商会",
+      "Voynich Guild"
+    ],
+    "type": "Faction",
+    "note": "总部在那夏镇，与愚人众有脆弱的利益同盟"
+  },
+  "执灯人军团": {
+    "canonical_zh": "执灯人军团",
+    "canonical_en": "Lamplighter Legion",
+    "aliases": [
+      "执灯人军团",
+      "执灯人",
+      "执灯士"
+    ],
+    "type": "Faction",
+    "note": "索洛维创建，守护挪德卡莱免受狂猎侵袭"
+  },
+  "魇夜之莺": {
+    "canonical_zh": "魇夜之莺",
+    "canonical_en": "Nightingale of Nightmares",
+    "aliases": [
+      "魇夜之莺"
+    ],
+    "type": "Faction",
+    "note": "执灯人调查分队，叶洛亚任队长"
+  },
+  "盗宝团": {
+    "canonical_zh": "盗宝团",
+    "canonical_en": "Treasure Hoarders",
+    "aliases": [
+      "盗宝团"
+    ],
+    "type": "Faction",
+    "note": "雷德·米勒创建的互助组织，后异化为犯罪团伙"
+  },
+  "月矩力实验设计局": {
+    "canonical_zh": "月矩力实验设计局",
+    "canonical_en": "Kuuvahki Research Bureau",
+    "aliases": [
+      "月矩力实验设计局",
+      "月矩力试验设计局",
+      "实验设计局"
+    ],
+    "type": "Faction",
+    "note": "由木偶在帕哈岛建立和控制"
+  },
+  "秘闻馆": {
+    "canonical_zh": "秘闻馆",
+    "canonical_en": "",
+    "aliases": [
+      "秘闻馆"
+    ],
+    "type": "Faction",
+    "note": "奈芙尔经营的情报组织"
+  },
+  "西风骑士团": {
+    "canonical_zh": "西风骑士团",
+    "canonical_en": "",
+    "aliases": [
+      "西风骑士团"
+    ],
+    "type": "Faction",
+    "note": "蒙德组织，法尔伽率领在NK行动"
+  },
+  "赤月王朝": {
+    "canonical_zh": "赤月王朝",
+    "canonical_en": "",
+    "aliases": [
+      "赤月王朝"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚历史朝代，信奉赤月"
+  },
+  "花羽会": {
+    "canonical_zh": "花羽会",
+    "canonical_en": "",
+    "aliases": [
+      "花羽会"
+    ],
+    "type": "Faction",
+    "note": "纳塔部族之一，莉安歌建立"
+  },
+  "秘源机兵": {
+    "canonical_zh": "秘源机兵",
+    "canonical_en": "",
+    "aliases": [
+      "秘源机兵"
+    ],
+    "type": "Faction",
+    "note": "古老机关兵器，近期活动反常"
+  },
+  "五大罪人": {
+    "canonical_zh": "五大罪人",
+    "canonical_en": "",
+    "aliases": [
+      "五大罪人"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚灾难中获得深渊力量的五位强者"
+  },
+  "黑日王朝": {
+    "canonical_zh": "黑日王朝",
+    "canonical_en": "",
+    "aliases": [
+      "黑日王朝"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚末期统治王朝"
+  },
+  "欣缇部族": {
+    "canonical_zh": "欣缇部族",
+    "canonical_en": "",
+    "aliases": [
+      "欣缇部族"
+    ],
+    "type": "Faction",
+    "note": "须弥沙漠部族，图莱杜拉遗民，被屠灭"
+  },
+  "教令院": {
+    "canonical_zh": "教令院",
+    "canonical_en": "",
+    "aliases": [
+      "教令院"
+    ],
+    "type": "Faction",
+    "note": "须弥最高学术与行政机构"
+  },
+  "魔女会": {
+    "canonical_zh": "魔女会",
+    "canonical_en": "",
+    "aliases": [
+      "魔女会",
+      "「魔女会」"
+    ],
+    "type": "Faction",
+    "note": "由强大魔女组成的组织"
+  },
+  "水仙十字结社": {
+    "canonical_zh": "水仙十字结社",
+    "canonical_en": "",
+    "aliases": [
+      "水仙十字结社"
+    ],
+    "type": "Faction",
+    "note": "枫丹古老组织"
+  },
+  "联合会": {
+    "canonical_zh": "联合会",
+    "canonical_en": "",
+    "aliases": [
+      "联合会"
+    ],
+    "type": "Faction",
+    "note": "挪德卡莱各方势力组成，负责灾后重建"
+  },
+  "海螺帮": {
+    "canonical_zh": "海螺帮",
+    "canonical_en": "",
+    "aliases": [
+      "海螺帮",
+      "「海螺帮」"
+    ],
+    "type": "Faction",
+    "note": "霜月之子世界任务中的组织"
+  }
+}

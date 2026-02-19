@@ -1,0 +1,320 @@
+{
+  "苦壑崖事件": {
+    "canonical_zh": "苦壑崖事件",
+    "canonical_en": "Kuhe Cliff Incident",
+    "aliases": [
+      "苦壑崖事件",
+      "三年前事件"
+    ],
+    "type": "Event",
+    "note": "三年前调查分队被狂猎蛊惑自相残杀的惨案"
+  },
+  "寒天之钉": {
+    "canonical_zh": "寒天之钉",
+    "canonical_en": "Skyfrost Nail",
+    "aliases": [
+      "寒天之钉",
+      "天钉"
+    ],
+    "type": "Event",
+    "note": "天理对地面文明的惩罚性打击"
+  },
+  "星砂滩狂猎事件": {
+    "canonical_zh": "星砂滩狂猎事件",
+    "canonical_en": "",
+    "aliases": [
+      "星砂滩狂猎事件"
+    ],
+    "type": "Event",
+    "note": "大规模狂猎爆发，出现不明诡影"
+  },
+  "飞船迫降": {
+    "canonical_zh": "飞船迫降",
+    "canonical_en": "",
+    "aliases": [
+      "飞船迫降"
+    ],
+    "type": "Event",
+    "note": "旅行者飞船降落在星砂滩的事件"
+  },
+  "索西遇害事件": {
+    "canonical_zh": "索西遇害事件",
+    "canonical_en": "",
+    "aliases": [
+      "索西遇害事件"
+    ],
+    "type": "Event",
+    "note": "索西军士长被杀，猎月人嫁祸菲林斯"
+  },
+  "星砂滩之战": {
+    "canonical_zh": "星砂滩之战",
+    "canonical_en": "",
+    "aliases": [
+      "星砂滩之战"
+    ],
+    "type": "Event",
+    "note": "旅行者与菲林斯在星砂滩阻击猎月人"
+  },
+  "猎月人获取形体": {
+    "canonical_zh": "猎月人获取形体",
+    "canonical_en": "",
+    "aliases": [
+      "猎月人获取形体"
+    ],
+    "type": "Event",
+    "note": "猎月人利用大炮重塑身躯"
+  },
+  "猎月人复活": {
+    "canonical_zh": "猎月人复活",
+    "canonical_en": "",
+    "aliases": [
+      "猎月人复活"
+    ],
+    "type": "Event",
+    "note": "猎月人借助月矩力光束复活"
+  },
+  "仪式": {
+    "canonical_zh": "仪式",
+    "canonical_en": "",
+    "aliases": [
+      "仪式"
+    ],
+    "type": "Event",
+    "note": "奈芙尔发动的调查猎月人记忆的行动"
+  },
+  "入院仪式": {
+    "canonical_zh": "入院仪式",
+    "canonical_en": "",
+    "aliases": [
+      "入院仪式"
+    ],
+    "type": "Event",
+    "note": "赤月王朝教养院为外来孩子设计的洗练仪式"
+  },
+  "海滩袭击事件": {
+    "canonical_zh": "海滩袭击事件",
+    "canonical_en": "",
+    "aliases": [
+      "海滩袭击事件"
+    ],
+    "type": "Event",
+    "note": "秘源机兵袭击花羽会附近海滩"
+  },
+  "秘源机兵袭击": {
+    "canonical_zh": "秘源机兵袭击",
+    "canonical_en": "",
+    "aliases": [
+      "秘源机兵袭击"
+    ],
+    "type": "Event",
+    "note": "愚人众控制秘源机兵袭击爱莱妲一家"
+  },
+  "旷日持久的战争": {
+    "canonical_zh": "旷日持久的战争",
+    "canonical_en": "",
+    "aliases": [
+      "旷日持久的战争"
+    ],
+    "type": "Event",
+    "note": "两千年前导致龙众落败的古战争"
+  },
+  "营救维瑟弗尼尔": {
+    "canonical_zh": "营救维瑟弗尼尔",
+    "canonical_en": "",
+    "aliases": [
+      "营救维瑟弗尼尔"
+    ],
+    "type": "Event",
+    "note": "戴因斯雷布杀入王宫的营救行动"
+  },
+  "肃清赤月遗民": {
+    "canonical_zh": "肃清赤月遗民",
+    "canonical_en": "",
+    "aliases": [
+      "肃清赤月遗民"
+    ],
+    "type": "Event",
+    "note": "黑日王朝对赤月后裔的系统性屠杀"
+  },
+  "欣缇部族屠杀": {
+    "canonical_zh": "欣缇部族屠杀",
+    "canonical_en": "",
+    "aliases": [
+      "欣缇部族屠杀"
+    ],
+    "type": "Event",
+    "note": "因水源争夺被伊阿布与乌努部族联合屠灭"
+  },
+  "伊阿布与乌努的冲突": {
+    "canonical_zh": "伊阿布与乌努的冲突",
+    "canonical_en": "",
+    "aliases": [
+      "伊阿布与乌努的冲突"
+    ],
+    "type": "Event",
+    "note": "奈芙尔诱导两部族互相残杀"
+  },
+  "祈月之夜": {
+    "canonical_zh": "祈月之夜",
+    "canonical_en": "",
+    "aliases": [
+      "祈月之夜",
+      "「祈月之夜」"
+    ],
+    "type": "Event",
+    "note": "挪德卡莱重要节日，通过银月之庭将月神送回月亮"
+  },
+  "决战猎月人": {
+    "canonical_zh": "决战猎月人",
+    "canonical_en": "",
+    "aliases": [
+      "决战猎月人"
+    ],
+    "type": "Event",
+    "note": "哥伦比娅消耗巨大力量的战斗"
+  },
+  "开启遗迹之门的仪式": {
+    "canonical_zh": "开启遗迹之门的仪式",
+    "canonical_en": "",
+    "aliases": [
+      "开启遗迹之门的仪式"
+    ],
+    "type": "Event",
+    "note": "利用月矩力同频开启亥珀波瑞亚圣地之门"
+  },
+  "研究所之战": {
+    "canonical_zh": "研究所之战",
+    "canonical_en": "",
+    "aliases": [
+      "研究所之战"
+    ],
+    "type": "Event",
+    "note": "突袭多托雷研究所并撤离的战斗"
+  },
+  "挪德卡莱撤离事件": {
+    "canonical_zh": "挪德卡莱撤离事件",
+    "canonical_en": "",
+    "aliases": [
+      "挪德卡莱撤离事件"
+    ],
+    "type": "Event",
+    "note": "各组织联合护送居民前往纳塔和至冬避难"
+  },
+  "多托雷的实验": {
+    "canonical_zh": "多托雷的实验",
+    "canonical_en": "",
+    "aliases": [
+      "多托雷的实验"
+    ],
+    "type": "Event",
+    "note": "多托雷在挪德卡莱进行的大型实验"
+  },
+  "那夏镇保卫战": {
+    "canonical_zh": "那夏镇保卫战",
+    "canonical_en": "",
+    "aliases": [
+      "那夏镇保卫战"
+    ],
+    "type": "Event",
+    "note": "众人合力抵抗多托雷爪牙守护城镇"
+  },
+  "联合会发表仪式": {
+    "canonical_zh": "联合会发表仪式",
+    "canonical_en": "",
+    "aliases": [
+      "联合会发表仪式"
+    ],
+    "type": "Event",
+    "note": "宣告挪德卡莱各势力团结合作"
+  },
+  "雷图礁月矩力紊乱事件": {
+    "canonical_zh": "雷图礁月矩力紊乱事件",
+    "canonical_en": "",
+    "aliases": [
+      "雷图礁月矩力紊乱事件"
+    ],
+    "type": "Event",
+    "note": "天降巨石导致雷图礁月矩力失衡"
+  },
+  "初谕之庭封锁": {
+    "canonical_zh": "初谕之庭封锁",
+    "canonical_en": "",
+    "aliases": [
+      "初谕之庭封锁"
+    ],
+    "type": "Event",
+    "note": "五百年前爱依菈执行的封印行动"
+  },
+  "苦壑崖决胜之战": {
+    "canonical_zh": "苦壑崖决胜之战",
+    "canonical_en": "",
+    "aliases": [
+      "苦壑崖决胜之战"
+    ],
+    "type": "Event",
+    "note": "执灯人军团彻底解决苦壑崖魔物威胁"
+  },
+  "五百年前的灾厄": {
+    "canonical_zh": "五百年前的灾厄",
+    "canonical_en": "",
+    "aliases": [
+      "五百年前的灾厄"
+    ],
+    "type": "Event",
+    "note": "教授试图前往乐园引发的危机"
+  },
+  "击溃「恶卵」": {
+    "canonical_zh": "击溃「恶卵」",
+    "canonical_en": "",
+    "aliases": [
+      "击溃「恶卵」"
+    ],
+    "type": "Event",
+    "note": "利用德肋庇革劳诺之箭消灭教授的最终战役"
+  },
+  "销毁车间之战": {
+    "canonical_zh": "销毁车间之战",
+    "canonical_en": "",
+    "aliases": [
+      "销毁车间之战"
+    ],
+    "type": "Event",
+    "note": "旅行者与涅朵奇卡对抗拉斯科尔尼科夫"
+  },
+  "海难": {
+    "canonical_zh": "海难",
+    "canonical_en": "",
+    "aliases": [
+      "海难"
+    ],
+    "type": "Event",
+    "note": "十年前幸运儿号事故，导致扳手老爹失忆"
+  },
+  "浪底的低语": {
+    "canonical_zh": "浪底的低语",
+    "canonical_en": "",
+    "aliases": [
+      "浪底的低语"
+    ],
+    "type": "Event",
+    "note": "刻拉蒂之眼洞穴探索事件"
+  },
+  "末日": {
+    "canonical_zh": "末日",
+    "canonical_en": "",
+    "aliases": [
+      "末日"
+    ],
+    "type": "Event",
+    "note": "霍德望教授发动的毁灭世界事件"
+  },
+  "监督办公室之战": {
+    "canonical_zh": "监督办公室之战",
+    "canonical_en": "",
+    "aliases": [
+      "监督办公室之战"
+    ],
+    "type": "Event",
+    "note": "旅行者在避难所击败末缀之劫"
+  }
+}

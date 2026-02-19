@@ -1,0 +1,1918 @@
+{
+  "尼伯龙根": {
+    "canonical_zh": "尼伯龙根",
+    "canonical_en": "Nibelung",
+    "aliases": [
+      "尼伯龙根",
+      "龙王"
+    ],
+    "type": "Character",
+    "note": "龙王，创造三月女神，后在葬火之战中将月亮改造为武器"
+  },
+  "戴因斯雷布": {
+    "canonical_zh": "戴因斯雷布",
+    "canonical_en": "Dainsleif",
+    "aliases": [
+      "戴因斯雷布",
+      "Dainsleif"
+    ],
+    "type": "Character",
+    "note": "雷利尔的旧友"
+  },
+  "旅行者": {
+    "canonical_zh": "旅行者",
+    "canonical_en": "Traveler",
+    "aliases": [
+      "旅行者",
+      "杜麦尼",
+      "玩家",
+      "Traveler",
+      "金发异乡人"
+    ],
+    "type": "Character",
+    "note": "主角（空/荧的统称）"
+  },
+  "荧": {
+    "canonical_zh": "荧",
+    "canonical_en": "Lumine",
+    "aliases": [
+      "荧",
+      "Lumine"
+    ],
+    "type": "Character",
+    "note": "旅行者的妹妹，非旅行者本人，独立角色"
+  },
+  "派蒙": {
+    "canonical_zh": "派蒙",
+    "canonical_en": "Paimon",
+    "aliases": [
+      "派蒙",
+      "应急食品",
+      "飞行的小精灵",
+      "Paimon"
+    ],
+    "type": "Character",
+    "note": "旅行者的伙伴"
+  },
+  "愚人众": {
+    "canonical_zh": "愚人众",
+    "canonical_en": "Fatui",
+    "aliases": [
+      "愚人众",
+      "Fatui"
+    ],
+    "type": "Faction",
+    "note": "至冬国组织，多个执行官参与NK剧情"
+  },
+  "虚假之天": {
+    "canonical_zh": "虚假之天",
+    "canonical_en": "False Sky",
+    "aliases": [
+      "虚假之天",
+      "天幕"
+    ],
+    "type": "Concept",
+    "note": "遮蔽真实月亮的天空，隐喻提瓦特被天理包裹隔离"
+  },
+  "葬火之战": {
+    "canonical_zh": "葬火之战",
+    "canonical_en": "War of Pyre",
+    "aliases": [
+      "葬火之战"
+    ],
+    "type": "Event",
+    "note": "尼伯龙根改造月亮对抗天理，天理击碎恒月虹月，霜月被抛至天外"
+  },
+  "少女": {
+    "canonical_zh": "哥伦比娅",
+    "canonical_en": "Columbina",
+    "aliases": [
+      "少女",
+      "哥伦比娅",
+      "希珀塞莱尼娅",
+      "库塔尔",
+      "Columbina",
+      "Hyposelenia",
+      "「少女」",
+      "Kuutar",
+      "月神"
+    ],
+    "type": "Character",
+    "note": "前愚人众第三席执行官，三月女神转世，被霜月之子尊奉为库塔尔"
+  },
+  "桑多涅": {
+    "canonical_zh": "桑多涅",
+    "canonical_en": "Sandrone",
+    "aliases": [
+      "木偶",
+      "桑多涅",
+      "Sandrone",
+      "「木偶」"
+    ],
+    "type": "Character",
+    "note": "愚人众执行官，帕哈岛月矩力实验设计局负责人"
+  },
+  "多托雷": {
+    "canonical_zh": "多托雷",
+    "canonical_en": "Dottore",
+    "aliases": [
+      "博士",
+      "多托雷",
+      "Dottore",
+      "「博士」"
+    ],
+    "type": "Character",
+    "note": "愚人众执行官，NK主要反派，企图夺取三月权能"
+  },
+  "阿蕾奇诺": {
+    "canonical_zh": "阿蕾奇诺",
+    "canonical_en": "Arlecchino",
+    "aliases": [
+      "仆人",
+      "阿蕾奇诺",
+      "Arlecchino",
+      "「仆人」"
+    ],
+    "type": "Character",
+    "note": "愚人众执行官，遵从苍星诏令介入NK事件，保管虹月月髓"
+  },
+  "法尔伽": {
+    "canonical_zh": "法尔伽",
+    "canonical_en": "Farga",
+    "aliases": [
+      "队长",
+      "法尔伽",
+      "Farga",
+      "「队长」"
+    ],
+    "type": "Character",
+    "note": "愚人众执行官，北风骑士，协助最终决战"
+  },
+  "叶洛亚": {
+    "canonical_zh": "叶洛亚",
+    "canonical_en": "Yeroa",
+    "aliases": [
+      "叶洛亚"
+    ],
+    "type": "Character",
+    "note": "魇夜之莺分队队长，执灯人新一代最强成员"
+  },
+  "伊涅芙": {
+    "canonical_zh": "伊涅芙",
+    "canonical_en": "Ineva",
+    "aliases": [
+      "伊涅芙",
+      "Ineva"
+    ],
+    "type": "Character",
+    "note": "爱诺制造的机关人偶（女仆型自动机关），核心可能源自至高领主"
+  },
+  "爱诺": {
+    "canonical_zh": "爱诺",
+    "canonical_en": "Aino",
+    "aliases": [
+      "爱诺",
+      "Aino"
+    ],
+    "type": "Character",
+    "note": "发明家，叮铃哐啷蛋卷工坊创办者，伊涅芙的制造者"
+  },
+  "尼基塔": {
+    "canonical_zh": "尼基塔",
+    "canonical_en": "Nikita",
+    "aliases": [
+      "尼基塔",
+      "执灯长"
+    ],
+    "type": "Character",
+    "note": "执灯人军团最高指挥官，伪装为普通执灯士"
+  },
+  "索洛维": {
+    "canonical_zh": "索洛维",
+    "canonical_en": "Solovi",
+    "aliases": [
+      "索洛维",
+      "铸灯者",
+      "Solovi"
+    ],
+    "type": "Character",
+    "note": "约五百年前创建执灯人军团，留下三件圣物"
+  },
+  "爱莉厄": {
+    "canonical_zh": "爱莉厄",
+    "canonical_en": "Eliria",
+    "aliases": [
+      "爱莉厄",
+      "Eliria",
+      "灯之妖精"
+    ],
+    "type": "Character",
+    "note": "凡人，被困时空夹缝五百年，守护银灯芯，被传说为妖精"
+  },
+  "雷利尔": {
+    "canonical_zh": "雷利尔",
+    "canonical_en": "Rerir",
+    "aliases": [
+      "雷利尔",
+      "猎月人",
+      "Rerir"
+    ],
+    "type": "Character",
+    "note": "坎瑞亚五大罪人之一，身体碎片为狂猎源头"
+  },
+  "拉乌斯万格": {
+    "canonical_zh": "拉乌斯万格",
+    "canonical_en": "Lauswange",
+    "aliases": [
+      "拉乌斯万格",
+      "教授",
+      "妖僧",
+      "「教授」",
+      "不死的毒蛇"
+    ],
+    "type": "Character",
+    "note": "远古不死毒蛇，苍星王廷妖僧，NK执灯人线主要反派（非博士）"
+  },
+  "雷德·米勒": {
+    "canonical_zh": "雷德·米勒",
+    "canonical_en": "Red Miller",
+    "aliases": [
+      "雷德·米勒",
+      "雷勒"
+    ],
+    "type": "Character",
+    "note": "盗宝团创始人，拥有圣嗣之血，索洛维幼时好友"
+  },
+  "奈芙尔": {
+    "canonical_zh": "奈芙尔",
+    "canonical_en": "Nefer",
+    "aliases": [
+      "奈芙尔"
+    ],
+    "type": "Character",
+    "note": "NK主要同伴角色"
+  },
+  "菲林斯": {
+    "canonical_zh": "菲林斯",
+    "canonical_en": "Filins",
+    "aliases": [
+      "菲林斯"
+    ],
+    "type": "Character",
+    "note": "NK主要同伴角色"
+  },
+  "菈乌玛": {
+    "canonical_zh": "菈乌玛",
+    "canonical_en": "Rauma",
+    "aliases": [
+      "菈乌玛"
+    ],
+    "type": "Character",
+    "note": "NK主要同伴角色，保管恒月月髓"
+  },
+  "雅珂达": {
+    "canonical_zh": "雅珂达",
+    "canonical_en": "Yakoda",
+    "aliases": [
+      "雅珂达"
+    ],
+    "type": "Character",
+    "note": "奈芙尔的助手，负责情报工作"
+  },
+  "比约恩": {
+    "canonical_zh": "比约恩",
+    "canonical_en": "Bjorn",
+    "aliases": [
+      "比约恩"
+    ],
+    "type": "Character",
+    "note": "执灯士，因急病未参加三年前苦壑崖行动而幸存"
+  },
+  "尼可": {
+    "canonical_zh": "尼可",
+    "canonical_en": "Niko",
+    "aliases": [
+      "尼可",
+      "魔女尼可",
+      "魔女"
+    ],
+    "type": "Character",
+    "note": "帮助法尔伽与仆人将霜月拉入虚假之天"
+  },
+  "索琳蒂丝": {
+    "canonical_zh": "索琳蒂丝",
+    "canonical_en": "Solintis",
+    "aliases": [
+      "索琳蒂丝"
+    ],
+    "type": "Character",
+    "note": "雷利尔曾经的恋人，坎瑞亚人"
+  },
+  "阿贝多": {
+    "canonical_zh": "阿贝多",
+    "canonical_en": "Albedo",
+    "aliases": [
+      "阿贝多",
+      "Albedo"
+    ],
+    "type": "Character",
+    "note": "炼金术士，在NK协助救援旅行者"
+  },
+  "杜林": {
+    "canonical_zh": "杜林",
+    "canonical_en": "Durin",
+    "aliases": [
+      "杜林",
+      "Durin"
+    ],
+    "type": "Character",
+    "note": "在NK协助救援旅行者"
+  },
+  "努昂诺塔": {
+    "canonical_zh": "努昂诺塔",
+    "canonical_en": "Nuannuota",
+    "aliases": [
+      "努昂诺塔",
+      "月灵"
+    ],
+    "type": "Character",
+    "note": "少女身边的月灵伙伴"
+  },
+  "达达利亚": {
+    "canonical_zh": "达达利亚",
+    "canonical_en": "Tartaglia",
+    "aliases": [
+      "达达利亚",
+      "公子"
+    ],
+    "type": "Character",
+    "note": "愚人众成员"
+  },
+  "莉安歌": {
+    "canonical_zh": "莉安歌",
+    "canonical_en": "Liange",
+    "aliases": [
+      "莉安歌"
+    ],
+    "type": "Character",
+    "note": "花羽会创始英杰，由第八席至高领主养育"
+  },
+  "奥尔松": {
+    "canonical_zh": "奥尔松",
+    "canonical_en": "Olsson",
+    "aliases": [
+      "奥尔松"
+    ],
+    "type": "Character",
+    "note": "前调查分队队长，三年前苦壑崖事件中牺牲"
+  },
+  "德米安": {
+    "canonical_zh": "德米安",
+    "canonical_en": "Demian",
+    "aliases": [
+      "德米安"
+    ],
+    "type": "Character",
+    "note": "那夏镇角色"
+  },
+  "薇尔米娜": {
+    "canonical_zh": "薇尔米娜",
+    "canonical_en": "Vilmina",
+    "aliases": [
+      "薇尔米娜"
+    ],
+    "type": "Character",
+    "note": "NK角色"
+  },
+  "阿尔托": {
+    "canonical_zh": "阿尔托",
+    "canonical_en": "Alto",
+    "aliases": [
+      "阿尔托"
+    ],
+    "type": "Character",
+    "note": "木偶的部下"
+  },
+  "花烛与风羽的司巫": {
+    "canonical_zh": "花烛与风羽的司巫",
+    "canonical_en": "Priestess of Candles and Feathers",
+    "aliases": [
+      "花烛与风羽的司巫",
+      "第八席至高领主",
+      "「花烛与风羽的司巫」"
+    ],
+    "type": "Character",
+    "note": "第八席至高领主，养育莉安歌，与伊涅芙可能有关联"
+  },
+  "索西": {
+    "canonical_zh": "索西",
+    "canonical_en": "",
+    "aliases": [
+      "索西"
+    ],
+    "type": "Character",
+    "note": "执灯人军团军士长，常驻那夏镇，后遇害"
+  },
+  "艾莉亚": {
+    "canonical_zh": "艾莉亚",
+    "canonical_en": "",
+    "aliases": [
+      "艾莉亚"
+    ],
+    "type": "Character",
+    "note": "恒月女神，在葬火之战中逝去"
+  },
+  "恰斯卡": {
+    "canonical_zh": "恰斯卡",
+    "canonical_en": "",
+    "aliases": [
+      "恰斯卡"
+    ],
+    "type": "Character",
+    "note": "花羽会成员，拥有「超越」之古名"
+  },
+  "希诺宁": {
+    "canonical_zh": "希诺宁",
+    "canonical_en": "",
+    "aliases": [
+      "希诺宁"
+    ],
+    "type": "Character",
+    "note": "回声之子工匠，拥有「祝福」之古名"
+  },
+  "卓新": {
+    "canonical_zh": "卓新",
+    "canonical_en": "",
+    "aliases": [
+      "卓新"
+    ],
+    "type": "Character",
+    "note": "爱莱妲的父亲，愚人众眼线"
+  },
+  "明晨之镜": {
+    "canonical_zh": "明晨之镜",
+    "canonical_en": "",
+    "aliases": [
+      "明晨之镜"
+    ],
+    "type": "Character",
+    "note": "圣龙，十三至高领主第十一位，伊涅芙分裂出的「领主」人格"
+  },
+  "维瑟弗尼尔": {
+    "canonical_zh": "维瑟弗尼尔",
+    "canonical_en": "",
+    "aliases": [
+      "维瑟弗尼尔"
+    ],
+    "type": "Character",
+    "note": "五大罪人之一，坎瑞亚预言家，戴因斯雷布之兄"
+  },
+  "辛努海": {
+    "canonical_zh": "辛努海",
+    "canonical_en": "",
+    "aliases": [
+      "辛努海"
+    ],
+    "type": "Character",
+    "note": "奈芙尔父亲，欣缇部族族长"
+  },
+  "图特": {
+    "canonical_zh": "图特",
+    "canonical_en": "",
+    "aliases": [
+      "图特",
+      "鹮之王"
+    ],
+    "type": "Character",
+    "note": "赤王七柱之一，三佞臣之一"
+  },
+  "多莉": {
+    "canonical_zh": "多莉",
+    "canonical_en": "",
+    "aliases": [
+      "多莉",
+      "桑歌玛哈巴依老爷"
+    ],
+    "type": "Character",
+    "note": "须弥大商人"
+  },
+  "阿兰·吉约丹": {
+    "canonical_zh": "阿兰·吉约丹",
+    "canonical_en": "",
+    "aliases": [
+      "阿兰·吉约丹",
+      "奇械公"
+    ],
+    "type": "Character",
+    "note": "枫丹科学院创始人"
+  },
+  "艾莉丝": {
+    "canonical_zh": "艾莉丝",
+    "canonical_en": "",
+    "aliases": [
+      "艾莉丝"
+    ],
+    "type": "Character",
+    "note": "魔女会成员，可莉母亲，维持提瓦特边界稳定"
+  },
+  "流浪者": {
+    "canonical_zh": "流浪者",
+    "canonical_en": "Wanderer",
+    "aliases": [
+      "流浪者",
+      "阿帽",
+      "Wanderer"
+    ],
+    "type": "Character",
+    "note": "须弥教令院学生，曾为愚人众执行官，世界树枝条拟造的人偶"
+  },
+  "天理": {
+    "canonical_zh": "天理",
+    "canonical_en": "",
+    "aliases": [
+      "天理",
+      "「天理」"
+    ],
+    "type": "Character",
+    "note": "提瓦特改造者与现行秩序维护者"
+  },
+  "芭比洛斯": {
+    "canonical_zh": "芭比洛斯",
+    "canonical_en": "",
+    "aliases": [
+      "芭比洛斯"
+    ],
+    "type": "Character",
+    "note": "魔女会代号B，擅长占卜"
+  },
+  "维娜": {
+    "canonical_zh": "维娜",
+    "canonical_en": "",
+    "aliases": [
+      "维娜",
+      "维娜琴卡"
+    ],
+    "type": "Character",
+    "note": "霜月之子大执祭，希汐岛机械师"
+  },
+  "爱依菈": {
+    "canonical_zh": "爱依菈",
+    "canonical_en": "",
+    "aliases": [
+      "爱依菈"
+    ],
+    "type": "Character",
+    "note": "五百年前咏月使，封印初谕之庭"
+  },
+  "娄维娅": {
+    "canonical_zh": "娄维娅",
+    "canonical_en": "",
+    "aliases": [
+      "娄维娅"
+    ],
+    "type": "Character",
+    "note": "爱依菈前任咏月使，因亵渎神明被除忆"
+  },
+  "阿咚": {
+    "canonical_zh": "阿咚",
+    "canonical_en": "",
+    "aliases": [
+      "阿咚"
+    ],
+    "type": "Character",
+    "note": "索洛维的夜莺，跨越五百年的信鸟"
+  },
+  "维德": {
+    "canonical_zh": "维德",
+    "canonical_en": "",
+    "aliases": [
+      "维德"
+    ],
+    "type": "Character",
+    "note": "执灯人成员，比约恩旧友，已故"
+  },
+  "涅朵奇卡": {
+    "canonical_zh": "涅朵奇卡",
+    "canonical_en": "",
+    "aliases": [
+      "涅朵奇卡"
+    ],
+    "type": "Character",
+    "note": "斯塔拉诺夫警长之女，自诩大盗雷德·米勒后继者"
+  },
+  "拉斯科尔尼科夫": {
+    "canonical_zh": "拉斯科尔尼科夫",
+    "canonical_en": "",
+    "aliases": [
+      "拉斯科尔尼科夫"
+    ],
+    "type": "Character",
+    "note": "愚人众中尉"
+  },
+  "丹尤莎·谢斯特宁": {
+    "canonical_zh": "丹尤莎·谢斯特宁",
+    "canonical_en": "",
+    "aliases": [
+      "丹尤莎·谢斯特宁",
+      "丹尤莎"
+    ],
+    "type": "Character",
+    "note": "扳手老爹的女儿"
+  },
+  "卓里克·谢斯特宁": {
+    "canonical_zh": "卓里克·谢斯特宁",
+    "canonical_en": "",
+    "aliases": [
+      "卓里克·谢斯特宁",
+      "卓里克"
+    ],
+    "type": "Character",
+    "note": "丹尤莎的丈夫"
+  },
+  "托尔芬": {
+    "canonical_zh": "托尔芬",
+    "canonical_en": "",
+    "aliases": [
+      "托尔芬"
+    ],
+    "type": "Character",
+    "note": "边地游商，海捷德的孙子，盗宝团成员"
+  },
+  "扳手老爹": {
+    "canonical_zh": "扳手老爹",
+    "canonical_en": "",
+    "aliases": [
+      "扳手老爹",
+      "老谢斯特宁"
+    ],
+    "type": "Character",
+    "note": "机械师，海难幸存者"
+  },
+  "蒂涅": {
+    "canonical_zh": "蒂涅",
+    "canonical_en": "",
+    "aliases": [
+      "蒂涅"
+    ],
+    "type": "Character",
+    "note": "受怪病折磨的孩子"
+  },
+  "伊尔玛里": {
+    "canonical_zh": "伊尔玛里",
+    "canonical_en": "",
+    "aliases": [
+      "伊尔玛里"
+    ],
+    "type": "Character",
+    "note": "刻拉蒂之眼附近的渔夫"
+  },
+  "霍德望": {
+    "canonical_zh": "霍德望",
+    "canonical_en": "",
+    "aliases": [
+      "霍德望"
+    ],
+    "type": "Character",
+    "note": "避难所教授，末缀之劫的主人"
+  },
+  "格蕾兹娜": {
+    "canonical_zh": "格蕾兹娜",
+    "canonical_en": "",
+    "aliases": [
+      "格蕾兹娜"
+    ],
+    "type": "Character",
+    "note": "避难所高级研究员"
+  },
+  "末缀之劫": {
+    "canonical_zh": "末缀之劫",
+    "canonical_en": "",
+    "aliases": [
+      "末缀之劫"
+    ],
+    "type": "Character",
+    "note": "避难所深渊魔兽"
+  },
+  "海捷德": {
+    "canonical_zh": "海捷德",
+    "canonical_en": "",
+    "aliases": [
+      "海捷德",
+      "黑枪太婆"
+    ],
+    "type": "Character",
+    "note": "托尔芬祖母，盗宝团资深成员"
+  },
+  "西维": {
+    "canonical_zh": "西维",
+    "canonical_en": "",
+    "aliases": [
+      "西维"
+    ],
+    "type": "Character",
+    "note": "雷德·米勒的同伴"
+  },
+  "布莱赫": {
+    "canonical_zh": "布莱赫",
+    "canonical_en": "",
+    "aliases": [
+      "布莱赫"
+    ],
+    "type": "Character",
+    "note": "总督养子，托尔芬先辈"
+  },
+  "挪德卡莱": {
+    "canonical_zh": "挪德卡莱",
+    "canonical_en": "Nod-Krai",
+    "aliases": [
+      "挪德卡莱",
+      "Nod-Krai",
+      "挪得卡莱"
+    ],
+    "type": "Place",
+    "note": "至冬边境，冒险者乐园，前身为亥珀波瑞亚"
+  },
+  "那夏镇": {
+    "canonical_zh": "那夏镇",
+    "canonical_en": "Nasha Town",
+    "aliases": [
+      "那夏镇",
+      "那夏"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱最繁忙的商镇，伏尼契商会总部所在地"
+  },
+  "希汐岛": {
+    "canonical_zh": "希汐岛",
+    "canonical_en": "Hiisi Island",
+    "aliases": [
+      "希汐岛",
+      "Hiisi Island"
+    ],
+    "type": "Place",
+    "note": "霜月之子主要居住地，银月之庭所在地"
+  },
+  "帕哈岛": {
+    "canonical_zh": "帕哈岛",
+    "canonical_en": "Paha Isle",
+    "aliases": [
+      "帕哈岛",
+      "Paha Isle"
+    ],
+    "type": "Place",
+    "note": "月矩力实验设计局所在地"
+  },
+  "皮拉米达城": {
+    "canonical_zh": "皮拉米达城",
+    "canonical_en": "Pyramida City",
+    "aliases": [
+      "皮拉米达城",
+      "皮拉米达"
+    ],
+    "type": "Place",
+    "note": "执灯人军团总部，围绕德肋庇革劳诺之箭建造"
+  },
+  "苦壑崖": {
+    "canonical_zh": "苦壑崖",
+    "canonical_en": "Kuhe Cliff",
+    "aliases": [
+      "苦壑崖"
+    ],
+    "type": "Place",
+    "note": "狂猎活跃区域，三年前惨案发生地"
+  },
+  "厄布拉神柱": {
+    "canonical_zh": "厄布拉神柱",
+    "canonical_en": "Ebra Pillar",
+    "aliases": [
+      "厄布拉神柱"
+    ],
+    "type": "Place",
+    "note": "教授建造的通天高塔，银灯芯守护地"
+  },
+  "银月之庭": {
+    "canonical_zh": "银月之庭",
+    "canonical_en": "Silver Moon Court",
+    "aliases": [
+      "银月之庭"
+    ],
+    "type": "Place",
+    "note": "哥伦比娅隐居之地，位于希汐岛"
+  },
+  "亥珀波瑞亚": {
+    "canonical_zh": "亥珀波瑞亚",
+    "canonical_en": "Hyperborea",
+    "aliases": [
+      "亥珀波瑞亚",
+      "Hyperborea",
+      "黄金国"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱前身，古代文明遗址"
+  },
+  "秘密基地": {
+    "canonical_zh": "秘密基地",
+    "canonical_en": "",
+    "aliases": [
+      "秘密基地"
+    ],
+    "type": "Place",
+    "note": "西风骑士团在挪德卡莱的集结点"
+  },
+  "坎瑞亚": {
+    "canonical_zh": "坎瑞亚",
+    "canonical_en": "",
+    "aliases": [
+      "坎瑞亚"
+    ],
+    "type": "Place",
+    "note": "古代地下王国，雷利尔故国"
+  },
+  "第八席领地": {
+    "canonical_zh": "第八席领地",
+    "canonical_en": "",
+    "aliases": [
+      "第八席领地",
+      "「领地」"
+    ],
+    "type": "Place",
+    "note": "花烛与风羽的司巫统治区域，被莉安歌封印"
+  },
+  "深秘院": {
+    "canonical_zh": "深秘院",
+    "canonical_en": "",
+    "aliases": [
+      "深秘院"
+    ],
+    "type": "Place",
+    "note": "坎瑞亚研究机构，研究深渊与赤月"
+  },
+  "智慧宫": {
+    "canonical_zh": "智慧宫",
+    "canonical_en": "",
+    "aliases": [
+      "智慧宫"
+    ],
+    "type": "Place",
+    "note": "教令院大图书馆"
+  },
+  "研究所": {
+    "canonical_zh": "研究所",
+    "canonical_en": "",
+    "aliases": [
+      "研究所"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱最北方，多托雷制造人造月髓之地"
+  },
+  "月亮倒影": {
+    "canonical_zh": "月亮倒影",
+    "canonical_en": "",
+    "aliases": [
+      "月亮倒影"
+    ],
+    "type": "Place",
+    "note": "时间向过去流淌的神秘空间"
+  },
+  "雷图礁": {
+    "canonical_zh": "雷图礁",
+    "canonical_en": "",
+    "aliases": [
+      "雷图礁"
+    ],
+    "type": "Place",
+    "note": "月矩力极度紊乱的区域"
+  },
+  "初谕之庭": {
+    "canonical_zh": "初谕之庭",
+    "canonical_en": "",
+    "aliases": [
+      "初谕之庭"
+    ],
+    "type": "Place",
+    "note": "霜月之子圣所，五百年前被封锁"
+  },
+  "霜月之坊": {
+    "canonical_zh": "霜月之坊",
+    "canonical_en": "",
+    "aliases": [
+      "霜月之坊"
+    ],
+    "type": "Place",
+    "note": "霜月之子聚落"
+  },
+  "蓝珀湖": {
+    "canonical_zh": "蓝珀湖",
+    "canonical_en": "",
+    "aliases": [
+      "蓝珀湖"
+    ],
+    "type": "Place",
+    "note": "扳手老爹留下机械装置的湖泊"
+  },
+  "刻拉蒂之眼": {
+    "canonical_zh": "刻拉蒂之眼",
+    "canonical_en": "",
+    "aliases": [
+      "刻拉蒂之眼"
+    ],
+    "type": "Place",
+    "note": "月之东日之西任务地点"
+  },
+  "月之东，日之西": {
+    "canonical_zh": "月之东，日之西",
+    "canonical_en": "",
+    "aliases": [
+      "月之东，日之西",
+      "月之东日之西"
+    ],
+    "type": "Place",
+    "note": "传说中埋藏伟大财宝的地点"
+  },
+  "避难所": {
+    "canonical_zh": "避难所",
+    "canonical_en": "",
+    "aliases": [
+      "避难所"
+    ],
+    "type": "Place",
+    "note": "皮拉米达城西侧湖下的古老设施"
+  },
+  "霜月之子": {
+    "canonical_zh": "霜月之子",
+    "canonical_en": "Frostmoon Scions",
+    "aliases": [
+      "霜月之子",
+      "Frostmoon Scions"
+    ],
+    "type": "Faction",
+    "note": "崇拜月神库塔尓的原住民，亥珀波瑞亚后裔"
+  },
+  "伏尼契商会": {
+    "canonical_zh": "伏尼契商会",
+    "canonical_en": "Voynich Guild",
+    "aliases": [
+      "伏尼契商会",
+      "Voynich Guild"
+    ],
+    "type": "Faction",
+    "note": "总部在那夏镇，与愚人众有脆弱的利益同盟"
+  },
+  "执灯人军团": {
+    "canonical_zh": "执灯人军团",
+    "canonical_en": "Lamplighter Legion",
+    "aliases": [
+      "执灯人军团",
+      "执灯人",
+      "执灯士"
+    ],
+    "type": "Faction",
+    "note": "索洛维创建，守护挪德卡莱免受狂猎侵袭"
+  },
+  "魇夜之莺": {
+    "canonical_zh": "魇夜之莺",
+    "canonical_en": "Nightingale of Nightmares",
+    "aliases": [
+      "魇夜之莺"
+    ],
+    "type": "Faction",
+    "note": "执灯人调查分队，叶洛亚任队长"
+  },
+  "盗宝团": {
+    "canonical_zh": "盗宝团",
+    "canonical_en": "Treasure Hoarders",
+    "aliases": [
+      "盗宝团"
+    ],
+    "type": "Faction",
+    "note": "雷德·米勒创建的互助组织，后异化为犯罪团伙"
+  },
+  "月矩力实验设计局": {
+    "canonical_zh": "月矩力实验设计局",
+    "canonical_en": "Kuuvahki Research Bureau",
+    "aliases": [
+      "月矩力实验设计局",
+      "月矩力试验设计局",
+      "实验设计局"
+    ],
+    "type": "Faction",
+    "note": "由木偶在帕哈岛建立和控制"
+  },
+  "秘闻馆": {
+    "canonical_zh": "秘闻馆",
+    "canonical_en": "",
+    "aliases": [
+      "秘闻馆"
+    ],
+    "type": "Faction",
+    "note": "奈芙尔经营的情报组织"
+  },
+  "西风骑士团": {
+    "canonical_zh": "西风骑士团",
+    "canonical_en": "",
+    "aliases": [
+      "西风骑士团"
+    ],
+    "type": "Faction",
+    "note": "蒙德组织，法尔伽率领在NK行动"
+  },
+  "赤月王朝": {
+    "canonical_zh": "赤月王朝",
+    "canonical_en": "",
+    "aliases": [
+      "赤月王朝"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚历史朝代，信奉赤月"
+  },
+  "花羽会": {
+    "canonical_zh": "花羽会",
+    "canonical_en": "",
+    "aliases": [
+      "花羽会"
+    ],
+    "type": "Faction",
+    "note": "纳塔部族之一，莉安歌建立"
+  },
+  "秘源机兵": {
+    "canonical_zh": "秘源机兵",
+    "canonical_en": "",
+    "aliases": [
+      "秘源机兵"
+    ],
+    "type": "Faction",
+    "note": "古老机关兵器，近期活动反常"
+  },
+  "五大罪人": {
+    "canonical_zh": "五大罪人",
+    "canonical_en": "",
+    "aliases": [
+      "五大罪人"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚灾难中获得深渊力量的五位强者"
+  },
+  "黑日王朝": {
+    "canonical_zh": "黑日王朝",
+    "canonical_en": "",
+    "aliases": [
+      "黑日王朝"
+    ],
+    "type": "Faction",
+    "note": "坎瑞亚末期统治王朝"
+  },
+  "欣缇部族": {
+    "canonical_zh": "欣缇部族",
+    "canonical_en": "",
+    "aliases": [
+      "欣缇部族"
+    ],
+    "type": "Faction",
+    "note": "须弥沙漠部族，图莱杜拉遗民，被屠灭"
+  },
+  "教令院": {
+    "canonical_zh": "教令院",
+    "canonical_en": "",
+    "aliases": [
+      "教令院"
+    ],
+    "type": "Faction",
+    "note": "须弥最高学术与行政机构"
+  },
+  "魔女会": {
+    "canonical_zh": "魔女会",
+    "canonical_en": "",
+    "aliases": [
+      "魔女会",
+      "「魔女会」"
+    ],
+    "type": "Faction",
+    "note": "由强大魔女组成的组织"
+  },
+  "水仙十字结社": {
+    "canonical_zh": "水仙十字结社",
+    "canonical_en": "",
+    "aliases": [
+      "水仙十字结社"
+    ],
+    "type": "Faction",
+    "note": "枫丹古老组织"
+  },
+  "联合会": {
+    "canonical_zh": "联合会",
+    "canonical_en": "",
+    "aliases": [
+      "联合会"
+    ],
+    "type": "Faction",
+    "note": "挪德卡莱各方势力组成，负责灾后重建"
+  },
+  "海螺帮": {
+    "canonical_zh": "海螺帮",
+    "canonical_en": "",
+    "aliases": [
+      "海螺帮",
+      "「海螺帮」"
+    ],
+    "type": "Faction",
+    "note": "霜月之子世界任务中的组织"
+  },
+  "月髓": {
+    "canonical_zh": "月髓",
+    "canonical_en": "Moon Marrow",
+    "aliases": [
+      "月髓"
+    ],
+    "type": "Item",
+    "note": "高浓度古月遗骸核心，分为恒月/霜月/虹月三枚"
+  },
+  "银灯芯": {
+    "canonical_zh": "银灯芯",
+    "canonical_en": "Silver Wick",
+    "aliases": [
+      "银灯芯"
+    ],
+    "type": "Item",
+    "note": "铸灯者三件圣物之一，可展开结界抵御狂猎"
+  },
+  "螺旋剑": {
+    "canonical_zh": "螺旋剑",
+    "canonical_en": "Spiral Sword",
+    "aliases": [
+      "螺旋剑"
+    ],
+    "type": "Item",
+    "note": "铸灯者三件圣物之一，后用作德肋庇革劳诺之箭的箭头"
+  },
+  "德肋庇革劳诺之箭": {
+    "canonical_zh": "德肋庇革劳诺之箭",
+    "canonical_en": "Arrow of Delphic Labors",
+    "aliases": [
+      "德肋庇革劳诺之箭"
+    ],
+    "type": "Item",
+    "note": "皮拉米达城的古代武器，最终击溃教授的恶卵"
+  },
+  "三宝磨": {
+    "canonical_zh": "三宝磨",
+    "canonical_en": "Sampo",
+    "aliases": [
+      "三宝磨",
+      "Sampo"
+    ],
+    "type": "Item",
+    "note": "古代装置，能汲取大地力量，需圣嗣之血才能命令其臣服"
+  },
+  "古月遗骸": {
+    "canonical_zh": "古月遗骸",
+    "canonical_en": "Ancient Lunar Remains",
+    "aliases": [
+      "古月遗骸"
+    ],
+    "type": "Item",
+    "note": "散落的月亮碎片，月矩力的来源"
+  },
+  "祈月之花": {
+    "canonical_zh": "祈月之花",
+    "canonical_en": "Moon Prayer Flower",
+    "aliases": [
+      "祈月之花"
+    ],
+    "type": "Item",
+    "note": "银月之庭中的花，颜色反映少女的力量状态"
+  },
+  "大炮": {
+    "canonical_zh": "大炮",
+    "canonical_en": "",
+    "aliases": [
+      "大炮"
+    ],
+    "type": "Item",
+    "note": "蛋卷工坊制造，清剿狂猎的强力兵器"
+  },
+  "薇尔琪塔": {
+    "canonical_zh": "薇尔琪塔",
+    "canonical_en": "",
+    "aliases": [
+      "薇尔琪塔"
+    ],
+    "type": "Item",
+    "note": "爱诺制作的小机器人，辅助大炮检修"
+  },
+  "飞船": {
+    "canonical_zh": "飞船",
+    "canonical_en": "",
+    "aliases": [
+      "飞船"
+    ],
+    "type": "Item",
+    "note": "旅行者与妹妹来到这个世界的交通工具"
+  },
+  "深渊碎片": {
+    "canonical_zh": "深渊碎片",
+    "canonical_en": "",
+    "aliases": [
+      "深渊碎片"
+    ],
+    "type": "Item",
+    "note": "狂猎核心中的晶体，蕴含深渊力量"
+  },
+  "虹月的月髓": {
+    "canonical_zh": "虹月的月髓",
+    "canonical_en": "",
+    "aliases": [
+      "虹月的月髓"
+    ],
+    "type": "Item",
+    "note": "三月女神虹月的遗物，被深渊侵染"
+  },
+  "密码筒": {
+    "canonical_zh": "密码筒",
+    "canonical_en": "",
+    "aliases": [
+      "密码筒"
+    ],
+    "type": "Item",
+    "note": "多种工艺拼凑的机关容器"
+  },
+  "核心": {
+    "canonical_zh": "核心",
+    "canonical_en": "",
+    "aliases": [
+      "核心"
+    ],
+    "type": "Item",
+    "note": "秘源造物/人偶的能量与记忆中枢"
+  },
+  "棋盒": {
+    "canonical_zh": "棋盒",
+    "canonical_en": "",
+    "aliases": [
+      "棋盒"
+    ],
+    "type": "Item",
+    "note": "鹮之王赐予奈芙尔的宝物，象征神的解析之力"
+  },
+  "辛努海的信": {
+    "canonical_zh": "辛努海的信",
+    "canonical_en": "",
+    "aliases": [
+      "辛努海的信"
+    ],
+    "type": "Item",
+    "note": "辛努海写给教令院求援的信件"
+  },
+  "祈月之夜贺卡": {
+    "canonical_zh": "祈月之夜贺卡",
+    "canonical_en": "",
+    "aliases": [
+      "祈月之夜贺卡"
+    ],
+    "type": "Item",
+    "note": "朋友们送给哥伦比娅的离别礼物"
+  },
+  "月谕圣牌": {
+    "canonical_zh": "月谕圣牌",
+    "canonical_en": "",
+    "aliases": [
+      "月谕圣牌"
+    ],
+    "type": "Item",
+    "note": "用于占卜的牌阵"
+  },
+  "伪月": {
+    "canonical_zh": "伪月",
+    "canonical_en": "",
+    "aliases": [
+      "伪月",
+      "「伪月」"
+    ],
+    "type": "Item",
+    "note": "多托雷创造的虚假月亮"
+  },
+  "人造月髓": {
+    "canonical_zh": "人造月髓",
+    "canonical_en": "",
+    "aliases": [
+      "人造月髓"
+    ],
+    "type": "Item",
+    "note": "多托雷利用亥珀波瑞亚知识制造的仿制品"
+  },
+  "计程仪": {
+    "canonical_zh": "计程仪",
+    "canonical_en": "",
+    "aliases": [
+      "计程仪"
+    ],
+    "type": "Item",
+    "note": "直观表现术式进展的机械装置"
+  },
+  "克莱卡三号": {
+    "canonical_zh": "克莱卡三号",
+    "canonical_en": "",
+    "aliases": [
+      "克莱卡三号"
+    ],
+    "type": "Item",
+    "note": "维娜制造的显像机关"
+  },
+  "盈月之镜": {
+    "canonical_zh": "盈月之镜",
+    "canonical_en": "",
+    "aliases": [
+      "盈月之镜"
+    ],
+    "type": "Item",
+    "note": "内藏月矩力碎片的神圣装置"
+  },
+  "识者之证": {
+    "canonical_zh": "识者之证",
+    "canonical_en": "",
+    "aliases": [
+      "识者之证"
+    ],
+    "type": "Item",
+    "note": "解开伟大财宝秘密的五把钥匙"
+  },
+  "月导靴": {
+    "canonical_zh": "月导靴",
+    "canonical_en": "",
+    "aliases": [
+      "月导靴",
+      "「月导靴」"
+    ],
+    "type": "Item",
+    "note": "涅朵奇卡使用的飞檐走壁道具"
+  },
+  "《大盗雷德·米勒传奇》": {
+    "canonical_zh": "《大盗雷德·米勒传奇》",
+    "canonical_en": "",
+    "aliases": [
+      "《大盗雷德·米勒传奇》",
+      "大盗雷德·米勒传奇"
+    ],
+    "type": "Item",
+    "note": "影响涅朵奇卡人生轨迹的书籍"
+  },
+  "铁鲸上校": {
+    "canonical_zh": "铁鲸上校",
+    "canonical_en": "",
+    "aliases": [
+      "铁鲸上校",
+      "「铁鲸上校」"
+    ],
+    "type": "Item",
+    "note": "扳手老爹为蒂涅打造的大型机械装置"
+  },
+  "奇怪的树": {
+    "canonical_zh": "奇怪的树",
+    "canonical_en": "",
+    "aliases": [
+      "奇怪的树"
+    ],
+    "type": "Item",
+    "note": "刻拉蒂之眼的神秘植物"
+  },
+  "月矩露滴": {
+    "canonical_zh": "月矩露滴",
+    "canonical_en": "",
+    "aliases": [
+      "月矩露滴"
+    ],
+    "type": "Item",
+    "note": "洞穴中收集的月矩力小碎片"
+  },
+  "曼陀草": {
+    "canonical_zh": "曼陀草",
+    "canonical_en": "",
+    "aliases": [
+      "曼陀草"
+    ],
+    "type": "Item",
+    "note": "击败末缀之劫的植物"
+  },
+  "鸦印": {
+    "canonical_zh": "鸦印",
+    "canonical_en": "",
+    "aliases": [
+      "鸦印"
+    ],
+    "type": "Item",
+    "note": "盗宝团标志，贵族家徽变形而来"
+  },
+  "铁钱": {
+    "canonical_zh": "铁钱",
+    "canonical_en": "",
+    "aliases": [
+      "铁钱"
+    ],
+    "type": "Item",
+    "note": "几百年前通行的货币"
+  },
+  "伟大财宝": {
+    "canonical_zh": "伟大财宝",
+    "canonical_en": "",
+    "aliases": [
+      "伟大财宝",
+      "「伟大财宝」"
+    ],
+    "type": "Item",
+    "note": "雷德·米勒留下的宝藏"
+  },
+  "月矩力": {
+    "canonical_zh": "月矩力",
+    "canonical_en": "Kuuvahki",
+    "aliases": [
+      "月矩力",
+      "Kuuvahki"
+    ],
+    "type": "Concept",
+    "note": "源自前神代月亮遗存的原始光界力，早于七元素体系"
+  },
+  "狂猎": {
+    "canonical_zh": "狂猎",
+    "canonical_en": "Wild Hunt",
+    "aliases": [
+      "狂猎"
+    ],
+    "type": "Concept",
+    "note": "深渊力量与月矩力结合的灾害，源自雷利尔碎片"
+  },
+  "三月女神": {
+    "canonical_zh": "三月女神",
+    "canonical_en": "Three Moon Goddesses",
+    "aliases": [
+      "三月女神",
+      "恒月",
+      "霜月",
+      "虹月"
+    ],
+    "type": "Concept",
+    "note": "龙王创造的三位月亮女神，各掌一轮月亮"
+  },
+  "圣嗣之血": {
+    "canonical_zh": "圣嗣之血",
+    "canonical_en": "Blood of the Sacred Heir",
+    "aliases": [
+      "圣嗣之血"
+    ],
+    "type": "Concept",
+    "note": "能命令三宝磨臣服的特殊血脉"
+  },
+  "无界之世": {
+    "canonical_zh": "无界之世",
+    "canonical_en": "Boundless World",
+    "aliases": [
+      "无界之世"
+    ],
+    "type": "Concept",
+    "note": "雷德·米勒的理想，后被盗宝团异化为贪婪信条"
+  },
+  "苍星诏令": {
+    "canonical_zh": "苍星诏令",
+    "canonical_en": "Pale Star Edict",
+    "aliases": [
+      "苍星诏令"
+    ],
+    "type": "Concept",
+    "note": "冰之女皇的命令"
+  },
+  "赤月": {
+    "canonical_zh": "赤月",
+    "canonical_en": "",
+    "aliases": [
+      "赤月"
+    ],
+    "type": "Concept",
+    "note": "虹月碎裂后与深渊结合的产物"
+  },
+  "两界之火": {
+    "canonical_zh": "两界之火",
+    "canonical_en": "",
+    "aliases": [
+      "两界之火"
+    ],
+    "type": "Concept",
+    "note": "阿蕾奇诺体内的特殊血火，连接生死两界"
+  },
+  "记忆缺失": {
+    "canonical_zh": "记忆缺失",
+    "canonical_en": "",
+    "aliases": [
+      "记忆缺失"
+    ],
+    "type": "Concept",
+    "note": "伊涅芙的症状，负反馈机制引起"
+  },
+  "至高领主": {
+    "canonical_zh": "至高领主",
+    "canonical_en": "",
+    "aliases": [
+      "至高领主"
+    ],
+    "type": "Concept",
+    "note": "火龙王以秘源技术构筑的十三个意识"
+  },
+  "无归之诅咒": {
+    "canonical_zh": "无归之诅咒",
+    "canonical_en": "",
+    "aliases": [
+      "无归之诅咒"
+    ],
+    "type": "Concept",
+    "note": "「领主」设下的限制程序"
+  },
+  "深渊之力": {
+    "canonical_zh": "深渊之力",
+    "canonical_en": "",
+    "aliases": [
+      "深渊之力"
+    ],
+    "type": "Concept",
+    "note": "诱惑坎瑞亚五大罪人堕落的禁忌力量"
+  },
+  "虚影": {
+    "canonical_zh": "虚影",
+    "canonical_en": "",
+    "aliases": [
+      "虚影"
+    ],
+    "type": "Concept",
+    "note": "祈月之夜前后出现的海市蜃楼现象"
+  },
+  "变数": {
+    "canonical_zh": "变数",
+    "canonical_en": "",
+    "aliases": [
+      "变数",
+      "「变数」"
+    ],
+    "type": "Concept",
+    "note": "被刻意堆砌的可能性，干扰既定命运"
+  },
+  "「亥珀波瑞亚」的虚影提供的知识": {
+    "canonical_zh": "「亥珀波瑞亚」的虚影提供的知识",
+    "canonical_en": "",
+    "aliases": [
+      "「亥珀波瑞亚」的虚影提供的知识"
+    ],
+    "type": "Concept",
+    "note": "制造人造月髓的关键知识来源"
+  },
+  "光界力": {
+    "canonical_zh": "光界力",
+    "canonical_en": "",
+    "aliases": [
+      "光界力"
+    ],
+    "type": "Concept",
+    "note": "提瓦特原初的力量，元素力的源头"
+  },
+  "世界式": {
+    "canonical_zh": "世界式",
+    "canonical_en": "",
+    "aliases": [
+      "世界式",
+      "术式"
+    ],
+    "type": "Concept",
+    "note": "雷内/桑多涅用于计算世界命运的图示"
+  },
+  "深渊污染": {
+    "canonical_zh": "深渊污染",
+    "canonical_en": "",
+    "aliases": [
+      "深渊污染"
+    ],
+    "type": "Concept",
+    "note": "侵蚀避难所的高浓度深渊能量"
+  },
+  "雷德·米勒的梦想": {
+    "canonical_zh": "雷德·米勒的梦想",
+    "canonical_en": "",
+    "aliases": [
+      "雷德·米勒的梦想"
+    ],
+    "type": "Concept",
+    "note": "建立属于饥贫之人的乐园"
+  },
+  "苦壑崖事件": {
+    "canonical_zh": "苦壑崖事件",
+    "canonical_en": "Kuhe Cliff Incident",
+    "aliases": [
+      "苦壑崖事件",
+      "三年前事件"
+    ],
+    "type": "Event",
+    "note": "三年前调查分队被狂猎蛊惑自相残杀的惨案"
+  },
+  "寒天之钉": {
+    "canonical_zh": "寒天之钉",
+    "canonical_en": "Skyfrost Nail",
+    "aliases": [
+      "寒天之钉",
+      "天钉"
+    ],
+    "type": "Event",
+    "note": "天理对地面文明的惩罚性打击"
+  },
+  "星砂滩狂猎事件": {
+    "canonical_zh": "星砂滩狂猎事件",
+    "canonical_en": "",
+    "aliases": [
+      "星砂滩狂猎事件"
+    ],
+    "type": "Event",
+    "note": "大规模狂猎爆发，出现不明诡影"
+  },
+  "飞船迫降": {
+    "canonical_zh": "飞船迫降",
+    "canonical_en": "",
+    "aliases": [
+      "飞船迫降"
+    ],
+    "type": "Event",
+    "note": "旅行者飞船降落在星砂滩的事件"
+  },
+  "索西遇害事件": {
+    "canonical_zh": "索西遇害事件",
+    "canonical_en": "",
+    "aliases": [
+      "索西遇害事件"
+    ],
+    "type": "Event",
+    "note": "索西军士长被杀，猎月人嫁祸菲林斯"
+  },
+  "星砂滩之战": {
+    "canonical_zh": "星砂滩之战",
+    "canonical_en": "",
+    "aliases": [
+      "星砂滩之战"
+    ],
+    "type": "Event",
+    "note": "旅行者与菲林斯在星砂滩阻击猎月人"
+  },
+  "猎月人获取形体": {
+    "canonical_zh": "猎月人获取形体",
+    "canonical_en": "",
+    "aliases": [
+      "猎月人获取形体"
+    ],
+    "type": "Event",
+    "note": "猎月人利用大炮重塑身躯"
+  },
+  "猎月人复活": {
+    "canonical_zh": "猎月人复活",
+    "canonical_en": "",
+    "aliases": [
+      "猎月人复活"
+    ],
+    "type": "Event",
+    "note": "猎月人借助月矩力光束复活"
+  },
+  "仪式": {
+    "canonical_zh": "仪式",
+    "canonical_en": "",
+    "aliases": [
+      "仪式"
+    ],
+    "type": "Event",
+    "note": "奈芙尔发动的调查猎月人记忆的行动"
+  },
+  "入院仪式": {
+    "canonical_zh": "入院仪式",
+    "canonical_en": "",
+    "aliases": [
+      "入院仪式"
+    ],
+    "type": "Event",
+    "note": "赤月王朝教养院为外来孩子设计的洗练仪式"
+  },
+  "海滩袭击事件": {
+    "canonical_zh": "海滩袭击事件",
+    "canonical_en": "",
+    "aliases": [
+      "海滩袭击事件"
+    ],
+    "type": "Event",
+    "note": "秘源机兵袭击花羽会附近海滩"
+  },
+  "秘源机兵袭击": {
+    "canonical_zh": "秘源机兵袭击",
+    "canonical_en": "",
+    "aliases": [
+      "秘源机兵袭击"
+    ],
+    "type": "Event",
+    "note": "愚人众控制秘源机兵袭击爱莱妲一家"
+  },
+  "旷日持久的战争": {
+    "canonical_zh": "旷日持久的战争",
+    "canonical_en": "",
+    "aliases": [
+      "旷日持久的战争"
+    ],
+    "type": "Event",
+    "note": "两千年前导致龙众落败的古战争"
+  },
+  "营救维瑟弗尼尔": {
+    "canonical_zh": "营救维瑟弗尼尔",
+    "canonical_en": "",
+    "aliases": [
+      "营救维瑟弗尼尔"
+    ],
+    "type": "Event",
+    "note": "戴因斯雷布杀入王宫的营救行动"
+  },
+  "肃清赤月遗民": {
+    "canonical_zh": "肃清赤月遗民",
+    "canonical_en": "",
+    "aliases": [
+      "肃清赤月遗民"
+    ],
+    "type": "Event",
+    "note": "黑日王朝对赤月后裔的系统性屠杀"
+  },
+  "欣缇部族屠杀": {
+    "canonical_zh": "欣缇部族屠杀",
+    "canonical_en": "",
+    "aliases": [
+      "欣缇部族屠杀"
+    ],
+    "type": "Event",
+    "note": "因水源争夺被伊阿布与乌努部族联合屠灭"
+  },
+  "伊阿布与乌努的冲突": {
+    "canonical_zh": "伊阿布与乌努的冲突",
+    "canonical_en": "",
+    "aliases": [
+      "伊阿布与乌努的冲突"
+    ],
+    "type": "Event",
+    "note": "奈芙尔诱导两部族互相残杀"
+  },
+  "祈月之夜": {
+    "canonical_zh": "祈月之夜",
+    "canonical_en": "",
+    "aliases": [
+      "祈月之夜",
+      "「祈月之夜」"
+    ],
+    "type": "Event",
+    "note": "挪德卡莱重要节日，通过银月之庭将月神送回月亮"
+  },
+  "决战猎月人": {
+    "canonical_zh": "决战猎月人",
+    "canonical_en": "",
+    "aliases": [
+      "决战猎月人"
+    ],
+    "type": "Event",
+    "note": "哥伦比娅消耗巨大力量的战斗"
+  },
+  "开启遗迹之门的仪式": {
+    "canonical_zh": "开启遗迹之门的仪式",
+    "canonical_en": "",
+    "aliases": [
+      "开启遗迹之门的仪式"
+    ],
+    "type": "Event",
+    "note": "利用月矩力同频开启亥珀波瑞亚圣地之门"
+  },
+  "研究所之战": {
+    "canonical_zh": "研究所之战",
+    "canonical_en": "",
+    "aliases": [
+      "研究所之战"
+    ],
+    "type": "Event",
+    "note": "突袭多托雷研究所并撤离的战斗"
+  },
+  "挪德卡莱撤离事件": {
+    "canonical_zh": "挪德卡莱撤离事件",
+    "canonical_en": "",
+    "aliases": [
+      "挪德卡莱撤离事件"
+    ],
+    "type": "Event",
+    "note": "各组织联合护送居民前往纳塔和至冬避难"
+  },
+  "多托雷的实验": {
+    "canonical_zh": "多托雷的实验",
+    "canonical_en": "",
+    "aliases": [
+      "多托雷的实验"
+    ],
+    "type": "Event",
+    "note": "多托雷在挪德卡莱进行的大型实验"
+  },
+  "那夏镇保卫战": {
+    "canonical_zh": "那夏镇保卫战",
+    "canonical_en": "",
+    "aliases": [
+      "那夏镇保卫战"
+    ],
+    "type": "Event",
+    "note": "众人合力抵抗多托雷爪牙守护城镇"
+  },
+  "联合会发表仪式": {
+    "canonical_zh": "联合会发表仪式",
+    "canonical_en": "",
+    "aliases": [
+      "联合会发表仪式"
+    ],
+    "type": "Event",
+    "note": "宣告挪德卡莱各势力团结合作"
+  },
+  "雷图礁月矩力紊乱事件": {
+    "canonical_zh": "雷图礁月矩力紊乱事件",
+    "canonical_en": "",
+    "aliases": [
+      "雷图礁月矩力紊乱事件"
+    ],
+    "type": "Event",
+    "note": "天降巨石导致雷图礁月矩力失衡"
+  },
+  "初谕之庭封锁": {
+    "canonical_zh": "初谕之庭封锁",
+    "canonical_en": "",
+    "aliases": [
+      "初谕之庭封锁"
+    ],
+    "type": "Event",
+    "note": "五百年前爱依菈执行的封印行动"
+  },
+  "苦壑崖决胜之战": {
+    "canonical_zh": "苦壑崖决胜之战",
+    "canonical_en": "",
+    "aliases": [
+      "苦壑崖决胜之战"
+    ],
+    "type": "Event",
+    "note": "执灯人军团彻底解决苦壑崖魔物威胁"
+  },
+  "五百年前的灾厄": {
+    "canonical_zh": "五百年前的灾厄",
+    "canonical_en": "",
+    "aliases": [
+      "五百年前的灾厄"
+    ],
+    "type": "Event",
+    "note": "教授试图前往乐园引发的危机"
+  },
+  "击溃「恶卵」": {
+    "canonical_zh": "击溃「恶卵」",
+    "canonical_en": "",
+    "aliases": [
+      "击溃「恶卵」"
+    ],
+    "type": "Event",
+    "note": "利用德肋庇革劳诺之箭消灭教授的最终战役"
+  },
+  "销毁车间之战": {
+    "canonical_zh": "销毁车间之战",
+    "canonical_en": "",
+    "aliases": [
+      "销毁车间之战"
+    ],
+    "type": "Event",
+    "note": "旅行者与涅朵奇卡对抗拉斯科尔尼科夫"
+  },
+  "海难": {
+    "canonical_zh": "海难",
+    "canonical_en": "",
+    "aliases": [
+      "海难"
+    ],
+    "type": "Event",
+    "note": "十年前幸运儿号事故，导致扳手老爹失忆"
+  },
+  "浪底的低语": {
+    "canonical_zh": "浪底的低语",
+    "canonical_en": "",
+    "aliases": [
+      "浪底的低语"
+    ],
+    "type": "Event",
+    "note": "刻拉蒂之眼洞穴探索事件"
+  },
+  "末日": {
+    "canonical_zh": "末日",
+    "canonical_en": "",
+    "aliases": [
+      "末日"
+    ],
+    "type": "Event",
+    "note": "霍德望教授发动的毁灭世界事件"
+  },
+  "监督办公室之战": {
+    "canonical_zh": "监督办公室之战",
+    "canonical_en": "",
+    "aliases": [
+      "监督办公室之战"
+    ],
+    "type": "Event",
+    "note": "旅行者在避难所击败末缀之劫"
+  }
+}

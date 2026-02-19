@@ -1,0 +1,57 @@
+{
+  "尼伯龙根": {
+    "canonical_zh": "尼伯龙根",
+    "canonical_en": "Nibelung",
+    "aliases": [
+      "尼伯龙根",
+      "龙王"
+    ],
+    "type": "Character",
+    "note": "龙王，创造三月女神，后在葬火之战中将月亮改造为武器"
+  },
+  "戴因斯雷布": {
+    "canonical_zh": "戴因斯雷布",
+    "canonical_en": "Dainsleif",
+    "aliases": [
+      "戴因斯雷布",
+      "Dainsleif"
+    ],
+    "type": "Character",
+    "note": "雷利尔的旧友"
+  },
+  "旅行者": {
+    "canonical_zh": "旅行者",
+    "canonical_en": "Traveler",
+    "aliases": [
+      "旅行者",
+      "杜麦尼",
+      "玩家",
+      "Traveler",
+      "金发异乡人"
+    ],
+    "type": "Character",
+    "note": "主角（空/荧的统称）"
+  },
+  "荧": {
+    "canonical_zh": "荧",
+    "canonical_en": "Lumine",
+    "aliases": [
+      "荧",
+      "Lumine"
+    ],
+    "type": "Character",
+    "note": "旅行者的妹妹，非旅行者本人，独立角色"
+  },
+  "派蒙": {
+    "canonical_zh": "派蒙",
+    "canonical_en": "Paimon",
+    "aliases": [
+      "派蒙",
+      "应急食品",
+      "飞行的小精灵",
+      "Paimon"
+    ],
+    "type": "Character",
+    "note": "旅行者的伙伴"
+  }
+}

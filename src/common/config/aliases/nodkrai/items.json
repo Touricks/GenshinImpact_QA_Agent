@@ -1,0 +1,305 @@
+{
+  "月髓": {
+    "canonical_zh": "月髓",
+    "canonical_en": "Moon Marrow",
+    "aliases": [
+      "月髓"
+    ],
+    "type": "Item",
+    "note": "高浓度古月遗骸核心，分为恒月/霜月/虹月三枚"
+  },
+  "银灯芯": {
+    "canonical_zh": "银灯芯",
+    "canonical_en": "Silver Wick",
+    "aliases": [
+      "银灯芯"
+    ],
+    "type": "Item",
+    "note": "铸灯者三件圣物之一，可展开结界抵御狂猎"
+  },
+  "螺旋剑": {
+    "canonical_zh": "螺旋剑",
+    "canonical_en": "Spiral Sword",
+    "aliases": [
+      "螺旋剑"
+    ],
+    "type": "Item",
+    "note": "铸灯者三件圣物之一，后用作德肋庇革劳诺之箭的箭头"
+  },
+  "德肋庇革劳诺之箭": {
+    "canonical_zh": "德肋庇革劳诺之箭",
+    "canonical_en": "Arrow of Delphic Labors",
+    "aliases": [
+      "德肋庇革劳诺之箭"
+    ],
+    "type": "Item",
+    "note": "皮拉米达城的古代武器，最终击溃教授的恶卵"
+  },
+  "三宝磨": {
+    "canonical_zh": "三宝磨",
+    "canonical_en": "Sampo",
+    "aliases": [
+      "三宝磨",
+      "Sampo"
+    ],
+    "type": "Item",
+    "note": "古代装置，能汲取大地力量，需圣嗣之血才能命令其臣服"
+  },
+  "古月遗骸": {
+    "canonical_zh": "古月遗骸",
+    "canonical_en": "Ancient Lunar Remains",
+    "aliases": [
+      "古月遗骸"
+    ],
+    "type": "Item",
+    "note": "散落的月亮碎片，月矩力的来源"
+  },
+  "祈月之花": {
+    "canonical_zh": "祈月之花",
+    "canonical_en": "Moon Prayer Flower",
+    "aliases": [
+      "祈月之花"
+    ],
+    "type": "Item",
+    "note": "银月之庭中的花，颜色反映少女的力量状态"
+  },
+  "大炮": {
+    "canonical_zh": "大炮",
+    "canonical_en": "",
+    "aliases": [
+      "大炮"
+    ],
+    "type": "Item",
+    "note": "蛋卷工坊制造，清剿狂猎的强力兵器"
+  },
+  "薇尔琪塔": {
+    "canonical_zh": "薇尔琪塔",
+    "canonical_en": "",
+    "aliases": [
+      "薇尔琪塔"
+    ],
+    "type": "Item",
+    "note": "爱诺制作的小机器人，辅助大炮检修"
+  },
+  "飞船": {
+    "canonical_zh": "飞船",
+    "canonical_en": "",
+    "aliases": [
+      "飞船"
+    ],
+    "type": "Item",
+    "note": "旅行者与妹妹来到这个世界的交通工具"
+  },
+  "深渊碎片": {
+    "canonical_zh": "深渊碎片",
+    "canonical_en": "",
+    "aliases": [
+      "深渊碎片"
+    ],
+    "type": "Item",
+    "note": "狂猎核心中的晶体，蕴含深渊力量"
+  },
+  "虹月的月髓": {
+    "canonical_zh": "虹月的月髓",
+    "canonical_en": "",
+    "aliases": [
+      "虹月的月髓"
+    ],
+    "type": "Item",
+    "note": "三月女神虹月的遗物，被深渊侵染"
+  },
+  "密码筒": {
+    "canonical_zh": "密码筒",
+    "canonical_en": "",
+    "aliases": [
+      "密码筒"
+    ],
+    "type": "Item",
+    "note": "多种工艺拼凑的机关容器"
+  },
+  "核心": {
+    "canonical_zh": "核心",
+    "canonical_en": "",
+    "aliases": [
+      "核心"
+    ],
+    "type": "Item",
+    "note": "秘源造物/人偶的能量与记忆中枢"
+  },
+  "棋盒": {
+    "canonical_zh": "棋盒",
+    "canonical_en": "",
+    "aliases": [
+      "棋盒"
+    ],
+    "type": "Item",
+    "note": "鹮之王赐予奈芙尔的宝物，象征神的解析之力"
+  },
+  "辛努海的信": {
+    "canonical_zh": "辛努海的信",
+    "canonical_en": "",
+    "aliases": [
+      "辛努海的信"
+    ],
+    "type": "Item",
+    "note": "辛努海写给教令院求援的信件"
+  },
+  "祈月之夜贺卡": {
+    "canonical_zh": "祈月之夜贺卡",
+    "canonical_en": "",
+    "aliases": [
+      "祈月之夜贺卡"
+    ],
+    "type": "Item",
+    "note": "朋友们送给哥伦比娅的离别礼物"
+  },
+  "月谕圣牌": {
+    "canonical_zh": "月谕圣牌",
+    "canonical_en": "",
+    "aliases": [
+      "月谕圣牌"
+    ],
+    "type": "Item",
+    "note": "用于占卜的牌阵"
+  },
+  "伪月": {
+    "canonical_zh": "伪月",
+    "canonical_en": "",
+    "aliases": [
+      "伪月",
+      "「伪月」"
+    ],
+    "type": "Item",
+    "note": "多托雷创造的虚假月亮"
+  },
+  "人造月髓": {
+    "canonical_zh": "人造月髓",
+    "canonical_en": "",
+    "aliases": [
+      "人造月髓"
+    ],
+    "type": "Item",
+    "note": "多托雷利用亥珀波瑞亚知识制造的仿制品"
+  },
+  "计程仪": {
+    "canonical_zh": "计程仪",
+    "canonical_en": "",
+    "aliases": [
+      "计程仪"
+    ],
+    "type": "Item",
+    "note": "直观表现术式进展的机械装置"
+  },
+  "克莱卡三号": {
+    "canonical_zh": "克莱卡三号",
+    "canonical_en": "",
+    "aliases": [
+      "克莱卡三号"
+    ],
+    "type": "Item",
+    "note": "维娜制造的显像机关"
+  },
+  "盈月之镜": {
+    "canonical_zh": "盈月之镜",
+    "canonical_en": "",
+    "aliases": [
+      "盈月之镜"
+    ],
+    "type": "Item",
+    "note": "内藏月矩力碎片的神圣装置"
+  },
+  "识者之证": {
+    "canonical_zh": "识者之证",
+    "canonical_en": "",
+    "aliases": [
+      "识者之证"
+    ],
+    "type": "Item",
+    "note": "解开伟大财宝秘密的五把钥匙"
+  },
+  "月导靴": {
+    "canonical_zh": "月导靴",
+    "canonical_en": "",
+    "aliases": [
+      "月导靴",
+      "「月导靴」"
+    ],
+    "type": "Item",
+    "note": "涅朵奇卡使用的飞檐走壁道具"
+  },
+  "《大盗雷德·米勒传奇》": {
+    "canonical_zh": "《大盗雷德·米勒传奇》",
+    "canonical_en": "",
+    "aliases": [
+      "《大盗雷德·米勒传奇》",
+      "大盗雷德·米勒传奇"
+    ],
+    "type": "Item",
+    "note": "影响涅朵奇卡人生轨迹的书籍"
+  },
+  "铁鲸上校": {
+    "canonical_zh": "铁鲸上校",
+    "canonical_en": "",
+    "aliases": [
+      "铁鲸上校",
+      "「铁鲸上校」"
+    ],
+    "type": "Item",
+    "note": "扳手老爹为蒂涅打造的大型机械装置"
+  },
+  "奇怪的树": {
+    "canonical_zh": "奇怪的树",
+    "canonical_en": "",
+    "aliases": [
+      "奇怪的树"
+    ],
+    "type": "Item",
+    "note": "刻拉蒂之眼的神秘植物"
+  },
+  "月矩露滴": {
+    "canonical_zh": "月矩露滴",
+    "canonical_en": "",
+    "aliases": [
+      "月矩露滴"
+    ],
+    "type": "Item",
+    "note": "洞穴中收集的月矩力小碎片"
+  },
+  "曼陀草": {
+    "canonical_zh": "曼陀草",
+    "canonical_en": "",
+    "aliases": [
+      "曼陀草"
+    ],
+    "type": "Item",
+    "note": "击败末缀之劫的植物"
+  },
+  "鸦印": {
+    "canonical_zh": "鸦印",
+    "canonical_en": "",
+    "aliases": [
+      "鸦印"
+    ],
+    "type": "Item",
+    "note": "盗宝团标志，贵族家徽变形而来"
+  },
+  "铁钱": {
+    "canonical_zh": "铁钱",
+    "canonical_en": "",
+    "aliases": [
+      "铁钱"
+    ],
+    "type": "Item",
+    "note": "几百年前通行的货币"
+  },
+  "伟大财宝": {
+    "canonical_zh": "伟大财宝",
+    "canonical_en": "",
+    "aliases": [
+      "伟大财宝",
+      "「伟大财宝」"
+    ],
+    "type": "Item",
+    "note": "雷德·米勒留下的宝藏"
+  }
+}
