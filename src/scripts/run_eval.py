@@ -76,8 +76,9 @@ def _run_one_question(question: dict) -> dict:
         from src.agent import create_agent
 
         agent = create_agent(enable_grader=True)
+        golden_answer = question.get("golden_answer", "")
         answer, response = asyncio.run(
-            agent.run_with_grading(question["question"])
+            agent.run_with_grading(question["question"], golden_answer=golden_answer)
         )
         duration_ms = int((time.time() - start) * 1000)
 
@@ -87,8 +88,7 @@ def _run_one_question(question: dict) -> dict:
             "answer": answer[:2000],
             "faithfulness": response.grading.faithfulness,
             "completeness": response.grading.completeness,
-            "answer_relevance": response.grading.answer_relevance,
-            "passed": response.grading.passed,
+            "total": response.grading.total,
             "query_count": response.query_count,
             "tool_calls": len(response.tool_calls),
             "duration_ms": duration_ms,
@@ -102,8 +102,7 @@ def _run_one_question(question: dict) -> dict:
             "answer": "",
             "faithfulness": 0.0,
             "completeness": 0.0,
-            "answer_relevance": 0.0,
-            "passed": False,
+            "total": 0.0,
             "query_count": 0,
             "tool_calls": 0,
             "duration_ms": duration_ms,
@@ -160,26 +159,23 @@ def write_results(label: str, results: list[dict]):
 
 def print_summary(results: list[dict], total_time: float):
     """Print a summary table to stdout."""
-    print(f"\n{'='*80}")
-    print(f"{'ID':<8} {'Cmplx':>5} {'Faith':>6} {'Comp':>6} {'Relev':>6} {'Pass':>5} {'Tools':>5} {'Time':>8} {'Err':>4}")
-    print(f"{'-'*80}")
+    print(f"\n{'='*72}")
+    print(f"{'ID':<8} {'Cmplx':>5} {'Faith':>6} {'Comp':>6} {'Total':>6} {'Tools':>5} {'Time':>8} {'Err':>4}")
+    print(f"{'-'*72}")
 
-    passed = 0
     for r in sorted(results, key=lambda x: x["id"]):
         err = "ERR" if r.get("error") else ""
-        p = "Y" if r["passed"] else "N"
-        if r["passed"]:
-            passed += 1
         dur = f"{r['duration_ms']/1000:.0f}s"
         print(
             f"{r['id']:<8} {r['complexity']:>5} "
-            f"{r['faithfulness']:>6.2f} {r['completeness']:>6.2f} {r['answer_relevance']:>6.2f} "
-            f"{p:>5} {r['tool_calls']:>5} {dur:>8} {err:>4}"
+            f"{r['faithfulness']:>6.2f} {r['completeness']:>6.2f} {r['total']:>6.2f} "
+            f"{r['tool_calls']:>5} {dur:>8} {err:>4}"
         )
 
-    print(f"{'='*80}")
-    print(f"Total: {len(results)} questions, {passed} passed, {total_time:.0f}s elapsed")
-    print(f"{'='*80}")
+    avg_total = sum(r["total"] for r in results) / len(results) if results else 0
+    print(f"{'='*72}")
+    print(f"Total: {len(results)} questions, avg_score={avg_total:.2f}, {total_time:.0f}s elapsed")
+    print(f"{'='*72}")
 
 
 # ── Archive previous logs ─────────────────────────────────────────
@@ -249,7 +245,7 @@ def main():
             logger.info(f"[{i}/{len(questions)}] Running {q['id']}...")
             result = _run_one_question(q)
             results.append(result)
-            status = "PASS" if result["passed"] else "FAIL"
+            status = f'{result["total"]:.2f}'
             logger.info(f"[{i}/{len(questions)}] {q['id']} → {status} ({result['duration_ms']/1000:.0f}s)")
     else:
         # Parallel execution
@@ -266,7 +262,7 @@ def main():
                 try:
                     result = future.result()
                     results.append(result)
-                    status = "PASS" if result["passed"] else "FAIL"
+                    status = f'{result["total"]:.2f}'
                     err = f" [ERROR: {result['error'][:50]}]" if result.get("error") else ""
                     logger.info(
                         f"[{completed}/{len(questions)}] {qid} → {status} "
@@ -276,8 +272,8 @@ def main():
                     logger.error(f"[{completed}/{len(questions)}] {qid} → CRASH: {e}")
                     results.append({
                         "id": qid, "complexity": 0, "answer": "",
-                        "faithfulness": 0, "completeness": 0, "answer_relevance": 0,
-                        "passed": False, "query_count": 0, "tool_calls": 0,
+                        "faithfulness": 0, "completeness": 0, "total": 0,
+                        "query_count": 0, "tool_calls": 0,
                         "duration_ms": 0, "error": str(e),
                     })
 

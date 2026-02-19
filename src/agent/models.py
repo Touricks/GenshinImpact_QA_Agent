@@ -42,8 +42,7 @@ class FaithfulnessResult(BaseModel):
 class ProductionGrade(BaseModel):
     faithfulness: float = 0.0
     completeness: float = 0.0
-    answer_relevance: float = 0.0
-    passed: bool = False
+    total: float = 0.0  # (faithfulness + completeness) / 2
 
 
 # ── AgentResponse (API 输出) ────────────────────────────────────────
@@ -51,8 +50,7 @@ class ProductionGrade(BaseModel):
 class GradingResult(BaseModel):
     faithfulness: float = 0.0
     completeness: float = 0.0
-    answer_relevance: float = 0.0
-    passed: bool = False
+    total: float = 0.0
 
 
 class AgentResponse(BaseModel):

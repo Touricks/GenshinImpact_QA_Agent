@@ -72,6 +72,9 @@ class AgentState(TypedDict):
     solve_iterations: int            # overwrite
     solve_start_ts: float            # timestamp of first solve_llm call
 
+    # Eval
+    golden_answer: str  # empty string = production mode
+
     # Output
     raw_answer: str
     humanized_answer: str
@@ -337,28 +340,26 @@ class AgentV4Workflow:
             question=state["question"],
             answer=state["humanized_answer"],
             tool_calls=state.get("tool_calls", []),
+            golden_answer=state.get("golden_answer") or None,
         )
         grade_ms = int((time.time() - grade_start) * 1000)
         logger.info(
             f"[v4:Grade] faith={final_grade.faithfulness:.2f} "
             f"comp={final_grade.completeness:.2f} "
-            f"rel={final_grade.answer_relevance:.2f} "
-            f"passed={final_grade.passed} ({grade_ms}ms)"
+            f"total={final_grade.total:.2f} ({grade_ms}ms)"
         )
 
         grading = GradingResult(
             faithfulness=final_grade.faithfulness,
             completeness=final_grade.completeness,
-            answer_relevance=final_grade.answer_relevance,
-            passed=final_grade.passed,
+            total=final_grade.total,
         )
 
         if self.tracer:
             self.tracer.log_final_grading({
                 "faithfulness": grading.faithfulness,
                 "completeness": grading.completeness,
-                "answer_relevance": grading.answer_relevance,
-                "passed": grading.passed,
+                "total": grading.total,
                 "duration_ms": grade_ms,
             })
 
@@ -366,7 +367,7 @@ class AgentV4Workflow:
 
     # ── Orchestrator ──────────────────────────────────────────────
 
-    async def run(self, question: str) -> AgentResponse:
+    async def run(self, question: str, golden_answer: str = "") -> AgentResponse:
         """Execute StateGraph: solve → humanize → grade → AgentResponse."""
         from .prompts import AGENT_V4_SYSTEM_PROMPT
 
@@ -381,7 +382,7 @@ class AgentV4Workflow:
                 "version": "v4-langgraph",
                 "max_iterations": max_iterations,
                 "max_tool_calls": max_tool_calls,
-            })
+            }, golden_answer=golden_answer)
             self.tracer.log_routing("single", "v4 LangGraph StateGraph ReAct", 0)
             self.tracer.start_query_event(qe_id, question, "", False)
 
@@ -408,6 +409,7 @@ class AgentV4Workflow:
             "total_tool_call_count": 0,
             "solve_iterations": 0,
             "solve_start_ts": 0.0,
+            "golden_answer": golden_answer,
             "raw_answer": "",
             "humanized_answer": "",
             "grading": None,

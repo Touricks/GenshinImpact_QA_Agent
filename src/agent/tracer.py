@@ -22,7 +22,7 @@ class AgentTracer:
         self.log_dir.mkdir(parents=True, exist_ok=True)
         self.current_trace: Optional[Dict[str, Any]] = None
 
-    def start_trace(self, query: str, config: Dict[str, Any]) -> str:
+    def start_trace(self, query: str, config: Dict[str, Any], golden_answer: str = "") -> str:
         timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
         query_hash = hashlib.md5(query.encode()).hexdigest()[:6]
         trace_id = f"{timestamp}-{query_hash}"
@@ -31,6 +31,7 @@ class AgentTracer:
             "trace_id": trace_id,
             "timestamp": datetime.now().isoformat(),
             "query": query,
+            "golden_answer": golden_answer or None,
             "config": config,
             "routing": None,
             "query_events": [],

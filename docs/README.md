@@ -62,7 +62,7 @@ START → solve_llm → [should_continue?]
 - **solve_tools**: 执行工具调用，记录 ToolCallRecord，返回结果
 - **force_answer**: 达到工具/迭代上限时，强制生成文本回答
 - **humanize**: 润色原始回答为自然语言
-- **grade**: 三维度评分 (Faithfulness / Completeness / Relevance)
+- **grade**: golden_answer 评分 (Faithfulness + Completeness → Total)
 
 ### 7 个检索工具
 
@@ -76,13 +76,15 @@ START → solve_llm → [should_continue?]
 | `explore_subgraph` | Neo4j | 探索实体周围子图 |
 | `search_memory` | Qdrant | 三信号混合搜索 (dense + sparse + BM25) |
 
-### 三维度评分
+### 评分体系 (golden_answer 模式)
 
-| 维度 | 说明 | 阈值 |
-|------|------|------|
-| Faithfulness | 回答是否基于工具证据 | ≥ 0.7 |
-| Completeness | 工具输出利用度 | ≥ 0.5 |
-| Relevance | 问题回答度 | ≥ 0.7 |
+| 维度 | 说明 |
+|------|------|
+| Faithfulness | Agent 回答与 golden_answer 的事实一致性 |
+| Completeness | Agent 回答对 golden_answer 要点的覆盖率 |
+| Total | (faithfulness + completeness) / 2 |
+
+生产环境（无 golden_answer）：跳过评分，零 LLM 调用。
 
 详细架构文档: [agent/architecture.md](./agent/architecture.md)
 

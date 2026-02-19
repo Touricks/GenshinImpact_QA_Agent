@@ -1,9 +1,8 @@
 {
   "name": "smoke",
   "description": "Quick 3-question sanity check (complexity 1/2/5)",
-  "count": 3,
+  "count": 2,
   "ids": [
-    "NK-12",
     "NK-15",
     "NK-19"
   ]

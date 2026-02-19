@@ -555,7 +555,7 @@ class GraphSearcher:
             query = f"""
                 MATCH (a {{name: $start}})-[r:LEADS_TO|MOTIVATED_BY*..{min(max_hops, 3)}]-(b)
                 WHERE a <> b
-                WITH b, r ORDER BY length(r) ASC
+                WITH b, r ORDER BY size(r) ASC
                 WITH b, COLLECT(r)[0] AS shortest_path
                 RETURN b.name AS name, labels(b)[0] AS type,
                        [rel IN shortest_path | {{type: type(rel), desc: rel.description}}] AS chain
