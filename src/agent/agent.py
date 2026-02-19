@@ -62,7 +62,7 @@ class GenshinRetrievalAgent:
         from .llm_factory import create_chat_model
 
         # REASONING_MODEL — for solve_question (需要强推理 + tool calling)
-        reasoning_llm = create_chat_model(self.model, thinking_level="low")
+        reasoning_llm = create_chat_model(self.model, thinking_level=self.settings.AGENT_THINKING_LEVEL)
 
         # GRADER_MODEL — for grader, humanizer (快速模型, BaseChatModel 直接传递)
         grader_llm = create_chat_model(self.settings.GRADER_MODEL)
@@ -109,12 +109,12 @@ class GenshinRetrievalAgent:
         result = await self._workflow.run(question=query)
         return result.answer_text
 
-    async def run_with_grading(self, query: str) -> Tuple[str, AgentResponse]:
+    async def run_with_grading(self, query: str, golden_answer: str = "") -> Tuple[str, AgentResponse]:
         """Run with full grading. Returns (answer_text, full_response)."""
         self._ensure_initialized()
 
         start_time = time.time()
-        result = await self._workflow.run(question=query)
+        result = await self._workflow.run(question=query, golden_answer=golden_answer)
 
         total_duration = int((time.time() - start_time) * 1000)
         result.total_duration_ms = total_duration
@@ -122,7 +122,7 @@ class GenshinRetrievalAgent:
         # Save trace (raw_answer = pre-humanize, answer_text = post-humanize)
         trace_path = self._tracer.end_trace(
             final_response=result.raw_answer or result.answer_text,
-            passed=result.grading.passed,
+            passed=result.grading.total >= 0.7,
             total_duration_ms=total_duration,
             humanized_response=result.answer_text,
         )

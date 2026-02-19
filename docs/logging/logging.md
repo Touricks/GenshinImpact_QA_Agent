@@ -45,11 +45,11 @@ logger/
     ],
     "answer": "润色后的回答..."
   }],
+  "golden_answer": "标准答案 (eval 模式下存在)",
   "final_grading": {
     "faithfulness": 1.0,
     "completeness": 1.0,
-    "answer_relevance": 1.0,
-    "passed": true,
+    "total": 1.0,
     "duration_ms": 9403
   },
   "final_response": "原始回答 (润色前)",
@@ -84,7 +84,7 @@ cat logger/traces/*.json | jq '.query_events[].tool_calls[].tool_name' | sort | 
 ### 查看评分
 
 ```bash
-cat logger/traces/*.json | jq '.final_grading | {faithfulness, completeness, answer_relevance, passed}'
+cat logger/traces/*.json | jq '.final_grading | {faithfulness, completeness, total}'
 ```
 
 ### 对比润色效果

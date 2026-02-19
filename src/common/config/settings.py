@@ -89,6 +89,7 @@ class Settings(BaseSettings):
     AGENT_V4_MAX_TOOL_CALLS: int = 20
     AGENT_V4_MAX_TOOLS_PER_ITER: int = 5  # 单轮最多执行的工具调用数
     AGENT_V4_WALL_TIMEOUT: int = 200  # 秒，单次 graph invoke 的墙钟超时
+    AGENT_THINKING_LEVEL: str = "high"  # Gemini 3: "low" | "medium" | "high"
     ABLATION_MODE: str = "full"  # "full" | "vector_only"
 
     @model_validator(mode="after")

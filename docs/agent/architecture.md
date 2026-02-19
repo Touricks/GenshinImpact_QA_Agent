@@ -23,8 +23,8 @@
 │  └─────┬─────┘                                                   │
 │        ▼                                                         │
 │  ┌───────────┐                                                   │
-│  │  grade    │  → Faithfulness / Completeness / Relevance       │
-│  │ (三维度)  │                                                   │
+│  │  grade    │  → Faithfulness / Completeness → Total           │
+│  │(golden_a) │                                                   │
 │  └─────┬─────┘                                                   │
 │        ▼                                                         │
 │      END → AgentResponse                                        │
@@ -56,7 +56,8 @@ class AgentState(TypedDict):
 
     raw_answer: str                          # 润色前原始回答
     humanized_answer: str                    # 润色后回答
-    grading: Optional[GradingResult]         # 三维度评分
+    golden_answer: str                         # golden answer (eval 模式)
+    grading: Optional[GradingResult]         # golden_answer 评分
 ```
 
 ### Graph 结构
@@ -116,17 +117,16 @@ START → solve_llm → [should_continue?]
 
 ### 5. grade
 
-**职责**: 三维度质量评分。
+**职责**: golden_answer 模式评分。
 
-使用 `with_structured_output` 确保输出格式可靠。三个维度并行评估：
+有 golden_answer 时，两维度通过 `asyncio.gather` 并行评估，使用 `with_structured_output` 确保格式可靠。
+无 golden_answer（生产环境）时跳过评分，零 LLM 调用。
 
-| 维度 | 评估内容 | 通过阈值 |
-|------|----------|----------|
-| **Faithfulness** | 回答声明是否有工具证据支持 | ≥ 0.7 |
-| **Completeness** | 工具返回信息的利用程度 | ≥ 0.5 |
-| **Relevance** | 回答是否切中问题 | ≥ 0.7 |
-
-通过条件: `faithfulness ≥ 0.7 AND completeness ≥ 0.5 AND relevance ≥ 0.7`
+| 维度 | 评估内容 |
+|------|----------|
+| **Faithfulness** | Agent 回答与 golden_answer 的事实一致性（只惩罚矛盾，不惩罚额外信息） |
+| **Completeness** | Agent 回答对 golden_answer 要点的覆盖率 |
+| **Total** | (faithfulness + completeness) / 2 |
 
 ---
 
@@ -167,7 +167,7 @@ LLM 创建通过 `llm_factory.create_chat_model()` 统一管理，支持 Gemini 
 3. [solve_llm] LLM 综合信息 → 生成最终文本回答 (无更多工具调用)
 4. [should_continue] 无工具调用 → 路由到 humanize
 5. [humanize] 润色回答 → 自然语言 (622ch → 494ch)
-6. [grade] 三维度评分 → faith=1.0, comp=1.0, rel=1.0, PASSED
+6. [grade] 评分 → faith=1.0, comp=1.0, total=1.0
 7. [END] → AgentResponse
 ```
 
@@ -200,7 +200,7 @@ src/agent/
 ├── agent.py             # GenshinRetrievalAgent 入口
 ├── workflow_v4.py       # AgentV4Workflow (StateGraph)
 ├── llm_factory.py       # LLM 创建工厂 (Gemini/Claude/OpenAI)
-├── grader.py            # ProductionGraderService (三维度评分)
+├── grader.py            # ProductionGraderService (golden_answer 评分)
 ├── combiner.py          # ResponseHumanizer (答案润色)
 ├── prompts.py           # AGENT_V4_SYSTEM_PROMPT + HUMANIZE_PROMPT
 ├── models.py            # ToolCallRecord, AgentResponse, GradingResult
