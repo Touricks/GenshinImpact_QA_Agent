@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nod-Krai QA Dataset — Annotation Difficulty Classification</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #232734;
+    --border: #2e3345;
+    --text: #e0e0e6;
+    --text-dim: #8b8fa3;
+    --accent: #6c8aff;
+    --type-a: #4ecdc4;
+    --type-b: #6c8aff;
+    --type-c: #f7b731;
+    --type-d: #fc5c65;
+    --type-e: #a55eea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+  header p { color: var(--text-dim); font-size: 0.95rem; }
+  .meta-badges { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .meta-badge {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+  .meta-badge strong { color: var(--text); }
+
+  /* Classification Section */
+  .classification {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .classification h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+  .classification > p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .tier-grid { display: grid; gap: 1rem; }
+  .tier-card {
+    display: grid;
+    grid-template-columns: 60px 1fr 1.2fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  @media (max-width: 900px) {
+    .tier-card { grid-template-columns: 1fr; }
+  }
+  .tier-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    padding: 0.15rem 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .tier-label small { display: block; font-size: 0.65rem; font-weight: 400; opacity: 0.8; }
+  .tier-a .tier-label { color: var(--type-a); }
+  .tier-b .tier-label { color: var(--type-b); }
+  .tier-c .tier-label { color: var(--type-c); }
+  .tier-d .tier-label { color: var(--type-d); }
+  .tier-e .tier-label { color: var(--type-e); }
+  .tier-card .col-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 0.2rem; }
+  .tier-card .col-body { font-size: 0.85rem; }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1; min-width: 120px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  .stat-card .num { font-size: 1.8rem; font-weight: 700; }
+  .stat-card .label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-a .num { color: var(--type-a); }
+  .stat-b .num { color: var(--type-b); }
+  .stat-c .num { color: var(--type-c); }
+  .stat-d .num { color: var(--type-d); }
+  .stat-e .num { color: var(--type-e); }
+
+  /* Filter Buttons */
+  .filters { margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .filter-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .filter-btn[data-type="A"].active { background: var(--type-a); border-color: var(--type-a); color: #000; }
+  .filter-btn[data-type="B"].active { background: var(--type-b); border-color: var(--type-b); color: #fff; }
+  .filter-btn[data-type="C"].active { background: var(--type-c); border-color: var(--type-c); color: #000; }
+  .filter-btn[data-type="D"].active { background: var(--type-d); border-color: var(--type-d); color: #fff; }
+  .filter-btn[data-type="E"].active { background: var(--type-e); border-color: var(--type-e); color: #fff; }
+
+  /* Question Cards */
+  .question-list { display: grid; gap: 1rem; }
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.15s;
+  }
+  .q-card:hover { border-color: #444; }
+  .q-card.hidden { display: none; }
+  .q-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .q-id {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    background: var(--surface2);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+  }
+  .q-type-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-radius: 4px;
+    padding: 0.15rem 0.6rem;
+  }
+  .q-type-A { background: rgba(78,205,196,0.15); color: var(--type-a); border: 1px solid rgba(78,205,196,0.3); }
+  .q-type-B { background: rgba(108,138,255,0.15); color: var(--type-b); border: 1px solid rgba(108,138,255,0.3); }
+  .q-type-C { background: rgba(247,183,49,0.15); color: var(--type-c); border: 1px solid rgba(247,183,49,0.3); }
+  .q-type-D { background: rgba(252,92,101,0.15); color: var(--type-d); border: 1px solid rgba(252,92,101,0.3); }
+  .q-type-E { background: rgba(165,94,234,0.15); color: var(--type-e); border: 1px solid rgba(165,94,234,0.3); }
+  .complexity-dots { display: flex; gap: 3px; align-items: center; margin-left: auto; }
+  .complexity-dots span { font-size: 0.7rem; color: var(--text-dim); margin-right: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .dot.filled { background: var(--accent); }
+  .q-question { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .q-answer-toggle {
+    font-size: 0.8rem;
+    color: var(--accent);
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  .q-answer-toggle:hover { text-decoration: underline; }
+  .q-answer {
+    display: none;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    background: var(--surface2);
+    border-radius: 6px;
+    padding: 1rem;
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+  .q-answer.show { display: block; }
+  .q-chinese {
+    font-size: 0.8rem;
+    color: #555e75;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #2a2f40;
+    white-space: pre-wrap;
+    line-height: 1.6;
+  }
+  .q-chinese summary { cursor: pointer; color: #555e75; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Nod-Krai Story QA Dataset</h1>
+  <p>Genshin Impact &mdash; Annotation Difficulty Classification for RL Grader Training</p>
+  <div class="meta-badges">
+    <span class="meta-badge"><strong>41</strong> Questions</span>
+    <span class="meta-badge"><strong>19</strong> Existing + <strong>22</strong> New</span>
+    <span class="meta-badge">Complexity <strong>1&ndash;5</strong></span>
+    <span class="meta-badge">v2.0 &mdash; 2026-02-10</span>
+  </div>
+</header>
+
+<!-- ==================== CLASSIFICATION METHODOLOGY ==================== -->
+<section class="classification">
+  <h2>Annotation Difficulty Classification</h2>
+  <p>All 41 questions are classified into five tiers based on <strong>annotation feasibility</strong> for RL reward modeling, not raw content difficulty. Each tier reflects how reliably a reward signal can be generated.</p>
+  <div class="tier-grid">
+    <div class="tier-card tier-a">
+      <div class="tier-label">A<small>Pure Fact</small></div>
+      <div><div class="col-head">Annotation</div><div class="col-body">Exact match against a single entity/attribute. Clear, unambiguous correct answer.</div></div>
+      <div><div class="col-head">RL Feasibility</div><div class="col-body"><strong>Fully feasible.</strong> Reward signal is crisp &mdash; answer is either correct or not.</div></div>
+      <div><div class="col-head">Examples</div><div class="col-body">NK-01 (region status), NK-09 (Yeloya&rsquo;s rank), NK-21 (Piramida city role), NK-22 (Lamp Bearers founding)</div></div>
+    </div>
+    <div class="tier-card tier-b">
+      <div class="tier-label">B<small>Constrained Narrative</small></div>
+      <div><div class="col-head">Annotation</div><div class="col-body">Check whether key factual checkpoints are covered and correct. Can be decomposed into a boolean checklist.</div></div>
+      <div><div class="col-head">RL Feasibility</div><div class="col-body"><strong>Feasible.</strong> Decompose into checklist items; reward = fraction of items satisfied.</div></div>
+      <div><div class="col-head">Examples</div><div class="col-body">NK-12 (Three Moon Goddesses legend), NK-32 (Bitter Ravine incident), NK-36 (full Lamp Bearer timeline)</div></div>
+    </div>
+    <div class="tier-card tier-c">
+      <div class="tier-label">C<small>Constrained Analysis</small></div>
+      <div><div class="col-head">Annotation</div><div class="col-body">Verify cited plot points are real <strong>+</strong> check whether the reasoning chain is internally consistent.</div></div>
+      <div><div class="col-head">RL Feasibility</div><div class="col-body"><strong>Partially feasible.</strong> Factual grounding is RL-trainable; reasoning coherence needs preference-based signal.</div></div>
+      <div><div class="col-head">Examples</div><div class="col-body">NK-37 (8th vs 11th Supreme Lord hypothesis), NK-38 (Professor&rsquo;s deception analysis), NK-14 (Kuuvahki vs elements)</div></div>
+    </div>
+    <div class="tier-card tier-d">
+      <div class="tier-label">D<small>Cross-text Inference</small></div>
+      <div><div class="col-head">Annotation</div><div class="col-body">Requires judging &ldquo;reasonable inference&rdquo; vs &ldquo;over-interpretation&rdquo; across multiple source documents.</div></div>
+      <div><div class="col-head">RL Feasibility</div><div class="col-body"><strong>Difficult but possible</strong> via multi-dimensional rubric scoring (factual basis, inference quality, scope).</div></div>
+      <div><div class="col-head">Examples</div><div class="col-body">NK-39 (Fatui faction split), NK-41 (Sampo across all sources), NK-15 (Columbina&rsquo;s full arc)</div></div>
+    </div>
+    <div class="tier-card tier-e">
+      <div class="tier-label">E<small>Real-world Resonance</small></div>
+      <div><div class="col-head">Annotation</div><div class="col-body">Evaluate symbolic/thematic interpretation that bridges fictional narrative to universal human themes.</div></div>
+      <div><div class="col-head">RL Feasibility</div><div class="col-body"><strong>Hardest tier.</strong> Requires subjective literary judgment; best suited for preference ranking (RLHF) rather than binary reward.</div></div>
+      <div><div class="col-head">Examples</div><div class="col-body">NK-40 (Winter Grass proverb &mdash; sacrifice &amp; legacy symbolism), NK-16 (&ldquo;False Sky&rdquo; metaphor)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<div class="stats-bar">
+  <div class="stat-card stat-a"><div class="num">13</div><div class="label">A &middot; Pure Fact</div></div>
+  <div class="stat-card stat-b"><div class="num">13</div><div class="label">B &middot; Narrative</div></div>
+  <div class="stat-card stat-c"><div class="num">7</div><div class="label">C &middot; Analysis</div></div>
+  <div class="stat-card stat-d"><div class="num">6</div><div class="label">D &middot; Inference</div></div>
+  <div class="stat-card stat-e"><div class="num">2</div><div class="label">E &middot; Resonance</div></div>
+</div>
+
+<!-- ==================== FILTERS ==================== -->
+<div class="filters">
+  <button class="filter-btn active" data-type="ALL" onclick="filterCards('ALL')">All (41)</button>
+  <button class="filter-btn" data-type="A" onclick="filterCards('A')">A &middot; Pure Fact</button>
+  <button class="filter-btn" data-type="B" onclick="filterCards('B')">B &middot; Narrative</button>
+  <button class="filter-btn" data-type="C" onclick="filterCards('C')">C &middot; Analysis</button>
+  <button class="filter-btn" data-type="D" onclick="filterCards('D')">D &middot; Inference</button>
+  <button class="filter-btn" data-type="E" onclick="filterCards('E')">E &middot; Resonance</button>
+</div>
+
+<!-- ==================== QUESTION LIST ==================== -->
+<div class="question-list" id="qList">
+
+<!-- NK-01 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-01</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What country does the Nod-Krai region nominally belong to?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">No affiliation — it exists in a state of high autonomy (or is regarded as a lawless, wandering land).</div>
+</div>
+
+<!-- NK-02 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-02</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Who is the deity worshipped by the Frostmoon Scions?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Moon Goddess (Kuutar).</div>
+</div>
+
+<!-- NK-03 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-03</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the name of the town where the Voynich Guild is headquartered?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Nasha Town.</div>
+</div>
+
+<!-- NK-04 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-04</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the special power used by Nod-Krai residents that predates the seven-element system?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Kuuvahki (Moon-Gauge Force).</div>
+</div>
+
+<!-- NK-05 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-05</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Who are the main inhabitants of Hiisi Island?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Frostmoon Scions.</div>
+</div>
+
+<!-- NK-06 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-06</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Which Fatui Harbinger established and controls the Kuuvahki Experimental Design Bureau on Paha Isle?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Fatui Harbinger "Sandrone" (The Marionette).</div>
+</div>
+
+<!-- NK-07 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-07</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the relationship between former Fatui Harbinger "Columbina" and the Moon Goddess Kuutar?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Columbina Hyposelenia is a new Moon Goddess born from the lingering will of the Frostmoon and Teyvat's ancient connections. She was discovered by the Frostmoon Scions and revered as the prophesied "Kuutar." In essence, she is the continuation of the guardian hearts of the three Moon Goddesses.</div>
+</div>
+
+<!-- NK-08 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-08</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Why is Nasha Town called the "Adventurer's Paradise"?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Because there is no official governing body, laws are weak, ancient technology circulates freely, and opportunities to get rich abound.</div>
+</div>
+
+<!-- NK-09 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-09</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What position does Yeloya hold in the Lamp Bearers legion?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Captain of the reconnaissance squad "Nightmares' Oriole." He is the strongest member of the new generation, leading the counter-offensive mission against the Wild Hunt at Bitter Ravine Cliff.</div>
+</div>
+
+<!-- NK-10 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-10</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What type of products does the Clink-Clank Krumkake Workshop mainly produce?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Mainly mechanical toys and krumkake (rolled waffle cones), founded by Aino. The original goal was to research "the world's best krumkake machine." The workshop gradually evolved into a precision machinery manufacturer, also producing high-precision automated equipment.</div>
+</div>
+
+<!-- NK-11 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-11</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the true intent behind the Fatui establishing outposts in Nod-Krai and collecting "Ancient Moon Remains"?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">To research the pre-Archon power "Kuuvahki" and attempt to seize the Frostmoon Scions' sacred relic "Moon Marrow" to decode the power of the moon.</div>
+</div>
+
+<!-- NK-12 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-12</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Describe the historical legend of the "Three Moon Goddesses."</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Teyvat once had three moons — the Constant Moon, the Frostmoon, and the Iridescent Moon — each governed by a goddess. The Three Moon Goddesses were created by the Dragon King Nibelung, but were caught in the middle when the Heavenly Principles (Phanes) descended. During the War of Vengeance, Nibelung deemed the Moon Goddesses disloyal, imprisoned them, and weaponized the moons against the Heavenly Principles. The Heavenly Principles ultimately shattered the Constant and Iridescent Moons and cast the Frostmoon beyond the sky. The Three Moon Goddesses perished along with them.</div>
+</div>
+
+<!-- NK-13 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-13</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Describe the connection between the "Three Moon Goddesses" and Nod-Krai.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">(1) The predecessor of Nod-Krai — "Hyperborea" (the Golden Land) — preserved faith in the Moon Goddess; their descendants, the Frostmoon Scions, carry on this tradition. (2) Scattered Ancient Moon Remains formed the region's unique Kuuvahki environment, a primordial power predating the seven elements. (3) After the Frostmoon was preserved, a new Moon Goddess — Columbina (Kuutar), the former Fatui Harbinger "Damselette" — was eventually born from it over the ages.</div>
+</div>
+
+<!-- NK-14 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-14</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">What is the fundamental difference between Kuuvahki, Abyssal power, and the Seven-Element system?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Kuuvahki originates from "pre-Archon era" lunar remnants — a pure, primordial light-realm force, similar in nature to Phlogiston or Primordial Seawater. It does not rely on Visions for guidance, is neither countered by the seven elements, nor does it possess the chaotic corrosive nature of the Abyss (though it can have side effects on those with poor adaptability).</div>
+</div>
+
+<!-- NK-15 -->
+<div class="q-card" data-type="D">
+  <div class="q-header">
+    <span class="q-id">NK-15</span>
+    <span class="q-type-badge q-type-D">D &middot; Cross-text Inference</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Trace Columbina's full arc in the Nod-Krai storyline — from awakening to final resolution.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">1. Birth: After the War of Vengeance, only the Frostmoon survived. Columbina Hyposelenia was born ages later — the embodiment of the Frostmoon's lingering will.
+2. Revered as Goddess: Discovered by the Frostmoon Scions and worshipped as the prophesied "Kuutar," but the relationship devolved into one-sided wish-granting.
+3. Departure &amp; Joining Fatui: Disillusioned by followers' greed, she joined the Fatui as the 3rd Harbinger "Damselette." She was never assigned substantial missions (including Gnosis collection); mostly cooperated with Dottore on Kuuvahki experiments.
+4. Seclusion at Silver Moon Court: After sensing the organization's covetous designs on lunar power, she left the Fatui and secluded herself on Hiisi Island. The "Prayer Moon Flower" in Silver Moon Court reflects her power state (blue=normal, red=active, white=weakened).
+5. Aiding the Traveler: Used Kuuvahki to show the Traveler visions of the past; taught techniques to mask Moon Marrow's aura; teleported the Traveler and Sandrone to Silver Moon Court during a crisis.
+6. Final Resolution: In the decisive battle against Dottore, after Sandrone's sacrifice triggered her contingency, Capitano and the Knave (with help from Witch Nicole) pulled the Frostmoon into the False Sky, shattering the dome. Columbina united her Body (Kuuvahki scattered across the land), Soul (summoned from the beginning of time), and Three-Moon Authority (released from the moon), returning as the complete Three Moon Goddess to defeat Dottore. Afterward she entrusted the Constant and Iridescent Moon Marrows to Rauma and Arlecchino, restored some Kuuvahki to nourish the land, partially lifted world restrictions on the Traveler, and found the Traveler's kin's ship hidden on the moon. She ultimately chose to remain in Teyvat, integrating into Frostmoon Scions' life.</div>
+</div>
+
+<!-- NK-16 -->
+<div class="q-card" data-type="E">
+  <div class="q-header">
+    <span class="q-id">NK-16</span>
+    <span class="q-type-badge q-type-E">E &middot; Real-world Resonance</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Analyze the metaphor of the "False Sky" and the "True Moon" in the Nod-Krai storyline.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The plot reveals that the visible moon in the sky may be "false," while the true Frostmoon is concealed beyond the firmament (or exists only through Moon Marrow perception). This metaphor suggests that the essence of Teyvat's world is wrapped and isolated by some power (the Heavenly Principles / False Sky), and the truth of the old world has been covered up.</div>
+</div>
+
+<!-- NK-17 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-17</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">What specific events illustrate the cooperation and conflict between the Voynich Guild and the Fatui in technology development?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">They form a fragile alliance of convenience. The Guild (e.g., Aino) controls core mechanical technology (e.g., cannons), while the Fatui (e.g., Sandrone) possess strong military force and resources. The Fatui attempted to monopolize Kuuvahki research by establishing the Experimental Bureau and even stealing technology, creating tension between both parties (and local artisans).</div>
+</div>
+
+<!-- NK-18 -->
+<div class="q-card" data-type="D">
+  <div class="q-header">
+    <span class="q-id">NK-18</span>
+    <span class="q-type-badge q-type-D">D &middot; Cross-text Inference</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Compare the impact of the "Nail of the Heavens" on Dragonspine with the Celestial strike on Hyperborea. What are the similarities and differences?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer"><strong>Similarities:</strong> Both are punitive strikes by Celestia (Heavenly Principles/Phanes) using Celestial Nails — the ultimate weapon — causing regional geographic and ecological upheaval; both resulted in extreme cold and civilizational collapse; both left explorable ancient ruins.
+
+<strong>Differences:</strong>
+1. Cause: Dragonspine's Nail has an ambiguous origin (linked to old Mondstadt); Hyperborea's was explicitly punishment for "the first angels rebelling against Heavenly Principles" — giving creation authority to mortals, leading to the entire angel race being degraded into modern Seelies.
+2. Compounding disaster: Hyperborea's destruction also overlapped with the War of Vengeance (Nibelung weaponizing the moons), inheriting both the Nail's damage and Ancient Moon Remains, while Dragonspine only had the Nail.
+3. Cultural legacy: Dragonspine has only cryo-extreme environment and scattered ruins; Hyperborea's survivors (Frostmoon Scions) preserved a complete Moon Goddess faith system and unique Kuuvahki power.
+4. Continuity: Dragonspine's civilization is effectively extinct; Hyperborea's descendants migrated to Nod-Krai guided by the Moon Goddess, maintaining millennia of faith and organizational structure (Chanters/High Priest system).</div>
+</div>
+
+<!-- NK-19 -->
+<div class="q-card" data-type="D">
+  <div class="q-header">
+    <span class="q-id">NK-19</span>
+    <span class="q-type-badge q-type-D">D &middot; Cross-text Inference</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Combining "The Legend of Red Miller" and the truth of the "Great Treasure," analyze how Red Miller's "Boundless World" ideal was corrupted into the Treasure Hoarders' creed of greed.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer"><strong>Red Miller's ideal:</strong> Born in Nod-Krai, childhood friend of the first Lamp-Forger. He sought to create "a world without boundaries," defining the Treasure Hoarders as a "mutual-aid organization" — essentially a Robin Hood social movement. His friend Solovi (a Snezhnayan noble) shared this vision.
+
+<strong>The "Great Treasure" truth:</strong> Not gold or silver, but a spiritual legacy: "Let the dead bury the dead, then rise up and build paradise for the hungry with the wealth of the proud!"
+
+<strong>The corruption process:</strong>
+1. Leader's fall: Red Miller was executed; the group lost its moral anchor.
+2. Spiritual amnesia: Successors inherited the behavior ("dig ruins, find treasure") but forgot the core spirit ("mutual aid, break barriers").
+3. Organizational decay: As the group spread across Teyvat it became a loose criminal syndicate, self-styling as "returning treasures to connoisseurs."
+4. Meaning distortion: "Freedom" devolved into greed; "boundless" shifted from "breaking class barriers" to "ignoring legal boundaries."
+
+This corruption mirrors Nod-Krai itself as an "adventurer's paradise" — idealism consumed by utilitarianism in the absence of order.</div>
+</div>
+
+<!-- NK-20 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-20</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Given the properties of the "Wild Hunt," analyze why Sandrone is interested in "Moon Marrow."</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The "Wild Hunt" is a catastrophe born from the fusion of Abyssal power and Kuuvahki, while "Moon Marrow" is a high-concentration Ancient Moon Remains core with the potential to suppress or manipulate this force. As a Harbinger passionate about mechanical and energy research, Sandrone hopes to decode Moon Marrow to master this ancient energy technology — and potentially use it to create more powerful mechanical soldiers.</div>
+</div>
+
+<!-- NK-21 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-21</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the status of Piramida City in Nod-Krai?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Piramida City is the headquarters of the Lamp Bearers legion in Nod-Krai and the region's primary city. It was built around the ancient weapon "Arrow of Delepiglauno" and serves as the core stronghold against the Wild Hunt.</div>
+</div>
+
+<!-- NK-22 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-22</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Who created the Lamp Bearers legion, and when?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Founded by the Lamp-Forger Solovi approximately five hundred years ago. Its mission is to protect Nod-Krai from the Wild Hunt's onslaught.</div>
+</div>
+
+<!-- NK-23 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-23</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C1</span><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is Ineva's identity?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Ineva is a mechanical puppet (maid-type automaton) built by the Nod-Krai inventor Aino. She was tasked with carrying an encoded letter to find the Traveler, but could not complete the mission due to amnesia.</div>
+</div>
+
+<!-- NK-24 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-24</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is Nikita's true identity within the Lamp Bearers? Why does he conceal it?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Nikita is actually the Lamp Commander (supreme commander of the Lamp Bearers), not the "ordinary lamp-bearer" he claims to be. He hides his identity out of personal habit (the old man's "prank"), while also using the disguise to quietly assess the situation among the people and commission the Traveler to find sacred relics.</div>
+</div>
+
+<!-- NK-25 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-25</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is Eliria's true identity? What is she not, despite the legends?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Eliria is not the legendary "fairy" — she is a mortal. She threw herself into the Sampo to ignite it with her own blood and flesh to thwart the Professor's plot, and was accidentally trapped in a rift between time and space, surviving across five hundred years to guard the sacred relic "Silver Lamp Wick" atop the Ebura Divine Pillar.</div>
+</div>
+
+<!-- NK-26 -->
+<div class="q-card" data-type="A">
+  <div class="q-header">
+    <span class="q-id">NK-26</span>
+    <span class="q-type-badge q-type-A">A &middot; Pure Fact</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What special ability does the Wild Hunt possess at Bitter Ravine Cliff that differs from elsewhere?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Wild Hunt at Bitter Ravine has the power to "seize one's mind." In thick fog, it uses faint, eerily familiar human voices to beguile people, causing Lamp Bearers to hallucinate and turn on each other. This very ability caused devastating losses to the previous investigation squad three years ago.</div>
+</div>
+
+<!-- NK-27 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-27</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C2</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">How does Ineva's "amnesia" mechanism differ from ordinary malfunction?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Ineva's amnesia is not data corruption but rather isolation by a "curse"-like negative feedback mechanism (built-in restriction) — the harder she tries to remember, the more "pain" she experiences. This resembles a self-discipline limiter set by her creator to ensure the automaton follows design intent. Her memory data still exists but is rendered inaccessible.</div>
+</div>
+
+<!-- NK-28 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-28</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the "Professor" (Lausvanger / the Sorcerer-Monk)'s ultimate goal, and what did he do to achieve it?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The "Professor" is an ancient "Undying Serpent." His ultimate goal is to use the Sampo to drain the land's power, channeling it through his self-built sky-reaching tower (later known as the Ebura Divine Pillar) to reach a "paradise" beyond the firmament. Had he succeeded, all of Nod-Krai — land and living beings alike — would have become his fuel. He was thwarted the first time by Eliria five hundred years ago, sealed a second time by the Lamp-Forger and the Chanter, and finally buried for good in the current storyline.</div>
+</div>
+
+<!-- NK-29 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-29</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What are the three sacred relics left by the Lamp-Forger Solovi, and what are their functions?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The three relics are the Sword (Spiral Sword), the Lamp (Silver Lamp Wick), and the Mirror — weapons used by the Lamp-Forger to defeat and seal the Professor five hundred years ago. The Silver Lamp Wick can project a barrier against the Wild Hunt; the Spiral Sword was later used as the arrowhead for the "Arrow of Delepiglauno." The relics were entrusted to different guardians: the Silver Lamp Wick was guarded by Eliria atop the Ebura Divine Pillar.</div>
+</div>
+
+<!-- NK-30 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-30</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the true connection between the Moon Hunter Rerir and the origin of the Wild Hunt?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Rerir is one of Khaenri'ah's Five Sinners (the Moon Hunter). His body was shattered while attempting to cross the Moon Gate, and the fragments scattered across Nod-Krai. These body fragments became the source of the Wild Hunt phenomenon — the Wild Hunt is essentially a catastrophe driven by Rerir's residual will, formed from the fusion of Abyssal power and Kuuvahki, continuously seeking Moon Marrow fragments. Dottore later collected his body fragments and exploited them.</div>
+</div>
+
+<!-- NK-31 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-31</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C3</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What are the ancient Natlan "Supreme Lords"? What is their connection to Ineva?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The "Supreme Lords" are thirteen consciousness-constructs built using Secret Source technology, created by the Pyro Dragon King. Each ruled a portion of Natlan with wisdom and power surpassing ancient dragonkind. They perished one by one during the war against the Six Heroes. Ajaw (K'uhul Ajaw, himself a Supreme Lord) sensed a "Supreme Lord" aura from the core in Ineva's chest, implying her core may originate from a Supreme Lord's remnants.</div>
+</div>
+
+<!-- NK-32 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-32</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">Describe the Bitter Ravine Cliff incident three years ago and its impact on the Lamp Bearers.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Three years ago, an investigation squad led by Captain Orson traveled to Bitter Ravine to investigate seal anomalies. During nighttime camp, squad members were controlled by the Wild Hunt's beguiling ability, turning on each other in the fog with devastating casualties. Captain Orson barely maintained clarity and ordered Yeloya to retreat with the wounded Ivar for reinforcements, staying behind to cover them — and was killed. The Wild Hunt then spread below the cliff, causing mass civilian casualties (including Anleif's wife and Treasure Hoarder companions). Commander Nikita subsequently declared the area a restricted zone, holding defensive positions for three years awaiting the right moment to counter-attack. Bjorn survived only because illness kept him from participating, and has carried guilt ever since for Vied, who took his place and died. This event became the collective trauma of the Lamp Bearers.</div>
+</div>
+
+<!-- NK-33 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-33</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">What is the relationship between the "Candle and Feather Shaman" (8th Supreme Lord) and Liange? What was her fate?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The "Candle and Feather Shaman" was the 8th of the thirteen Supreme Lords, ruling the Feather-Flower Alliance territory. She defied the dragons' prohibition and secretly raised a human orphan, Liange (later the founding hero of the Feather-Flower Alliance), guiding her to leave the nest to find her own path. She was executed by her own kind for "betraying dragonkind" — the other Lords placed a curse on her: "If she truly bears goodwill toward humans, then every act of kindness will spawn manifold agony in her consciousness." She was ultimately destroyed in the resulting tearing conflict. This curse mechanism bears a striking resemblance to Ineva's amnesia/pain feedback.</div>
+</div>
+
+<!-- NK-34 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-34</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">How did Eliria first thwart the "Professor"? What were the consequences?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">When the Professor was atop the tower using the Sampo to drain the land's power — on the verge of opening a passage to his "paradise" beyond the sky — Eliria, with no other option, threw herself into the Sampo, igniting it with her blood and flesh carrying "the Blood of the Holy Heir," forcing the Sampo to reject the Professor's control. The cost was Eliria herself becoming trapped in a rift between time and space, wasting away five hundred years in a time-frozen prison. The tower was later mistaken by later generations for the "Ebura Divine Pillar," and Eliria was mythologized as a "fairy."</div>
+</div>
+
+<!-- NK-35 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-35</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C4</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+  </div>
+  <div class="q-question">When the "Professor" mistook Eliria for "Reler," what information about Nod-Krai's ancient history did he inadvertently reveal?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">In his delirium, the Professor mistook Eliria for his disciple "Reler," inadvertently exposing multiple historical truths:
+(1) Reler possessed the "Blood of the Holy Heir" and could command the Sampo to submit.
+(2) The Professor's true name is Lausvanger, the "Sorcerer-Monk" of the Starfrost Court.
+(3) Reler later lost his officer rank and became the outlaw Red Miller — actually a trap jointly set by the Professor and Grand Duke Alvis.
+(4) The "paradise" the Professor spoke of was only ever meant for himself; all his promises to Reler were lies designed to make Reler seize the Sampo on his behalf.
+Eliria, as the inheritor of Red Miller's identity and will, ultimately wrote the final chapter of the Professor's story under that name.</div>
+</div>
+
+<!-- NK-36 -->
+<div class="q-card" data-type="B">
+  <div class="q-header">
+    <span class="q-id">NK-36</span>
+    <span class="q-type-badge q-type-B">B &middot; Constrained Narrative</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Trace the complete Lamp Bearers mainline timeline from the Traveler's arrival in Nod-Krai to the final defeat of the "Professor."</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">Key chronological nodes:
+1. Arrival at Piramida City: The Traveler witnesses the Lamp Bearers' rally, meets Nikita (posing as an ordinary bearer), and is commissioned to find the Silver Lamp Wick.
+2. Ebura Divine Pillar exploration: Encounters Yeloya at the Pillar; together they purify Abyssal corruption and repair barrier cores. Enters the time-space rift to meet Eliria; learns the history and prophecy of the Professor (the Undying Serpent).
+3. Retrieving the Silver Lamp Wick: After clearing the tower's corruption, they obtain the Wick, but the Pillar is fully consumed by the Abyss; Eliria stays behind to hold the Professor at bay.
+4. Joining the investigation squad: The Traveler formally joins Yeloya's "Nightmares' Oriole" squad and participates in the oath ceremony.
+5. Bitter Ravine counter-attack: The squad assaults Bitter Ravine, faces the Professor's mind-controlling fog; Bjorn is severely wounded. They activate the Forest Spike to rebuild the barrier and recover the Spiral Sword.
+6. Final battle: Back at Piramida City, the Spiral Sword is loaded as the arrowhead of the "Arrow of Delepiglauno" and fired to shatter the Evil Egg. Eliria ends the Professor's story under the name of Red Miller; the Sampo rejects him once more.
+7. Victory celebration: A ceremony is held at Piramida City; Commander Nikita delivers a speech honoring those who fell.</div>
+</div>
+
+<!-- NK-37 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-37</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Analyze the two competing hypotheses regarding which Supreme Lord Ineva may be (8th vs 11th), comparing the evidence for each.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer"><strong>8th Seat (Candle &amp; Feather Shaman) hypothesis:</strong>
+- Supporting: Ineva reacts strongly to the name "Liange" (more than to "Mistress"); memory data frequency spikes near the Feather-Flower Alliance; the 8th Seat's curse ("kindness breeds pain") closely mirrors Ineva's amnesia/pain feedback; memory fragments show a farewell scene between Liange and an unknown being.
+- Against: Xilonen and Citlali's tests found that the "Mistress" trigger was actually weaker than the "Liange" trigger.
+
+<strong>11th Seat hypothesis:</strong>
+- Supporting: The 11th Seat disappeared after the war — last fought by Iki and Liange; Ineva's approach to Natlan intensified Secret Source mech rampages ("as if calling to each other"); the 11th Seat was the most arrogant, anti-human Lord — could have fragmented into a wholly different personality after going mad; Supreme Lords are fundamentally "consciousness" that can lose power and memory.
+- Risk: If Ineva is the 11th, full memory recovery could mean a return to "opposing humanity."
+
+Chasca's stance: regardless of the past, the present Ineva is trustworthy; even if the 11th returns, they'd simply defeat her again.</div>
+</div>
+
+<!-- NK-38 -->
+<div class="q-card" data-type="C">
+  <div class="q-header">
+    <span class="q-id">NK-38</span>
+    <span class="q-type-badge q-type-C">C &middot; Constrained Analysis</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Compare the "Professor" (Lausvanger)'s manipulation of Reler/Red Miller with other Fatui Harbingers' methods of controlling people. What does this reveal about his nature as a "Sorcerer-Monk"?</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Professor's deception is a complete psychological manipulation chain:
+1. Manufactured predicament: Conspired with Grand Duke Alvis to frame Reler, stripping him of his officer rank and forcing him into outlawry as Red Miller.
+2. False empathy: Presented himself as the only one in the Starfrost Court "willing to help a bullied human," exploiting Reler's anger and idealism.
+3. Fabricated vision: Promised to "create paradise for the bullied and humiliated," making fairy-tale nobility bow to Reler — but the "paradise" was only ever meant for himself.
+4. Instrumentalization: The true goal was to have Reler, possessing the "Blood of the Holy Heir," seize the Sampo on his behalf.
+
+This parallels Dottore's manipulation of the Sumeru Akademiya and exploitation of citizens' brains during the Sabzeruz Festival — both use false ideals to mask selfish aims, reducing people to tools. The difference is that the Professor's manipulation is more personal and psychological — quintessential "sorcerer-monk" beguiling.</div>
+</div>
+
+<!-- NK-39 -->
+<div class="q-card" data-type="D">
+  <div class="q-header">
+    <span class="q-id">NK-39</span>
+    <span class="q-type-badge q-type-D">D &middot; Cross-text Inference</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Combining Dottore's actions in Nod-Krai and Sandrone's sacrifice, analyze the factional split among Fatui Harbingers in the Nod-Krai storyline.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">An unprecedented factional split among the Harbingers:
+1. <strong>Dottore (The Doctor):</strong> Primary antagonist. Used the Kuuvahki Experimental Bureau to control Ancient Moon Remains, collected Rerir's body fragments to exploit the Wild Hunt. Ultimate goal: seize the Three Moon Goddess's full power for self-deification.
+2. <strong>Sandrone (The Marionette):</strong> Initially ran the Paha Isle lab cooperating with Dottore's Kuuvahki research; defected upon discovering his true ambitions. Sacrificed herself in the final battle to trigger a contingency, creating the decisive opening to defeat Dottore. Her sacrifice revealed the emotional depth of her identity as "Marian, Arlain's sister."
+3. <strong>Columbina (Damselette):</strong> Long departed from the Fatui, secluded at Silver Moon Court. Disillusioned by followers' greed and the organization's covetous designs. Ultimately united her full power as the complete Three Moon Goddess to defeat Dottore.
+4. <strong>Arlecchino (The Knave):</strong> Intervened per the Tsaritsa's "Starfrost Decree," took custody of the Iridescent Moon Marrow.
+5. <strong>Capitano &amp; The Jester:</strong> With Witch Nicole's aid, pulled the Frostmoon into the False Sky to shatter the dome, providing strategic support.
+
+This split marks the Fatui's internal fracture along the fundamental fault line of "purpose" — the Tsaritsa's grand plan vs. individual ambition.</div>
+</div>
+
+<!-- NK-40 -->
+<div class="q-card" data-type="E">
+  <div class="q-header">
+    <span class="q-id">NK-40</span>
+    <span class="q-type-badge q-type-E">E &middot; Real-world Resonance</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">The Winter Grass proverb — "Even when the blossoms fall, the leaves will keep their promise" — echoes multiple times in the Lamp Bearers arc. Analyze its symbolic meaning.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Winter Grass proverb threads through the entire Lamp Bearers mainline as its core symbol:
+1. Eliria speaks the proverb to Yeloya, explaining that staying behind to hold off the Professor is "what keeping a promise requires" — she is a "blossom" that has already wilted yet still honors a five-hundred-year-old vow.
+2. Bjorn, critically wounded, quotes Vied's words: Lamp Bearers are like Winter Grass — each one is fragile against the Wild Hunt (blossoms will fall), but as long as the roots hold firm in the soil, new blossoms will always bloom. This symbolizes the fact that the Lamp Bearers' spiritual inheritance and sacrifice are never in vain.
+3. Symbolic mapping: Winter Grass = the Lamp Bearers legion as a whole; Blossoms = each generation of fallen warriors; Leaves/Roots = the organization's faith and legacy. Individuals perish, but as long as belief endures (the roots remain), new guardians (blossoms) will ceaselessly bloom. This is the spiritual core of the five-hundred-year legacy from Lamp-Forger Solovi to Yeloya.</div>
+</div>
+
+<!-- NK-41 -->
+<div class="q-card" data-type="D">
+  <div class="q-header">
+    <span class="q-id">NK-41</span>
+    <span class="q-type-badge q-type-D">D &middot; Cross-text Inference</span>
+    <div class="complexity-dots"><span>C5</span><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+  </div>
+  <div class="q-question">Drawing on all raw data sources, analyze the role of the "Sampo" in Nod-Krai's history and its relationship with every major faction.</div>
+  <div class="q-answer-toggle" onclick="toggleAnswer(this)">&#9654; Show Golden Answer</div>
+  <div class="q-answer">The Sampo is the central device in Nod-Krai's history, entangled with multiple factions:
+1. <strong>Nature:</strong> An ancient device capable of draining and converting the land's power. Only someone with the "Blood of the Holy Heir" can command its submission.
+2. <strong>The Professor's exploitation:</strong> ~500 years ago, built a sky-reaching tower to use the Sampo to drain the land's power toward a "paradise" beyond the firmament. Had he succeeded, all of Nod-Krai would have been consumed.
+3. <strong>Eliria's sacrifice:</strong> Ignited the Sampo with her "Blood of the Holy Heir," forcing it to reject the Professor, but trapped herself in a time-space rift.
+4. <strong>After the Professor's revival:</strong> On his third resurrection, he again tried to control the Sampo, but it "once more rejected him" — suggesting the Sampo possesses some form of will or judgment mechanism.
+5. <strong>Final battle:</strong> The Sampo's power, combined with the "Arrow of Delepiglauno" and the three sacred relics, became the key to permanently burying the Professor.
+
+The Sampo's capacity for "refusal" implies it is not merely a tool — it may be connected to Nod-Krai's terrestrial will or the residual consciousness of an ancient deity.</div>
+</div>
+
+</div><!-- end question-list -->
+
+</div><!-- end container -->
+
+<script>
+function toggleAnswer(el) {
+  const ans = el.nextElementSibling;
+  ans.classList.toggle('show');
+  el.innerHTML = ans.classList.contains('show') ? '&#9660; Hide Golden Answer' : '&#9654; Show Golden Answer';
+}
+
+function filterCards(type) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.filter-btn[data-type="${type}"]`).classList.add('active');
+  document.querySelectorAll('.q-card').forEach(c => {
+    if (type === 'ALL' || c.dataset.type === type) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

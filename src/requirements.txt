@@ -1,0 +1,47 @@
+# Agent Framework (LangGraph ReAct + Multi-Provider)
+langchain-core>=1.2.0
+langchain-google-genai>=4.2.0    # Gemini
+langchain-anthropic>=0.3.0       # Claude
+langchain-openai>=0.3.0          # OpenAI
+langgraph>=1.0.0
+
+# Pipeline (still uses LlamaIndex for structured output)
+llama-index>=0.10.0
+llama-index-embeddings-huggingface>=0.1.0
+llama-index-vector-stores-qdrant>=0.1.0
+mem0ai>=0.1.0
+
+# Vector Database
+qdrant-client>=1.7.0
+
+# Chinese Embedding Model
+sentence-transformers>=2.2.0
+torch>=2.0.0
+FlagEmbedding>=1.2.0    # BGE-M3 (dense + sparse)
+jieba>=0.42.1            # Chinese BM25 tokenization
+
+# LLM Providers
+anthropic>=0.18.0        # Claude
+openai>=1.10.0           # GPT-4
+google-genai>=1.0.0      # Required by langchain-google-genai
+# dashscope>=1.14.0      # Qwen (optional)
+
+# Graph Database
+neo4j>=5.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+tqdm>=4.65.0
+
+# Development & Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# UI Demo
+streamlit>=1.32.0
+
+# Optional: Web API
+# fastapi>=0.109.0
+# uvicorn>=0.27.0

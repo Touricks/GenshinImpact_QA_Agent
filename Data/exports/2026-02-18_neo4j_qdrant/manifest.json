@@ -1,0 +1,20 @@
+{
+  "exported_at": "2026-02-18T21:15:40",
+  "region": "nodkrai",
+  "neo4j": {
+    "nodes": 230,
+    "relationships": 365
+  },
+  "qdrant": {
+    "collection": "genshin_story_v3",
+    "points": 666,
+    "vector_dim": 1024,
+    "vector_names": [
+      "dense"
+    ],
+    "sparse_names": [
+      "sparse-bm25",
+      "sparse-lexical"
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "月矩力": {
+    "canonical_zh": "月矩力",
+    "canonical_en": "Kuuvahki",
+    "aliases": [
+      "月矩力",
+      "Kuuvahki"
+    ],
+    "type": "Concept",
+    "note": "源自前神代月亮遗存的原始光界力，早于七元素体系"
+  },
+  "狂猎": {
+    "canonical_zh": "狂猎",
+    "canonical_en": "Wild Hunt",
+    "aliases": [
+      "狂猎"
+    ],
+    "type": "Concept",
+    "note": "深渊力量与月矩力结合的灾害，源自雷利尔碎片"
+  },
+  "三月女神": {
+    "canonical_zh": "三月女神",
+    "canonical_en": "Three Moon Goddesses",
+    "aliases": [
+      "三月女神",
+      "恒月",
+      "霜月",
+      "虹月"
+    ],
+    "type": "Concept",
+    "note": "龙王创造的三位月亮女神，各掌一轮月亮"
+  },
+  "圣嗣之血": {
+    "canonical_zh": "圣嗣之血",
+    "canonical_en": "Blood of the Sacred Heir",
+    "aliases": [
+      "圣嗣之血"
+    ],
+    "type": "Concept",
+    "note": "能命令三宝磨臣服的特殊血脉"
+  },
+  "无界之世": {
+    "canonical_zh": "无界之世",
+    "canonical_en": "Boundless World",
+    "aliases": [
+      "无界之世"
+    ],
+    "type": "Concept",
+    "note": "雷德·米勒的理想，后被盗宝团异化为贪婪信条"
+  },
+  "苍星诏令": {
+    "canonical_zh": "苍星诏令",
+    "canonical_en": "Pale Star Edict",
+    "aliases": [
+      "苍星诏令"
+    ],
+    "type": "Concept",
+    "note": "冰之女皇的命令"
+  },
+  "赤月": {
+    "canonical_zh": "赤月",
+    "canonical_en": "",
+    "aliases": [
+      "赤月"
+    ],
+    "type": "Concept",
+    "note": "虹月碎裂后与深渊结合的产物"
+  },
+  "两界之火": {
+    "canonical_zh": "两界之火",
+    "canonical_en": "",
+    "aliases": [
+      "两界之火"
+    ],
+    "type": "Concept",
+    "note": "阿蕾奇诺体内的特殊血火，连接生死两界"
+  },
+  "记忆缺失": {
+    "canonical_zh": "记忆缺失",
+    "canonical_en": "",
+    "aliases": [
+      "记忆缺失"
+    ],
+    "type": "Concept",
+    "note": "伊涅芙的症状，负反馈机制引起"
+  },
+  "至高领主": {
+    "canonical_zh": "至高领主",
+    "canonical_en": "",
+    "aliases": [
+      "至高领主"
+    ],
+    "type": "Concept",
+    "note": "火龙王以秘源技术构筑的十三个意识"
+  },
+  "无归之诅咒": {
+    "canonical_zh": "无归之诅咒",
+    "canonical_en": "",
+    "aliases": [
+      "无归之诅咒"
+    ],
+    "type": "Concept",
+    "note": "「领主」设下的限制程序"
+  },
+  "深渊之力": {
+    "canonical_zh": "深渊之力",
+    "canonical_en": "",
+    "aliases": [
+      "深渊之力"
+    ],
+    "type": "Concept",
+    "note": "诱惑坎瑞亚五大罪人堕落的禁忌力量"
+  },
+  "虚影": {
+    "canonical_zh": "虚影",
+    "canonical_en": "",
+    "aliases": [
+      "虚影"
+    ],
+    "type": "Concept",
+    "note": "祈月之夜前后出现的海市蜃楼现象"
+  },
+  "变数": {
+    "canonical_zh": "变数",
+    "canonical_en": "",
+    "aliases": [
+      "变数",
+      "「变数」"
+    ],
+    "type": "Concept",
+    "note": "被刻意堆砌的可能性，干扰既定命运"
+  },
+  "「亥珀波瑞亚」的虚影提供的知识": {
+    "canonical_zh": "「亥珀波瑞亚」的虚影提供的知识",
+    "canonical_en": "",
+    "aliases": [
+      "「亥珀波瑞亚」的虚影提供的知识"
+    ],
+    "type": "Concept",
+    "note": "制造人造月髓的关键知识来源"
+  },
+  "光界力": {
+    "canonical_zh": "光界力",
+    "canonical_en": "",
+    "aliases": [
+      "光界力"
+    ],
+    "type": "Concept",
+    "note": "提瓦特原初的力量，元素力的源头"
+  },
+  "世界式": {
+    "canonical_zh": "世界式",
+    "canonical_en": "",
+    "aliases": [
+      "世界式",
+      "术式"
+    ],
+    "type": "Concept",
+    "note": "雷内/桑多涅用于计算世界命运的图示"
+  },
+  "深渊污染": {
+    "canonical_zh": "深渊污染",
+    "canonical_en": "",
+    "aliases": [
+      "深渊污染"
+    ],
+    "type": "Concept",
+    "note": "侵蚀避难所的高浓度深渊能量"
+  },
+  "雷德·米勒的梦想": {
+    "canonical_zh": "雷德·米勒的梦想",
+    "canonical_en": "",
+    "aliases": [
+      "雷德·米勒的梦想"
+    ],
+    "type": "Concept",
+    "note": "建立属于饥贫之人的乐园"
+  }
+}

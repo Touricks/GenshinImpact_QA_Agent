@@ -1,0 +1,219 @@
+{
+  "挪德卡莱": {
+    "canonical_zh": "挪德卡莱",
+    "canonical_en": "Nod-Krai",
+    "aliases": [
+      "挪德卡莱",
+      "Nod-Krai",
+      "挪得卡莱"
+    ],
+    "type": "Place",
+    "note": "至冬边境，冒险者乐园，前身为亥珀波瑞亚"
+  },
+  "那夏镇": {
+    "canonical_zh": "那夏镇",
+    "canonical_en": "Nasha Town",
+    "aliases": [
+      "那夏镇",
+      "那夏"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱最繁忙的商镇，伏尼契商会总部所在地"
+  },
+  "希汐岛": {
+    "canonical_zh": "希汐岛",
+    "canonical_en": "Hiisi Island",
+    "aliases": [
+      "希汐岛",
+      "Hiisi Island"
+    ],
+    "type": "Place",
+    "note": "霜月之子主要居住地，银月之庭所在地"
+  },
+  "帕哈岛": {
+    "canonical_zh": "帕哈岛",
+    "canonical_en": "Paha Isle",
+    "aliases": [
+      "帕哈岛",
+      "Paha Isle"
+    ],
+    "type": "Place",
+    "note": "月矩力实验设计局所在地"
+  },
+  "皮拉米达城": {
+    "canonical_zh": "皮拉米达城",
+    "canonical_en": "Pyramida City",
+    "aliases": [
+      "皮拉米达城",
+      "皮拉米达"
+    ],
+    "type": "Place",
+    "note": "执灯人军团总部，围绕德肋庇革劳诺之箭建造"
+  },
+  "苦壑崖": {
+    "canonical_zh": "苦壑崖",
+    "canonical_en": "Kuhe Cliff",
+    "aliases": [
+      "苦壑崖"
+    ],
+    "type": "Place",
+    "note": "狂猎活跃区域，三年前惨案发生地"
+  },
+  "厄布拉神柱": {
+    "canonical_zh": "厄布拉神柱",
+    "canonical_en": "Ebra Pillar",
+    "aliases": [
+      "厄布拉神柱"
+    ],
+    "type": "Place",
+    "note": "教授建造的通天高塔，银灯芯守护地"
+  },
+  "银月之庭": {
+    "canonical_zh": "银月之庭",
+    "canonical_en": "Silver Moon Court",
+    "aliases": [
+      "银月之庭"
+    ],
+    "type": "Place",
+    "note": "哥伦比娅隐居之地，位于希汐岛"
+  },
+  "亥珀波瑞亚": {
+    "canonical_zh": "亥珀波瑞亚",
+    "canonical_en": "Hyperborea",
+    "aliases": [
+      "亥珀波瑞亚",
+      "Hyperborea",
+      "黄金国"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱前身，古代文明遗址"
+  },
+  "秘密基地": {
+    "canonical_zh": "秘密基地",
+    "canonical_en": "",
+    "aliases": [
+      "秘密基地"
+    ],
+    "type": "Place",
+    "note": "西风骑士团在挪德卡莱的集结点"
+  },
+  "坎瑞亚": {
+    "canonical_zh": "坎瑞亚",
+    "canonical_en": "",
+    "aliases": [
+      "坎瑞亚"
+    ],
+    "type": "Place",
+    "note": "古代地下王国，雷利尔故国"
+  },
+  "第八席领地": {
+    "canonical_zh": "第八席领地",
+    "canonical_en": "",
+    "aliases": [
+      "第八席领地",
+      "「领地」"
+    ],
+    "type": "Place",
+    "note": "花烛与风羽的司巫统治区域，被莉安歌封印"
+  },
+  "深秘院": {
+    "canonical_zh": "深秘院",
+    "canonical_en": "",
+    "aliases": [
+      "深秘院"
+    ],
+    "type": "Place",
+    "note": "坎瑞亚研究机构，研究深渊与赤月"
+  },
+  "智慧宫": {
+    "canonical_zh": "智慧宫",
+    "canonical_en": "",
+    "aliases": [
+      "智慧宫"
+    ],
+    "type": "Place",
+    "note": "教令院大图书馆"
+  },
+  "研究所": {
+    "canonical_zh": "研究所",
+    "canonical_en": "",
+    "aliases": [
+      "研究所"
+    ],
+    "type": "Place",
+    "note": "挪德卡莱最北方，多托雷制造人造月髓之地"
+  },
+  "月亮倒影": {
+    "canonical_zh": "月亮倒影",
+    "canonical_en": "",
+    "aliases": [
+      "月亮倒影"
+    ],
+    "type": "Place",
+    "note": "时间向过去流淌的神秘空间"
+  },
+  "雷图礁": {
+    "canonical_zh": "雷图礁",
+    "canonical_en": "",
+    "aliases": [
+      "雷图礁"
+    ],
+    "type": "Place",
+    "note": "月矩力极度紊乱的区域"
+  },
+  "初谕之庭": {
+    "canonical_zh": "初谕之庭",
+    "canonical_en": "",
+    "aliases": [
+      "初谕之庭"
+    ],
+    "type": "Place",
+    "note": "霜月之子圣所，五百年前被封锁"
+  },
+  "霜月之坊": {
+    "canonical_zh": "霜月之坊",
+    "canonical_en": "",
+    "aliases": [
+      "霜月之坊"
+    ],
+    "type": "Place",
+    "note": "霜月之子聚落"
+  },
+  "蓝珀湖": {
+    "canonical_zh": "蓝珀湖",
+    "canonical_en": "",
+    "aliases": [
+      "蓝珀湖"
+    ],
+    "type": "Place",
+    "note": "扳手老爹留下机械装置的湖泊"
+  },
+  "刻拉蒂之眼": {
+    "canonical_zh": "刻拉蒂之眼",
+    "canonical_en": "",
+    "aliases": [
+      "刻拉蒂之眼"
+    ],
+    "type": "Place",
+    "note": "月之东日之西任务地点"
+  },
+  "月之东，日之西": {
+    "canonical_zh": "月之东，日之西",
+    "canonical_en": "",
+    "aliases": [
+      "月之东，日之西",
+      "月之东日之西"
+    ],
+    "type": "Place",
+    "note": "传说中埋藏伟大财宝的地点"
+  },
+  "避难所": {
+    "canonical_zh": "避难所",
+    "canonical_en": "",
+    "aliases": [
+      "避难所"
+    ],
+    "type": "Place",
+    "note": "皮拉米达城西侧湖下的古老设施"
+  }
+}

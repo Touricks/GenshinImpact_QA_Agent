@@ -1,0 +1,22 @@
+{
+  "name": "basic",
+  "description": "Basic recall questions",
+  "count": 15,
+  "ids": [
+    "NK-01",
+    "NK-02",
+    "NK-06",
+    "NK-07",
+    "NK-09",
+    "NK-12",
+    "NK-13",
+    "NK-15",
+    "NK-19",
+    "NK-21",
+    "NK-22",
+    "NK-32",
+    "NK-36",
+    "NK-39",
+    "NK-41"
+  ]
+}

@@ -1,0 +1,5112 @@
+[
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "爱诺还真是了不起，不仅修好了伊涅芙",
+      "chapter": 160100,
+      "confidence": "high",
+      "description": "伊涅芙是由爱诺制造并修复的机器人。",
+      "task_id": "1601"
+    },
+    "target": "爱诺",
+    "target_label": "Character"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "爱莱妲：伊涅芙姐姐为了保护我们，一个人跳下了船…",
+      "chapter": 160000,
+      "confidence": "high",
+      "description": "伊涅芙在袭击中为了保护商队而受伤。",
+      "task_id": "1600"
+    },
+    "target": "海滩袭击事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "秘源机兵",
+    "source_label": "Faction",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "恰斯卡：她是被「秘源机兵」给袭击了。",
+      "chapter": 160000,
+      "confidence": "high",
+      "description": "秘源机兵是袭击的发动方。",
+      "task_id": "1600"
+    },
+    "target": "海滩袭击事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "海滩袭击事件",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "卓新：但是随着我们的船越来越靠近纳塔，她的情况就像是突然恶化一样…",
+      "chapter": 160000,
+      "confidence": "medium",
+      "description": "因果: 袭击导致的损伤或靠近纳塔的某种机制使伊涅芙记忆恶化。",
+      "task_id": "1600"
+    },
+    "target": "记忆缺失",
+    "target_label": "Concept"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "恰斯卡：那么她就是你的「信使」？...这只密码筒，似乎是寄给Traveler的信。",
+      "chapter": 160000,
+      "confidence": "high",
+      "description": "伊涅芙是密码筒的携带者和信使。",
+      "task_id": "1600"
+    },
+    "target": "密码筒",
+    "target_label": "Item"
+  },
+  {
+    "source": "恰斯卡",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "恰斯卡：这位是我们部族的「医生」伊法…",
+      "chapter": 160000,
+      "confidence": "high",
+      "description": "恰斯卡是花羽会的战士。",
+      "task_id": "1600"
+    },
+    "target": "花羽会",
+    "target_label": "Faction"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "伊涅芙：执行使命…给白色飞行物和金发旅行者送信…",
+      "chapter": 160000,
+      "confidence": "high",
+      "description": "伊涅芙的行为动机是完成给旅行者送信的使命。",
+      "task_id": "1600"
+    },
+    "target": "旅行者",
+    "target_label": "Character"
+  },
+  {
+    "source": "密码筒",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "卓新：虽然爱诺制造了你...关于它的来历和密码…伊涅芙一直没跟我们透漏过。",
+      "chapter": 160000,
+      "confidence": "medium",
+      "description": "密码筒由爱诺制作并交给伊涅芙。",
+      "task_id": "1600"
+    },
+    "target": "爱诺",
+    "target_label": "Character"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "要是担心愚人众找你的麻烦，不如就先留在花羽会？",
+      "chapter": 160002,
+      "confidence": "medium",
+      "description": "伊涅芙最终选择回到花羽会作为自己的归宿。",
+      "task_id": "1600"
+    },
+    "target": "花羽会",
+    "target_label": "Faction"
+  },
+  {
+    "source": "卓新",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我都给你们在那夏镇当了十几年眼线，难道还不够吗！",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "卓新作为眼线为愚人众效力十几年以偿还债务。",
+      "task_id": "1600"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "愚人众",
+    "source_label": "Faction",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "是…愚人众…控制…我们…袭击…他们还窃取了我的权限。",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "因果: 愚人众窃取权限并控制机兵发动了袭击。",
+      "task_id": "1600"
+    },
+    "target": "秘源机兵袭击",
+    "target_label": "Event"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "已确认目标，启动歼灭模式。还好，伊涅芙来得很及时…",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "伊涅芙在袭击发生时开启歼灭模式保护了爱莱妲一家。",
+      "task_id": "1600"
+    },
+    "target": "秘源机兵袭击",
+    "target_label": "Event"
+  },
+  {
+    "source": "莉安歌",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "这就是「花羽会」的起源。",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "莉安歌是花羽会的创始人。",
+      "task_id": "1600"
+    },
+    "target": "花羽会",
+    "target_label": "Faction"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "只要回到「第八席」的领地，我就能恢复所有记忆数据。",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "依赖: 伊涅芙需要回到该领地才能恢复完整的记忆数据。",
+      "task_id": "1600"
+    },
+    "target": "第八席领地",
+    "target_label": "Place"
+  },
+  {
+    "source": "桑多涅",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "而组建这些部队的执行官…就是现在身处挪德卡莱的…「木偶」。",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "使能: 「木偶」组建并领导在纳塔活动的愚人众特别部队。",
+      "task_id": "1600"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "莉安歌",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "避免奥奇坎发现…莉安歌…封锁了「领地」…",
+      "chapter": 160001,
+      "confidence": "medium",
+      "description": "因果: 莉安歌为了躲避奥奇坎而封印了该领地。",
+      "task_id": "1600"
+    },
+    "target": "第八席领地",
+    "target_label": "Place"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "它还用其它「名字」称呼过我——「第十一席」。",
+      "chapter": 160001,
+      "confidence": "high",
+      "description": "伊涅芙被秘源机兵称为第十一席，即至高领主之一。",
+      "task_id": "1600"
+    },
+    "target": "至高领主",
+    "target_label": "Concept"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你的意识分裂为二——渴望向人类复仇的「领主」，与渴求着新归宿的「悖谬」。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "同一意识分裂出的两个对立人格，互相争夺主导权。",
+      "task_id": "1600"
+    },
+    "target": "明晨之镜",
+    "target_label": "Item"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你的意识分裂为二——渴望向人类复仇的「领主」，与渴求着新归宿的「悖谬」。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "同一意识分裂出的两个对立人格，互相争夺主导权。",
+      "task_id": "1600"
+    },
+    "target": "明晨之镜",
+    "target_label": "Character"
+  },
+  {
+    "source": "明晨之镜",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "「领主」宁可毁灭，也无法容忍自身的堕落…于是对你、对自己，设下了永无归宿的诅咒…",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "「领主」为了防止自身堕落而对自己设下的诅咒。",
+      "task_id": "1600"
+    },
+    "target": "无归之诅咒",
+    "target_label": "Concept"
+  },
+  {
+    "source": "明晨之镜",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "「领主」宁可毁灭，也无法容忍自身的堕落…于是对你、对自己，设下了永无归宿的诅咒…",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "「领主」为了防止自身堕落而对自己设下的诅咒。",
+      "task_id": "1600"
+    },
+    "target": "无归之诅咒",
+    "target_label": "Concept"
+  },
+  {
+    "source": "无归之诅咒",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「无归之诅咒」仍将卷土重来，你也不得不再度忘记一切。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "因果: 诅咒导致伊涅芙在产生新归宿向往时意识崩溃，被迫不断忘却。",
+      "task_id": "1600"
+    },
+    "target": "伊涅芙",
+    "target_label": "Character"
+  },
+  {
+    "source": "莉安歌",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "这份「忘却」，正是莉安歌为你设下的保护…亦是我等逃脱「诅咒」的方式。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "使能: 莉安歌通过封印记忆和遗迹，为伊涅芙提供了暂时逃离诅咒的可能性。",
+      "task_id": "1600"
+    },
+    "target": "伊涅芙",
+    "target_label": "Character"
+  },
+  {
+    "source": "伊涅芙",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你虽然在战争中幸存，却失去了自己的「归宿」。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "伊涅芙在战争中幸存但失去了故土与归宿。",
+      "task_id": "1600"
+    },
+    "target": "旷日持久的战争",
+    "target_label": "Event"
+  },
+  {
+    "source": "花烛与风羽的司巫",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "第八席…莉安歌的「主母」！？",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "第八席司巫隶属于莉安歌，并称其为主母。",
+      "task_id": "1600"
+    },
+    "target": "莉安歌",
+    "target_label": "Character"
+  },
+  {
+    "source": "核心",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "她打从一开始就是瞄准伊涅芙的「核心」来的——！",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "依赖: 伊涅芙的意识与权限完全依赖于核心的运作。",
+      "task_id": "1600"
+    },
+    "target": "伊涅芙",
+    "target_label": "Character"
+  },
+  {
+    "source": "愚人众",
+    "source_label": "Faction",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "从你们潜入这座遗迹开始，我们就在注意你们的动向。",
+      "chapter": 160002,
+      "confidence": "high",
+      "description": "愚人众潜入并试图控制遗迹内的秘源机关。",
+      "task_id": "1600"
+    },
+    "target": "第八席领地",
+    "target_label": "Place"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "派蒙，Traveler，欢迎来到挪德卡莱。",
+      "chapter": 160100,
+      "confidence": "high",
+      "description": "旅行者抵达新国度挪德卡莱。",
+      "task_id": "1601"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "菈乌玛",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "「咏月使」菈乌玛大人？",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "菈乌玛是霜月之子的咏月使。",
+      "task_id": "1606"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "桑多涅",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "「木偶」：在愚人众，这类监督不属于苛责的范畴。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "桑多涅是愚人众执行官「木偶」。",
+      "task_id": "1608"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "我知道葬火之战后挪德卡莱这片土地上的力量发生了变化",
+      "chapter": 160802,
+      "confidence": "medium",
+      "description": "月矩力是挪德卡莱土地上的力量。",
+      "task_id": "1608"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "降临者引发的战争",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "据说当年月亮碎裂之后，大部分碎片都化作陨石落到了这片土地。",
+      "chapter": 160100,
+      "confidence": "high",
+      "description": "因果: 战争导致月亮碎裂，碎片化作陨石落入土地形成月矩力。",
+      "task_id": "1601"
+    },
+    "target": "月矩力",
+    "target_label": "Concept"
+  },
+  {
+    "source": "祈月之夜",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我也只有在一年一度的「祈月之夜」，才能够将其从秘所中取出。",
+      "chapter": 160100,
+      "confidence": "high",
+      "description": "使能: 祈月之夜的月矩力高峰允许咏月使取出月髓。",
+      "task_id": "1601"
+    },
+    "target": "月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "愚人众",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "「愚人众」很快就会找上你们的...若三日之内再不交出「圣物」",
+      "chapter": 160100,
+      "confidence": "high",
+      "description": "愚人众威胁霜月之子交出圣物并改造其神像。",
+      "task_id": "1601"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "并非愚人众执行官「少女」，而是哥伦比娅·希珀塞莱尼娅。",
+      "chapter": 160602,
+      "confidence": "high",
+      "description": "哥伦比娅是愚人众的执行官。",
+      "task_id": "1606"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "他又操纵她的力量，夺走了两块月髓。",
+      "chapter": 160602,
+      "confidence": "high",
+      "description": "月髓在事件中被多托雷夺走。",
+      "task_id": "1606"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "秘所",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "菈乌玛：他们昨天光顾过希汐岛...「霜月之子」的秘所，从很早以前开始，便隐匿于世人的视野之外。",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "秘所位于希汐岛上。",
+      "task_id": "1601"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "玩家：这就是…「月髓」…冒险尽头的宝藏…",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "月髓存放在秘所的最深处。",
+      "task_id": "1601"
+    },
+    "target": "秘所",
+    "target_label": "Place"
+  },
+  {
+    "source": "希汐岛",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "玩家：荧怎么会来希汐岛？...玩家：（挪德卡莱…这片土地埋藏着好多古老的历史…）",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "希汐岛是挪德卡莱地区的一部分。",
+      "task_id": "1601"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "只有祈月之夜来临，月矩力到达最高点的时候，秘所的封印才能被解除吧？",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "使能: 月矩力达到最高点是解除秘所封印的必要条件。",
+      "task_id": "1601"
+    },
+    "target": "秘所",
+    "target_label": "Place"
+  },
+  {
+    "source": "荧",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "玩家：（荧居然也在寻找「月髓」？但她的立场不可能与「愚人众」相同，这么说来…）",
+      "chapter": 160101,
+      "confidence": "medium",
+      "description": "荧的立场与愚人众并不相同。",
+      "task_id": "1601"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "玩家：我…要和你一起去。",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "玩家参与了进入秘所寻找月髓的冒险。",
+      "task_id": "1601"
+    },
+    "target": "秘所冒险",
+    "target_label": "Event"
+  },
+  {
+    "source": "荧",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "玩家：很久没有两个人一起冒险了，我很期待。",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "荧主导并参与了秘所的探险。",
+      "task_id": "1601"
+    },
+    "target": "秘所冒险",
+    "target_label": "Event"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "玩家：这就是…「月髓」…冒险尽头的宝藏…",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "月髓是秘所冒险的核心目标。",
+      "task_id": "1601"
+    },
+    "target": "秘所冒险",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "菲林斯：您在…「狂猎」的正中心做这事吗？",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "狂猎现象在秘所冒险接近尾声时爆发，导致荧消失。",
+      "task_id": "1601"
+    },
+    "target": "秘所冒险",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "菲林斯：您在…「狂猎」的正中心做这事吗？",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "狂猎现象在秘所冒险接近尾声时爆发，导致荧消失。",
+      "task_id": "1601"
+    },
+    "target": "秘所冒险",
+    "target_label": "Event"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "少女：我想要回到月亮上去…那个写有我故事的家…这就是…我现在的愿望…",
+      "chapter": 160101,
+      "confidence": "medium",
+      "description": "哥伦比娅因为月亮的真相（虚假之天）而产生回到月亮的愿望。",
+      "task_id": "1601"
+    },
+    "target": "虚假之天",
+    "target_label": "Concept"
+  },
+  {
+    "source": "霜月之子",
+    "source_label": "Faction",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "少女：那时看到了我的「霜月之子」也一样...他们就将我视作了自己的「神明」。",
+      "chapter": 160101,
+      "confidence": "high",
+      "description": "霜月之子将哥伦比娅视为神明并寄托信仰。",
+      "task_id": "1601"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "薇尔米娜",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "你…加入了「愚人众」？…没错。",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "薇尔米娜背叛族人后加入了愚人众。",
+      "task_id": "1601"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "薇尔米娜",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "薇尔米娜…这是怎么回事…看来…已经瞒不住了…",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "薇尔米娜背叛了菈乌玛及其族人。",
+      "task_id": "1601"
+    },
+    "target": "菈乌玛",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "经从「月髓」中提取的「月矩力」推测…",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "使能: 月髓是提取月矩力的来源。",
+      "task_id": "1601"
+    },
+    "target": "月矩力",
+    "target_label": "Concept"
+  },
+  {
+    "source": "月矩力实验设计局",
+    "source_label": "Place",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "是你把「圣物」交给了「愚人众」…",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "潜入行动的起因是薇尔米娜将圣物交给愚人众。",
+      "task_id": "1601"
+    },
+    "target": "薇尔米娜",
+    "target_label": "Character"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "Traveler，就辛苦你将「月髓」先存放在体内吧。",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "月髓最终被存放在玩家体内。",
+      "task_id": "1601"
+    },
+    "target": "月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "普隆尼亚",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "「木偶」：啧…它叫「普隆尼亚」，不是什么机器！",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "普隆尼亚是「木偶」控制的机械装置。",
+      "task_id": "1601"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "是「狂猎」来了！",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "狂猎现象在潜入及后续对峙中出现。",
+      "task_id": "1601"
+    },
+    "target": "月矩力实验设计局",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "是「狂猎」来了！",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "狂猎现象在潜入及后续对峙中出现。",
+      "task_id": "1601"
+    },
+    "target": "月矩力实验设计局",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力实验设计局",
+    "source_label": "Place",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "这两天发生了很多事…我打算今夜就去对他们说明真相。",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "潜入工厂夺回圣物发生在揭示真相之前。",
+      "task_id": "1601"
+    },
+    "target": "菈乌玛揭示真相",
+    "target_label": "Event"
+  },
+  {
+    "source": "月矩力实验设计局",
+    "source_label": "Place",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "我担心他们也会觊觎希汐岛的那块「古月遗骸」。",
+      "chapter": 160102,
+      "confidence": "medium",
+      "description": "愚人众的试验局觊觎希汐岛的资源。",
+      "task_id": "1601"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "薇尔米娜",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "喂，菈乌玛，背叛了「霜月之子」的人，应该怎么处置？",
+      "chapter": 160102,
+      "confidence": "high",
+      "description": "薇尔米娜背叛了霜月之子。",
+      "task_id": "1601"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "索西",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "承蒙关照，索西军士长。",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "索西曾担任执灯人的军士长。",
+      "task_id": "1602"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "菲林斯",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "奈芙尔：菲林斯，之后需要你去执灯人那边走些事后流程。",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "菲林斯是执灯人的一员，负责事后流程。",
+      "task_id": "1602"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "大炮",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "大炮的运行也不在预期之中……我们必须尽快平息那夏镇的混乱。",
+      "chapter": 160203,
+      "confidence": "high",
+      "description": "大炮安置在那夏镇。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "大炮",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "爱诺：呜…结果我无比自豪的大炮根本就在帮倒忙啊…",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "大炮是由爱诺制造的。",
+      "task_id": "1602"
+    },
+    "target": "爱诺",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你说星砂滩那场狂猎吗？",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "狂猎现象是该事件的核心内容。",
+      "task_id": "1602"
+    },
+    "target": "星砂滩狂猎事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你说星砂滩那场狂猎吗？",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "狂猎现象是该事件的核心内容。",
+      "task_id": "1602"
+    },
+    "target": "星砂滩狂猎事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "自从那个不明身份的诡影在星砂滩失手之后",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "旅行者亲历了星砂滩的狂猎爆发。",
+      "task_id": "1602"
+    },
+    "target": "星砂滩狂猎事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "赫伊基：哎，这么下去，我估计得考虑跑路了。",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "因果: 狂猎的出现导致了那夏镇居民的恐慌和逃亡意图。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "赫伊基：哎，这么下去，我估计得考虑跑路了。",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "因果: 狂猎的出现导致了那夏镇居民的恐慌和逃亡意图。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "薇尔琪塔",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "用「哔卟嘀嗒」去给大炮做检查，它会告诉你们需要做什么",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "依赖: 大炮的检修依赖小机器人的对接和数据反馈。",
+      "task_id": "1602"
+    },
+    "target": "大炮",
+    "target_label": "Item"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：目标是要解决狂猎引起的混乱。...要是狂猎造成了大量的伤亡...我们还去做谁的生意呢？",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "奈芙尔的行动动机之一是解决狂猎带来的商业环境破坏。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Concept"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：目标是要解决狂猎引起的混乱。...要是狂猎造成了大量的伤亡...我们还去做谁的生意呢？",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "奈芙尔的行动动机之一是解决狂猎带来的商业环境破坏。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Event"
+  },
+  {
+    "source": "执灯人军团",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "执灯人长期与狂猎对抗。",
+      "task_id": "10178"
+    },
+    "target": "狂猎",
+    "target_label": "Concept"
+  },
+  {
+    "source": "执灯人军团",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "执灯人长期与狂猎对抗。",
+      "task_id": "10178"
+    },
+    "target": "狂猎",
+    "target_label": "Event"
+  },
+  {
+    "source": "大炮",
+    "source_label": "Item",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "在星砂滩的狂猎之后，最近又出现了两处新的狂猎",
+      "chapter": 160200,
+      "confidence": "high",
+      "description": "星砂滩事件发生在本次大炮维修和发射之前。",
+      "task_id": "1602"
+    },
+    "target": "星砂滩狂猎事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "菈乌玛",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "动身前往希汐岛...菈乌玛，我们来啦！",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "菈乌玛在希汐岛负责收尾工作。",
+      "task_id": "1602"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "恒月的「艾莉亚」死后，其力量凝聚为了这颗月髓…",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "月髓是恒月女神艾莉亚死后力量凝聚的遗骸。",
+      "task_id": "1602"
+    },
+    "target": "艾莉亚",
+    "target_label": "Character"
+  },
+  {
+    "source": "葬火之战",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "但葬火之战后，三位女神均已逝去。",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "因果: 葬火之战导致了艾莉亚等女神的逝去。",
+      "task_id": "1602"
+    },
+    "target": "艾莉亚",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我可以从其他月髓中借用月矩力来恢复自己。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "使能: 库塔尔可以通过借用月髓中的月矩力来恢复自己的实力。",
+      "task_id": "1603"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "在「猎月人」消失之后，挪德卡莱的「狂猎」现象急剧恶化",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "因果: 雷利尔消失后，狂猎现象急剧恶化。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Concept"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "在「猎月人」消失之后，挪德卡莱的「狂猎」现象急剧恶化",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "因果: 雷利尔消失后，狂猎现象急剧恶化。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Event"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "前往「银月之庭」...她、她好好地坐在那里欸！",
+      "chapter": 160500,
+      "confidence": "high",
+      "description": "哥伦比娅目前居住在银月之庭休息。",
+      "task_id": "1605"
+    },
+    "target": "银月之庭",
+    "target_label": "Place"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "之前就追着「月髓」不放。",
+      "chapter": 160201,
+      "confidence": "medium",
+      "description": "雷利尔（通过狂猎）一直追逐并试图夺取月髓。",
+      "task_id": "1602"
+    },
+    "target": "月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "我感受到的记忆涌动十分紊乱...至少知道了我们的飞船迫降在挪德卡莱的位置",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "月髓中记录了飞船迫降时的记忆片段。",
+      "task_id": "1602"
+    },
+    "target": "飞船迫降",
+    "target_label": "Event"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "但葬火之战后，三位女神均已逝去...他来自坎瑞亚，在灾变时期获得了「深渊」的力量",
+      "chapter": 160201,
+      "confidence": "medium",
+      "description": "葬火之战发生在远古，雷利尔活跃于坎瑞亚灾变时期，葬火之战在先。",
+      "task_id": "1602"
+    },
+    "target": "葬火之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "教给你一些使用月矩力的办法，进一步隐蔽「月髓」的气息。",
+      "chapter": 160201,
+      "confidence": "high",
+      "description": "依赖: 使用月矩力的方法可以隐蔽月髓的气息。",
+      "task_id": "1602"
+    },
+    "target": "月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你们言简意赅地将猎月人杀害索西...告诉了他。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "雷利尔是杀害索西的真凶。",
+      "task_id": "1602"
+    },
+    "target": "索西遇害事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "索西遇害事件",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "如今矛头指向菲林斯，而他本人又恰好行踪不明",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "因果: 索西的死导致菲林斯被怀疑为凶手。",
+      "task_id": "1602"
+    },
+    "target": "菲林斯",
+    "target_label": "Character"
+  },
+  {
+    "source": "深渊碎片",
+    "source_label": "Item",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "在很久以前清剿狂猎的时候...有一块质感非常特殊的晶体从空中坠落。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "碎片是从狂猎的核心中掉落的。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Concept"
+  },
+  {
+    "source": "深渊碎片",
+    "source_label": "Item",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "在很久以前清剿狂猎的时候...有一块质感非常特殊的晶体从空中坠落。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "碎片是从狂猎的核心中掉落的。",
+      "task_id": "1602"
+    },
+    "target": "狂猎",
+    "target_label": "Event"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "他对这块碎片的执着远超想象...借「执灯人」之手把我找出来。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "雷利尔杀人嫁祸的动机是为了夺取菲林斯手中的碎片。",
+      "task_id": "1602"
+    },
+    "target": "深渊碎片",
+    "target_label": "Item"
+  },
+  {
+    "source": "索西遇害事件",
+    "source_label": "Event",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "他在假扮我之前，还扮演了索西军士长。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "雷利尔通过杀害索西并伪装他来达成目的。",
+      "task_id": "1602"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "索西遇害事件",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "死在了执灯人的办事处里。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "案件发生在那夏镇的执灯人办事处。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "菲林斯",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "于我来说，斩下猎月人头颅的理由又多了一个。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "菲林斯立志要斩下猎月人的头颅。",
+      "task_id": "1602"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "索西",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "机械手...是由爱诺老师亲自研究设计的...更别说是像他这样需要出去作战的人。",
+      "chapter": 160202,
+      "confidence": "high",
+      "description": "依赖: 索西依赖爱诺设计的机械手臂进行战斗。",
+      "task_id": "1602"
+    },
+    "target": "爱诺",
+    "target_label": "Character"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "月矩力弹药已经填充完毕，预热完成",
+      "chapter": 160203,
+      "confidence": "high",
+      "description": "依赖: 大炮的运作依赖月矩力作为弹药。",
+      "task_id": "1602"
+    },
+    "target": "大炮",
+    "target_label": "Item"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "但令我憎恨的是，你毁掉了我的心脏，让我承受的所有痛苦成为了徒劳！",
+      "chapter": 160203,
+      "confidence": "high",
+      "description": "猎月人因菲林斯毁掉其心脏碎片而极度憎恨他。",
+      "task_id": "1602"
+    },
+    "target": "菲林斯",
+    "target_label": "Character"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "看起来，是眼前这位少女助我们脱离了战场",
+      "chapter": 160203,
+      "confidence": "high",
+      "description": "哥伦比娅在战斗末尾介入并救走了主角方。",
+      "task_id": "1602"
+    },
+    "target": "星砂滩之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "那夏镇",
+    "source_label": "Place",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "猎月人早有预谋，他引燃了所有人心中猜忌的种子。",
+      "chapter": 160203,
+      "confidence": "high",
+      "description": "镇民的混乱和猜忌是由猎月人的煽动和谣言驱动的。",
+      "task_id": "1602"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "大炮",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "「猎月人」借用那夏镇的大炮获取了完整的身躯",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "大炮在猎月人获取形体的事件中起到了关键作用。",
+      "task_id": "1602"
+    },
+    "target": "猎月人获取形体",
+    "target_label": "Event"
+  },
+  {
+    "source": "大炮",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「猎月人」借用那夏镇的大炮获取了完整的身躯",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "使能: 大炮的存在使得猎月人能够获取完整身躯。",
+      "task_id": "1602"
+    },
+    "target": "猎月人获取形体",
+    "target_label": "Event"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "派蒙：哥伦比娅！你怎么到这里来了？",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "哥伦比娅目前在那夏镇游历。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "法尔伽",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "猎月人：...不如亮明身份吧。法尔伽：...我是西风骑士团「北风骑士」兼「团长」",
+      "chapter": 160204,
+      "confidence": "high",
+      "description": "法尔伽现身对峙猎月人。",
+      "task_id": "1602"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "奈芙尔：... 雅珂达。难道你不想和我一队吗？",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "奈芙尔是秘闻馆的领导者。",
+      "task_id": "1606"
+    },
+    "target": "秘闻馆",
+    "target_label": "Faction"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Faction",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "奈芙尔：... 雅珂达。难道你不想和我一队吗？",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "奈芙尔是秘闻馆的领导者。",
+      "task_id": "1606"
+    },
+    "target": "秘闻馆",
+    "target_label": "Faction"
+  },
+  {
+    "source": "雅珂达",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "可别丢「秘闻馆」的脸哦。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "雅珂达隶属于秘闻馆组织。",
+      "task_id": "1606"
+    },
+    "target": "秘闻馆",
+    "target_label": "Faction"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "「狂猎」招来的混乱还远未结束…",
+      "chapter": 160204,
+      "confidence": "medium",
+      "description": "狂猎在那夏镇造成了混乱。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "「狂猎」招来的混乱还远未结束…",
+      "chapter": 160204,
+      "confidence": "medium",
+      "description": "狂猎在那夏镇造成了混乱。",
+      "task_id": "1602"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "少女：唔…月矩力的流动有些紊乱",
+      "chapter": 160204,
+      "confidence": "medium",
+      "description": "猎月人获取形体后导致了月矩力的流动紊乱。",
+      "task_id": "1602"
+    },
+    "target": "猎月人获取形体",
+    "target_label": "Event"
+  },
+  {
+    "source": "法尔伽",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我叫法尔伽，是西风骑士团「北风骑士」兼「团长」。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "法尔伽是西风骑士团的团长。",
+      "task_id": "1603"
+    },
+    "target": "西风骑士团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我希望的是你能够留在霜月之子…以「家人」的身份。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "库塔尔被霜月之子视为神明和家人。",
+      "task_id": "1603"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "猎月人现在的目标是我。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "猎月人正在追踪并试图捕获少女。",
+      "task_id": "1603"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "「猎月人」借助月矩力光束顺利复活。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "猎月人是其复活事件的主体。",
+      "task_id": "1603"
+    },
+    "target": "猎月人复活",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "挪德卡莱的狂猎现象则是五大罪人之一的「猎月人」…他还是狂猎阶段时，所做的一切都是为了「复活」。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "因果: 狂猎现象的演变和聚集最终导致了猎月人的复活。",
+      "task_id": "1603"
+    },
+    "target": "猎月人复活",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "挪德卡莱的狂猎现象则是五大罪人之一的「猎月人」…他还是狂猎阶段时，所做的一切都是为了「复活」。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "因果: 狂猎现象的演变和聚集最终导致了猎月人的复活。",
+      "task_id": "1603"
+    },
+    "target": "猎月人复活",
+    "target_label": "Event"
+  },
+  {
+    "source": "秘密基地",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这是骑士团在挪德卡莱的集结点。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "秘密基地位于挪德卡莱境内。",
+      "task_id": "1603"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "目前猎月人的目标是收集月矩力…他还在坚持不懈地收集力量。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "猎月人被收集月矩力以增强实力的欲望所驱动。",
+      "task_id": "1603"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "你诞生在这里，现在又回到了此处。",
+      "chapter": 160300,
+      "confidence": "high",
+      "description": "库塔尔诞生于挪德卡莱（霜月之子所在地）。",
+      "task_id": "1603"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "桑多涅",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "费卢妮娅：你们来月矩力试验设计局做什么？...「木偶」大人。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "在此处办公并指挥防御。",
+      "task_id": "1603"
+    },
+    "target": "月矩力实验设计局",
+    "target_label": "Place"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "雷利尔：宫廷预言家也需要休息时间，对吧。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "曾是坎瑞亚宫廷的一员。",
+      "task_id": "1603"
+    },
+    "target": "坎瑞亚",
+    "target_label": "Place"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "为了和他对抗，我需要重新描绘失落的月亮。...虹月的月髓。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "使能: 用于对抗猎月人的力量来源。",
+      "task_id": "1603"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "奈芙尔开始了她的「仪式」。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "仪式的主导者。",
+      "task_id": "1603"
+    },
+    "target": "仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Faction",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "奈芙尔开始了她的「仪式」。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "仪式的主导者。",
+      "task_id": "1603"
+    },
+    "target": "仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "仪式",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "就让我们看看，所谓的「猎月人」，都经历过什么吧。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "使能: 通过仪式窥探雷利尔的记忆。",
+      "task_id": "1603"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "索琳蒂丝",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "留言人跟雷利尔很熟，生活在一起。",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "雷利尔的未婚妻，两人生活在一起。",
+      "task_id": "1603"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你的狂猎军团和我的造物们，看看谁才是最后的赢家！",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "狂猎军团正在进攻木偶防守的试验设计局。",
+      "task_id": "1603"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你的狂猎军团和我的造物们，看看谁才是最后的赢家！",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "狂猎军团正在进攻木偶防守的试验设计局。",
+      "task_id": "1603"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你的狂猎军团和我的造物们，看看谁才是最后的赢家！",
+      "chapter": 160301,
+      "confidence": "high",
+      "description": "狂猎军团正在进攻木偶防守的试验设计局。",
+      "task_id": "1603"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我奉「仆人」大人命令，前来传达她的口信。",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "阿蕾奇诺是愚人众的执行官「仆人」。",
+      "task_id": "1607"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "我正是赤月王室的血脉",
+      "chapter": 160302,
+      "confidence": "high",
+      "description": "阿蕾奇诺拥有赤月王室的血脉。",
+      "task_id": "1603"
+    },
+    "target": "赤月王朝",
+    "target_label": "Faction"
+  },
+  {
+    "source": "虹月的月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "帮助她进一步恢复力量。",
+      "chapter": 160302,
+      "confidence": "high",
+      "description": "使能: 虹月的月髓能帮助哥伦比娅恢复力量。",
+      "task_id": "1603"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "我不会放弃索琳蒂丝。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "雷利尔的行为动机是为了保护索琳蒂丝。",
+      "task_id": "1604"
+    },
+    "target": "索琳蒂丝",
+    "target_label": "Character"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "依靠我的力量，为你们打开通往那个空间的门并非难事。",
+      "chapter": 160302,
+      "confidence": "high",
+      "description": "阿蕾奇诺利用两界之火重现仪式以开启空间门。",
+      "task_id": "1603"
+    },
+    "target": "入院仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "索琳蒂丝",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "她当时研究的内容就是这个奇特的空间？",
+      "chapter": 160302,
+      "confidence": "medium",
+      "description": "索琳蒂丝曾在挪德卡莱的赤月空间进行研究。",
+      "task_id": "1603"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "将月髓存放在你那里，你的力量会得到进一步的提升。",
+      "chapter": 160302,
+      "confidence": "high",
+      "description": "使能: 阿蕾奇诺将月髓寄存在体内以提升哥伦比娅的实力。",
+      "task_id": "1603"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "雷利尔是黑日的特务，你得小心他。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "雷利尔是黑日王朝特务机关的成员。",
+      "task_id": "1604"
+    },
+    "target": "黑日王朝",
+    "target_label": "Faction"
+  },
+  {
+    "source": "索琳蒂丝",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "索琳蒂丝还在深秘院研究所里。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "索琳蒂丝在深秘院从事研究工作。",
+      "task_id": "1604"
+    },
+    "target": "深秘院",
+    "target_label": "Place"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "深秘院人力大都被调往研究深渊力量，对赤月遗留项目（月髓）的重视度大大降低。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "月髓是深秘院的研究对象。",
+      "task_id": "1604"
+    },
+    "target": "深秘院",
+    "target_label": "Place"
+  },
+  {
+    "source": "深渊之力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "维瑟弗尼尔，也在那个晚上瓜分了深渊之力，弃我而去。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "因果:深渊之力导致了五大罪人的堕落。",
+      "task_id": "1604"
+    },
+    "target": "五大罪人",
+    "target_label": "Faction"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "维持空间门需要不断注入极强的力量。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "依赖:开启月髓空间门需要极强的力量注入。",
+      "task_id": "1604"
+    },
+    "target": "深秘院",
+    "target_label": "Place"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "肃清谋反分子是他必须完成的工作。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "雷利尔作为特务直接参与了肃清行动。",
+      "task_id": "1604"
+    },
+    "target": "肃清赤月遗民",
+    "target_label": "Event"
+  },
+  {
+    "source": "戴因斯雷布",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "我需要你们所有人今晚跟我一起行动，杀入王宫营救维瑟。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "戴因斯雷布是营救行动的发起者。",
+      "task_id": "1604"
+    },
+    "target": "营救维瑟弗尼尔",
+    "target_label": "Event"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "而我的任务是，前往大牢，营救维瑟弗尼尔。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "雷利尔参与了营救行动，负责前往监牢。",
+      "task_id": "1604"
+    },
+    "target": "营救维瑟弗尼尔",
+    "target_label": "Event"
+  },
+  {
+    "source": "肃清赤月遗民",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "从那一天酒桌见面之后（肃清期间）...我就知道你迟早会来找我（营救前夕）。",
+      "chapter": 160400,
+      "confidence": "medium",
+      "description": "肃清行动发生在营救行动之前。",
+      "task_id": "1604"
+    },
+    "target": "营救维瑟弗尼尔",
+    "target_label": "Event"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "雷利尔是黑日的特务...你的身体里流淌的也是赤月的血脉！",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "两人的身份（特务与被肃清对象）在政治立场上完全对立。",
+      "task_id": "1604"
+    },
+    "target": "索琳蒂丝",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "早在赤月时代，实验人员就已确认月髓...对赤月遗留项目的重视度大大降低。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "月髓起源于前朝赤月，被黑日王朝继承研究。",
+      "task_id": "1604"
+    },
+    "target": "黑日王朝",
+    "target_label": "Faction"
+  },
+  {
+    "source": "维瑟弗尼尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "解读未来的「预言家」维瑟弗尼尔...那五个人里...",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "维瑟弗尼尔是五大罪人之一。",
+      "task_id": "1604"
+    },
+    "target": "五大罪人",
+    "target_label": "Faction"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "以及，疯狂撕咬月亮的「猎月人」——雷利尔。",
+      "chapter": 160400,
+      "confidence": "high",
+      "description": "雷利尔是五大罪人之一。",
+      "task_id": "1604"
+    },
+    "target": "五大罪人",
+    "target_label": "Faction"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "辛努海：所以我请求您，是否可以考虑让我的女儿入学教令院？她很聪明",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "奈芙尔是欣缇部族首领辛努海的女儿。",
+      "task_id": "1604"
+    },
+    "target": "欣缇部族",
+    "target_label": "Faction"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Faction",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "辛努海：所以我请求您，是否可以考虑让我的女儿入学教令院？她很聪明",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "奈芙尔是欣缇部族首领辛努海的女儿。",
+      "task_id": "1604"
+    },
+    "target": "欣缇部族",
+    "target_label": "Faction"
+  },
+  {
+    "source": "辛努海",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "辛努海：我是欣缇人的首领，辛努海。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "辛努海是欣缇部族的族长。",
+      "task_id": "1604"
+    },
+    "target": "欣缇部族",
+    "target_label": "Faction"
+  },
+  {
+    "source": "棋盒",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：这是我的独门技术。...棋盒是我的东西，只有我了解这件宝物",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "棋盒是奈芙尔的独门技术产物，受其完全控制。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "棋盒",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：这是我的独门技术。...棋盒是我的东西，只有我了解这件宝物",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "棋盒是奈芙尔的独门技术产物，受其完全控制。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Faction"
+  },
+  {
+    "source": "辛努海的信",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "奈芙尔：找到了。大纸箱...这封信...信封上的笔迹极为熟悉。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "辛努海寄出的求援信被弃置在智慧宫的废纸箱中。",
+      "task_id": "1604"
+    },
+    "target": "智慧宫",
+    "target_label": "Place"
+  },
+  {
+    "source": "教令院",
+    "source_label": "Faction",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "奈芙尔：到头来，教令院的人从没将你放在眼里。所谓的许诺也不过是场面话",
+      "chapter": 160401,
+      "confidence": "medium",
+      "description": "使能:教令院官员哈利勒对求援信的忽视，使得欣缇部族在冲突中孤立无援导致灭亡。",
+      "task_id": "1604"
+    },
+    "target": "欣缇部族屠杀",
+    "target_label": "Event"
+  },
+  {
+    "source": "欣缇部族屠杀",
+    "source_label": "Event",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：你没有做到的事，我替你做到了。...看看你们自己吧！再狂妄恶毒的人，死了倒在地上血也是红的。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "部族的灭亡和父亲的死是奈芙尔后续复仇行为的核心动机。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "欣缇部族屠杀",
+    "source_label": "Event",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：你没有做到的事，我替你做到了。...看看你们自己吧！再狂妄恶毒的人，死了倒在地上血也是红的。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "部族的灭亡和父亲的死是奈芙尔后续复仇行为的核心动机。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Faction"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "奈芙尔：几句话就让一个人冲动成这样。我也爱上这种感觉了。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "奈芙尔是该冲突的幕后策划者，通过欺诈手段诱发战争。",
+      "task_id": "1604"
+    },
+    "target": "伊阿布与乌努的冲突",
+    "target_label": "Event"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Faction",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "奈芙尔：几句话就让一个人冲动成这样。我也爱上这种感觉了。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "奈芙尔是该冲突的幕后策划者，通过欺诈手段诱发战争。",
+      "task_id": "1604"
+    },
+    "target": "伊阿布与乌努的冲突",
+    "target_label": "Event"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "奈芙尔：沙漠人不是你的学生...人还是有必要把自己变成成功者的一员。",
+      "chapter": 160401,
+      "confidence": "medium",
+      "description": "奈芙尔看透了教令院的歧视本质，最终选择退学并对其价值观表示蔑视。",
+      "task_id": "1604"
+    },
+    "target": "教令院",
+    "target_label": "Faction"
+  },
+  {
+    "source": "奈芙尔",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "奈芙尔：沙漠人不是你的学生...人还是有必要把自己变成成功者的一员。",
+      "chapter": 160401,
+      "confidence": "medium",
+      "description": "奈芙尔看透了教令院的歧视本质，最终选择退学并对其价值观表示蔑视。",
+      "task_id": "1604"
+    },
+    "target": "教令院",
+    "target_label": "Faction"
+  },
+  {
+    "source": "欣缇部族屠杀",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "奈芙尔：这些平平无奇的人，却毁了我的家乡...现在总算清净了。",
+      "chapter": 160401,
+      "confidence": "high",
+      "description": "欣缇部族的灭亡发生在奈芙尔策划两个部族内斗之前。",
+      "task_id": "1604"
+    },
+    "target": "伊阿布与乌努的冲突",
+    "target_label": "Event"
+  },
+  {
+    "source": "棋盒",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "奈芙尔：这只棋盒就是鹮之王赐予我的。",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "棋盒是由鹮之王赐予奈芙尔的。",
+      "task_id": "1604"
+    },
+    "target": "图特",
+    "target_label": "Character"
+  },
+  {
+    "source": "雷利尔",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "为了阻止猎月人对挪德卡莱造成进一步损害...击败「猎月人」雷利尔",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "雷利尔是挪德卡莱之战的主要敌对目标。",
+      "task_id": "1604"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "阿贝多：我们更应该帮助哥伦比娅小姐获得足够与他抗衡的力量。",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "哥伦比娅作为月神化身，是计划中对抗猎月人的核心力量。",
+      "task_id": "1604"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "戴因斯雷布",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "戴因斯雷布：于我而言，雷利尔是过去的朋友，也是如今必须铲除的敌人。",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "戴因斯雷布将昔日好友雷利尔视为必须铲除的敌人。",
+      "task_id": "1604"
+    },
+    "target": "雷利尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "挪德卡莱",
+    "source_label": "Place",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "玩家：奈芙尔！你的眼睛在流血！...奈芙尔：没什么，无非就是瞎了。",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "因果: 战斗导致奈芙尔双眼受伤失明。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Character"
+  },
+  {
+    "source": "挪德卡莱",
+    "source_label": "Place",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "玩家：奈芙尔！你的眼睛在流血！...奈芙尔：没什么，无非就是瞎了。",
+      "chapter": 160402,
+      "confidence": "high",
+      "description": "因果: 战斗导致奈芙尔双眼受伤失明。",
+      "task_id": "1604"
+    },
+    "target": "奈芙尔",
+    "target_label": "Faction"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我也是骑士团的一员。",
+      "chapter": 160500,
+      "confidence": "high",
+      "description": "旅行者自述是骑士团的一员。",
+      "task_id": "1605"
+    },
+    "target": "西风骑士团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "祈月之夜",
+    "source_label": "Event",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "这个节日最初是由「霜月之子」举办的。",
+      "chapter": 160500,
+      "confidence": "high",
+      "description": "节日最初由霜月之子发起。",
+      "task_id": "1605"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "周围的月矩力波动，我都感受得到。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "使能: 哥伦比娅利用月矩力感知周围环境和情绪波动。",
+      "task_id": "1606"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "决战猎月人",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "决战猎月人的时候，她使用了很强大的力量，自那之后她就变得更加虚弱。",
+      "chapter": 160500,
+      "confidence": "high",
+      "description": "因果: 决战中的力量消耗导致哥伦比娅身体虚弱。",
+      "task_id": "1605"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "虚影",
+    "source_label": "Concept",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "靠近「祈月之夜」的时候，挪德卡莱就会出现类似的虚影。",
+      "chapter": 160500,
+      "confidence": "high",
+      "description": "虚影现象是随着祈月之夜的临近而出现的。",
+      "task_id": "1605"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "她主动开启「月之门」，进入雷利尔和索琳蒂丝曾踏入的神秘空间。",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "哥伦比娅在祈月之夜事件中消失并进入了另一空间。",
+      "task_id": "1607"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "流浪者",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "我依然要毁了多托雷，无论以什么方式。",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "流浪者明确表示要摧毁多托雷。",
+      "task_id": "1608"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "葬火之战",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "在「葬火之战」后，月神就不再被提瓦特承认，她们的存在也失去了根基。",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "因果: 葬火之战导致月神不再被世界承认，是哥伦比娅虚弱消失的根本原因。",
+      "task_id": "1605"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "既然能绕开虚假之天的屏蔽...就说明提瓦特和外界已经建立了连接。那么只要这种月矩力更强...",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "依赖: 仪式需要极高浓度的月矩力，依赖月髓作为能量来源。",
+      "task_id": "1605"
+    },
+    "target": "开启遗迹之门的仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "既然我有容纳月髓的能力，应该能成为合适的人选。",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "阿蕾奇诺因具备容纳月髓的能力而参与了开启遗迹之门的仪式。",
+      "task_id": "1605"
+    },
+    "target": "开启遗迹之门的仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "尼可",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "在这里就能开启遗迹之门。...方法就是那样",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "尼可设计并主导了开启遗迹之门的仪式。",
+      "task_id": "1605"
+    },
+    "target": "开启遗迹之门的仪式",
+    "target_label": "Event"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "多托雷…那时候叫「赞迪克」，曾经在教令院读过书",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "多托雷曾是教令院的学生，后被驱逐。",
+      "task_id": "1605"
+    },
+    "target": "教令院",
+    "target_label": "Faction"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "哥伦比娅想要用它们的力量回家。",
+      "chapter": 160501,
+      "confidence": "high",
+      "description": "哥伦比娅寻找月髓的动机是利用其力量返回月亮。",
+      "task_id": "1605"
+    },
+    "target": "月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "它所说的新的月神，就是指哥伦比娅吧。",
+      "chapter": 160600,
+      "confidence": "high",
+      "description": "哥伦比娅是亥珀波瑞亚人祈祷并等待降生的新月神。",
+      "task_id": "1606"
+    },
+    "target": "亥珀波瑞亚",
+    "target_label": "Faction"
+  },
+  {
+    "source": "尼伯龙根",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "随后就是那场「葬火之战」，尼伯龙根与天理爆发了战争。",
+      "chapter": 160600,
+      "confidence": "high",
+      "description": "尼伯龙根与天理爆发了战争。",
+      "task_id": "1606"
+    },
+    "target": "天理",
+    "target_label": "Character"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "靠近的时候我感知到它内部的月矩力流动畅通",
+      "chapter": 160600,
+      "confidence": "high",
+      "description": "月矩力在银月之庭的装置内部流动。",
+      "task_id": "1606"
+    },
+    "target": "银月之庭",
+    "target_label": "Place"
+  },
+  {
+    "source": "葬火之战",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "想要看懂这些壁画，就必须了解「葬火之战」前后的历史...祈月之夜的月亮，已经升起来了。",
+      "chapter": 160600,
+      "confidence": "high",
+      "description": "葬火之战是远古历史，祈月之夜是当前发生的事件。",
+      "task_id": "1606"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "芭比洛斯",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我是魔女会代号为「B」的魔女。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "芭比洛斯是魔女会的成员，代号B。",
+      "task_id": "1606"
+    },
+    "target": "魔女会",
+    "target_label": "Faction"
+  },
+  {
+    "source": "祈月之夜贺卡",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "这是朋友们一起为你绘制的祈月之夜贺卡。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "贺卡是祈月之夜这一事件中产生的重要纪念品。",
+      "task_id": "1606"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "那夏镇",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "他似乎刚进那夏镇...深爱着挪德卡莱这片土地的一切。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "那夏镇位于挪德卡莱地区。",
+      "task_id": "1606"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "桑多涅",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "输了的话，信不信我把你头打爆。",
+      "chapter": 160601,
+      "confidence": "medium",
+      "description": "两人在节日中进行竞争性的游戏对抗。",
+      "task_id": "1606"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "祈月之夜",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "看来，时间到了呢。...该去你们说的那个遗迹里，然后…回到月亮上去了。",
+      "chapter": 160601,
+      "confidence": "high",
+      "description": "因果: 祈月之夜的结束直接导致哥伦比娅必须启程回归月亮。",
+      "task_id": "1606"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "「博士」：她在愚人众那些年，我们一度关系良好。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "多托雷是愚人众执行官「博士」。",
+      "task_id": "1608"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "伪月",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "他用这些知识，真的创造了一轮「伪月」。",
+      "chapter": 160602,
+      "confidence": "high",
+      "description": "多托雷利用知识创造了伪月。",
+      "task_id": "1606"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "变数",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "而这一切「变数」，便是让多托雷能够在这一晚...达成自己阴谋的必要条件。",
+      "chapter": 160602,
+      "confidence": "high",
+      "description": "因果: 变数的堆砌是多托雷达成阴谋的必要条件。",
+      "task_id": "1606"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "伪月",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "「祈月之夜」的夜晚…他用这些知识，真的创造了一轮「伪月」。",
+      "chapter": 160602,
+      "confidence": "high",
+      "description": "伪月在祈月之夜被用来误导传送。",
+      "task_id": "1606"
+    },
+    "target": "祈月之夜",
+    "target_label": "Event"
+  },
+  {
+    "source": "阿蕾奇诺",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "如果多托雷构成威胁，允许阿蕾奇诺与桑多涅对其实施剿灭。",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "阿蕾奇诺获得授权，若多托雷构成威胁可将其剿灭。",
+      "task_id": "1607"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "研究所",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "那我们就在挪德卡莱最北方的研究所见。",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "研究所位于挪德卡莱的最北方。",
+      "task_id": "1607"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "人造月髓",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "恐怕就是多托雷制造的人工月髓。",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "多托雷制造了第四个月亮（人工月髓）。",
+      "task_id": "1607"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "「亥珀波瑞亚」的虚影提供的知识",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "人造月髓？难道是靠那些「亥珀波瑞亚」的虚影提供的知识？",
+      "chapter": 160700,
+      "confidence": "medium",
+      "description": "依赖: 人造月髓的制造依赖于这些虚影提供的知识。",
+      "task_id": "1607"
+    },
+    "target": "人造月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "人造月髓",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "等第三颗月髓被成功制造出来，多托雷将彻底夺走三月的权柄。",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "因果: 人造月髓的完成使多托雷能够夺取三月的权柄。",
+      "task_id": "1607"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "「博士」：欢迎欢迎，我已恭候多时了。",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "多托雷是研究所之战的主要敌对方。",
+      "task_id": "1607"
+    },
+    "target": "研究所之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "玩家：你会为你的所作所为后悔的。",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "玩家参与了进攻研究所的行动。",
+      "task_id": "1607"
+    },
+    "target": "研究所之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "人造月髓",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "在未完成的人工月髓加持下，多托雷的力量已经达到我们无法匹敌的地步…",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "人造月髓在战斗中为多托雷提供了力量加持。",
+      "task_id": "1607"
+    },
+    "target": "研究所之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "我记得我是在战斗中被多托雷困住了…",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "多托雷将Traveler困在研究所并试图通过利益诱导其合作。",
+      "task_id": "1607"
+    },
+    "target": "旅行者",
+    "target_label": "Character"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "你胆敢派人去月矩力试验设计局？那可是女皇陛下的试验场所！",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "多托雷威胁并敌对他的同事桑多涅。",
+      "task_id": "1607"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "「博士」从哥伦比娅那里，夺走了本属于她的东西。",
+      "chapter": 160700,
+      "confidence": "high",
+      "description": "月髓原本属于哥伦比娅。",
+      "task_id": "1607"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "靠着这些，他开始制作用以代替天外那颗霜月的人造月髓。",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "多托雷利用亥珀波瑞亚的技术制造了人造月髓。",
+      "task_id": "1607"
+    },
+    "target": "人造月髓",
+    "target_label": "Item"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这就是「月亮倒影」里吗？那个神秘的空间？",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "哥伦比娅目前被困在月亮倒影这个神秘空间中。",
+      "task_id": "1607"
+    },
+    "target": "月亮倒影",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "看来她找到了一种利用「月矩力」来对过去的现实造成影响的方法。",
+      "chapter": 160701,
+      "confidence": "medium",
+      "description": "月亮倒影空间的操作和影响依赖于月矩力。",
+      "task_id": "1607"
+    },
+    "target": "月亮倒影",
+    "target_label": "Place"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "他可能想把整个挪德卡莱吞进去。…多托雷这畜生…他对我们做了手脚！",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "多托雷的扩张行为和诅咒是导致撤离事件的直接原因。",
+      "task_id": "1607"
+    },
+    "target": "挪德卡莱撤离事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "通过与黄金国「亥珀波瑞亚」的虚影接触，多托雷得到了有关月亮的知识",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "多托雷的技术和知识来源于黄金国亥珀波瑞亚的虚影。",
+      "task_id": "1607"
+    },
+    "target": "亥珀波瑞亚",
+    "target_label": "Faction"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "通过与黄金国「亥珀波瑞亚」的虚影接触，多托雷得到了有关月亮的知识",
+      "chapter": 160701,
+      "confidence": "high",
+      "description": "多托雷的技术和知识来源于黄金国亥珀波瑞亚的虚影。",
+      "task_id": "1607"
+    },
+    "target": "亥珀波瑞亚",
+    "target_label": "Place"
+  },
+  {
+    "source": "努昂诺塔",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "是我让努昂诺塔诞生的，以我自身的一部分「灵魂」作为代价。",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "哥伦比娅用自己的灵魂创造了努昂诺塔。",
+      "task_id": "1607"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "月髓",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "多托雷抢夺了原本应属于哥伦比娅的两枚月髓，并自己动手制造了第三枚",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "多托雷利用月髓进行实验以集齐权能。",
+      "task_id": "1607"
+    },
+    "target": "多托雷的实验",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "多托雷抓他，多半也是因为其降临者的身份",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "旅行者被多托雷作为「降临者」变量引入实验。",
+      "task_id": "1607"
+    },
+    "target": "多托雷的实验",
+    "target_label": "Event"
+  },
+  {
+    "source": "桑多涅",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "难道是，「降临者」？... 变量，是对于什么而言呢？世界式计算着整个世界",
+      "chapter": 160702,
+      "confidence": "medium",
+      "description": "桑多涅通过研究世界式来寻找对抗多托雷的「变量」。",
+      "task_id": "1607"
+    },
+    "target": "世界式",
+    "target_label": "Concept"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我…失去意识了吗？（果然，还是被吸回了这里…）",
+      "chapter": 160702,
+      "confidence": "high",
+      "description": "哥伦比娅被困在挪德卡莱相关的异常空间中。",
+      "task_id": "1607"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "尼可",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "魔女的茶会上我也这样出场。",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "尼可是魔女会的成员。",
+      "task_id": "1608"
+    },
+    "target": "魔女会",
+    "target_label": "Faction"
+  },
+  {
+    "source": "核心",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我允许你借用我的核心来运算。……我需要它能够运算出世界的未来。",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "使能: 核心提供的算力使桑多涅能够运算出世界的未来。",
+      "task_id": "1608"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "这份力量，是在我将身体洒向挪德卡莱后才出现的…",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "因果: 哥伦比娅将身体弃置于大地，直接导致了月矩力的产生。",
+      "task_id": "1608"
+    },
+    "target": "月矩力",
+    "target_label": "Concept"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "「恒月」和「虹月」…都已在战争中破碎…",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "哥伦比娅作为新任月神，其前身（三月女神）在葬火之战中破碎。",
+      "task_id": "1608"
+    },
+    "target": "葬火之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "现实中的「月矩力」……那本就是我的身体。",
+      "chapter": 160800,
+      "confidence": "high",
+      "description": "月矩力起源于哥伦比娅弃置的身体。",
+      "task_id": "1608"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "世界式",
+    "source_label": "Concept",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "「博士」：能从无数的信息中提炼并优化出如今这个世界式，当真不可思议。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "术式是由桑多涅提炼并优化的。",
+      "task_id": "1608"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "计程仪",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "「木偶」：你们将成为第一第二个见到我得意之作的人...这个计程仪直观表现了「术式」的进展。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "计程仪是桑多涅的得意之作。",
+      "task_id": "1608"
+    },
+    "target": "桑多涅",
+    "target_label": "Character"
+  },
+  {
+    "source": "世界式",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「木偶」：总之只要知道它是哥伦比娅回来所需的必要条件就行了。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "使能: 术式是迎回哥伦比娅的必要条件。",
+      "task_id": "1608"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "世界式",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「木偶」：尼可同意我使用她构建的信息通道，所以可以通过嘟嘟通讯仪...",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "依赖: 术式的运行依赖于尼可构建的信息通道。",
+      "task_id": "1608"
+    },
+    "target": "尼可",
+    "target_label": "Character"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "「博士」：而在终结你们之前，世界应当被告知，我已降临。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "玩家与多托雷处于敌对状态并最终交战。",
+      "task_id": "1608"
+    },
+    "target": "多托雷",
+    "target_label": "Character"
+  },
+  {
+    "source": "阿贝多",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "杜林：按照计划，那夏镇交给我和阿贝多。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "阿贝多负责驻守那夏镇。",
+      "task_id": "1608"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "那夏镇保卫战",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "杜林：那夏镇附近现在已经构筑起完整的防御工事了！",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "保卫战发生在那夏镇及其附近。",
+      "task_id": "1608"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "桑多涅被击败",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「博士」：她一死，存在于她体内的术式也会停止。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "因果: 桑多涅的战败直接导致了她体内术式的停止。",
+      "task_id": "1608"
+    },
+    "target": "世界式",
+    "target_label": "Concept"
+  },
+  {
+    "source": "那夏镇保卫战",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "剧情流程：守护那夏镇战斗 -> 与「博士」对峙 -> 桑多涅被击败。",
+      "chapter": 160801,
+      "confidence": "high",
+      "description": "先进行城镇保卫战，随后发生高处的对峙与桑多涅战败。",
+      "task_id": "1608"
+    },
+    "target": "桑多涅被击败",
+    "target_label": "Event"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "努昂诺塔也在哥伦比娅回来之后就不见了，我记得她解释说，那是她灵魂的一部分…",
+      "chapter": 160802,
+      "confidence": "high",
+      "description": "因果: 哥伦比娅回来导致作为她灵魂一部分的努昂诺塔消失。",
+      "task_id": "1608"
+    },
+    "target": "努昂诺塔",
+    "target_label": "Item"
+  },
+  {
+    "source": "哥伦比娅",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我为你解除了这个世界给予你的部分「限制」。这些对你以后的冒险会有帮助的吧？",
+      "chapter": 160802,
+      "confidence": "high",
+      "description": "使能: 哥伦比娅解除了旅行者的部分限制，增强了其力量。",
+      "task_id": "1608"
+    },
+    "target": "旅行者",
+    "target_label": "Character"
+  },
+  {
+    "source": "多托雷",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "对哥伦比娅的追捕，不过是多托雷渴望月神力量的借口罢了。",
+      "chapter": 160802,
+      "confidence": "high",
+      "description": "多托雷渴望月神力量并追捕哥伦比娅。",
+      "task_id": "1608"
+    },
+    "target": "哥伦比娅",
+    "target_label": "Character"
+  },
+  {
+    "source": "叶洛亚",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "这是队长命令！",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "叶洛亚是执灯人的队长。",
+      "task_id": "10178"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "尼基塔",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "尼基塔执灯长正等你呢！",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "尼基塔担任执灯人军团的执灯长。",
+      "task_id": "10179"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "执灯人军团",
+    "source_label": "Faction",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我们的身后就是皮拉米达城…咱们就能回到皮拉米达了",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "执灯人军团的总部和守护对象位于皮拉米达城。",
+      "task_id": "10177"
+    },
+    "target": "皮拉米达城",
+    "target_label": "Place"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「银灯芯」可以展开结界，抵御狂猎的攻击。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "使能: 银灯芯产生的结界可以抵御狂猎",
+      "task_id": "10177"
+    },
+    "target": "狂猎",
+    "target_label": "Concept"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「银灯芯」可以展开结界，抵御狂猎的攻击。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "使能: 银灯芯产生的结界可以抵御狂猎",
+      "task_id": "10177"
+    },
+    "target": "狂猎",
+    "target_label": "Event"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "「银灯芯」可以展开结界，抵御狂猎的攻击。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "使能: 银灯芯产生的结界可以抵御狂猎",
+      "task_id": "10177"
+    },
+    "target": "狂猎",
+    "target_label": "Faction"
+  },
+  {
+    "source": "执灯人军团",
+    "source_label": "Faction",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "吾等执灯人在此宣誓…如今我们将再度踏足崖上，进行决胜之战。",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "执灯人军团是此次决胜之战的发起方和主力。",
+      "task_id": "10177"
+    },
+    "target": "苦壑崖决胜之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "此次作战的目标是击退盘踞在苦壑崖的魔物…以及调查引发此次狂猎的罪魁祸首。",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "狂猎是此次决胜之战的主要对抗目标。",
+      "task_id": "10177"
+    },
+    "target": "苦壑崖决胜之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "此次作战的目标是击退盘踞在苦壑崖的魔物…以及调查引发此次狂猎的罪魁祸首。",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "狂猎是此次决胜之战的主要对抗目标。",
+      "task_id": "10177"
+    },
+    "target": "苦壑崖决胜之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Faction",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "此次作战的目标是击退盘踞在苦壑崖的魔物…以及调查引发此次狂猎的罪魁祸首。",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "狂猎是此次决胜之战的主要对抗目标。",
+      "task_id": "10177"
+    },
+    "target": "苦壑崖决胜之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "我们可是调查分队的临时成员呢！…这次作战有你们的助力，我也能放心不少了。",
+      "chapter": 1017700,
+      "confidence": "high",
+      "description": "旅行者作为调查分队临时成员参与此次作战。",
+      "task_id": "10177"
+    },
+    "target": "苦壑崖决胜之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "叶洛亚",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "叶洛亚率领的「魇夜之莺」调查分队",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "叶洛亚是魇夜之莺分队的领袖。",
+      "task_id": "10179"
+    },
+    "target": "魇夜之莺",
+    "target_label": "Faction"
+  },
+  {
+    "source": "魇夜之莺",
+    "source_label": "Faction",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "叶洛亚率领的「魇夜之莺」调查分队承担了最为艰巨的任务",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "魇夜之莺是执灯人军团下属的一个调查分队。",
+      "task_id": "10179"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "爱莉厄",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "被你们称为厄布拉神柱的这座高塔...这里是我令那毒蛇第一次死亡...的地方。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "爱莉厄长期驻守在高塔中",
+      "task_id": "10177"
+    },
+    "target": "厄布拉神柱",
+    "target_label": "Place"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "「银灯芯」的确在这里...在你们的「现在」，这座「高塔」受到了严重的污染，导致我无法自如地使用力量，取到「银灯芯」。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "圣物银灯芯被存放在高塔顶部",
+      "task_id": "10177"
+    },
+    "target": "厄布拉神柱",
+    "target_label": "Place"
+  },
+  {
+    "source": "三宝磨",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "他妄图利用「三宝磨」汲取大地的力量",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "教授利用三宝磨实施其计划",
+      "task_id": "10177"
+    },
+    "target": "拉乌斯万格",
+    "target_label": "Character"
+  },
+  {
+    "source": "三宝磨",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "他妄图利用「三宝磨」汲取大地的力量...整个挪德卡莱...都将沦为他的薪柴。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "因果: 三宝磨的运作会消耗挪德卡莱的生灵作为薪柴",
+      "task_id": "10177"
+    },
+    "target": "挪德卡莱",
+    "target_label": "Place"
+  },
+  {
+    "source": "爱莉厄",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "我只能投身「三宝磨」，用我自己的血肉引燃了它，这才挫败了那毒蛇的诡计。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "爱莉厄通过投身三宝磨阻止了灾厄",
+      "task_id": "10177"
+    },
+    "target": "五百年前的灾厄",
+    "target_label": "Event"
+  },
+  {
+    "source": "拉乌斯万格",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "这里是我令那毒蛇第一次死亡，却未能将他彻底送入地狱的地方。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "爱莉厄挫败了教授的诡计并试图将其埋葬",
+      "task_id": "10177"
+    },
+    "target": "爱莉厄",
+    "target_label": "Character"
+  },
+  {
+    "source": "索洛维",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "铸灯者建立执灯人军团已经差不多是五百年前的事情了…",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "索洛维是军团的创始人",
+      "task_id": "10177"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "阿咚",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "那原本是属于索洛维的夜莺，从故乡跟随他来到这苦寒的边地。",
+      "chapter": 1017701,
+      "confidence": "high",
+      "description": "阿咚原本是索洛维的夜莺",
+      "task_id": "10177"
+    },
+    "target": "索洛维",
+    "target_label": "Character"
+  },
+  {
+    "source": "安莱夫",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我已经加入执灯人三年了，怎么看都是个出色的执灯士吧？",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "安莱夫已加入执灯人三年，是一名执灯士。",
+      "task_id": "10178"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "比约恩",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我们执灯人就像冬凌草…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "比约恩是执灯人的一员。",
+      "task_id": "10178"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这里可是对抗苦壑崖上的狂猎的最前线",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "狂猎聚集在苦壑崖上。",
+      "task_id": "10178"
+    },
+    "target": "苦壑崖",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这里可是对抗苦壑崖上的狂猎的最前线",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "狂猎聚集在苦壑崖上。",
+      "task_id": "10178"
+    },
+    "target": "苦壑崖",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Faction",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这里可是对抗苦壑崖上的狂猎的最前线",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "狂猎聚集在苦壑崖上。",
+      "task_id": "10178"
+    },
+    "target": "苦壑崖",
+    "target_label": "Place"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "我们需要借用「银灯芯」的力量重建崖上的结界",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "银灯芯是反攻作战中重建结界的关键道具。",
+      "task_id": "10178"
+    },
+    "target": "反攻作战",
+    "target_label": "Event"
+  },
+  {
+    "source": "银灯芯",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我们需要借用「银灯芯」的力量重建崖上的结界，排除深渊低语的干扰",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "使能: 银灯芯的力量使得重建结界和排除深渊干扰成为可能。",
+      "task_id": "10178"
+    },
+    "target": "反攻作战",
+    "target_label": "Event"
+  },
+  {
+    "source": "奥尔松",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "奥尔松队长也勉强靠意志保持清醒...他自己，却选择了留下，为我们断后",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "奥尔松是三年前事故中的关键参与者和牺牲者。",
+      "task_id": "10178"
+    },
+    "target": "三年前的事故",
+    "target_label": "Event"
+  },
+  {
+    "source": "反攻作战",
+    "source_label": "Event",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "我们不仅是为了牺牲的战友，无辜罹难的平民才站在这里...更是为了保护现在还活着的人",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "反攻作战是为了给三年前牺牲的战友和平民复仇，并保护现在的人。",
+      "task_id": "10178"
+    },
+    "target": "三年前的事故",
+    "target_label": "Event"
+  },
+  {
+    "source": "执灯人军团",
+    "source_label": "Faction",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "执灯人长期与狂猎对抗。",
+      "task_id": "10178"
+    },
+    "target": "狂猎",
+    "target_label": "Faction"
+  },
+  {
+    "source": "三年前的事故",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "在那之后，我们重整营地，固守了三年...但现在，我们苦等已久的这一天终于到来！",
+      "chapter": 1017800,
+      "confidence": "high",
+      "description": "三年前的事故发生在当前反攻作战之前。",
+      "task_id": "10178"
+    },
+    "target": "反攻作战",
+    "target_label": "Event"
+  },
+  {
+    "source": "维德",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "他以前常说…我们执灯人就像冬凌草…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "维德曾是执灯人成员。",
+      "task_id": "10178"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "比约恩",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "前往战场南侧的阵地查看...比约恩怎么样了？",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "比约恩在阵地中养伤。",
+      "task_id": "10178"
+    },
+    "target": "战场南侧的阵地",
+    "target_label": "Place"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…伤得很重。攻击来得太突然了",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "因果: 狂猎（或其代表的魔物）的攻击导致比约恩重伤。",
+      "task_id": "10178"
+    },
+    "target": "比约恩",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…伤得很重。攻击来得太突然了",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "因果: 狂猎（或其代表的魔物）的攻击导致比约恩重伤。",
+      "task_id": "10178"
+    },
+    "target": "比约恩",
+    "target_label": "Character"
+  },
+  {
+    "source": "狂猎",
+    "source_label": "Faction",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "面对狂猎…我们每个人都很脆弱…伤得很重。攻击来得太突然了",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "因果: 狂猎（或其代表的魔物）的攻击导致比约恩重伤。",
+      "task_id": "10178"
+    },
+    "target": "比约恩",
+    "target_label": "Character"
+  },
+  {
+    "source": "比约恩",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "他不是抱怨…三年前自己没死成么",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "比约恩参与了三年前的战斗并幸存。",
+      "task_id": "10178"
+    },
+    "target": "三年前的事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "叶洛亚",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "那些比你强的人…不都死掉了么…不管是三年前…还是十年前…要不然为什么…每次…每次活下来的都只有你？",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "叶洛亚是三年前战斗的幸存者。",
+      "task_id": "10178"
+    },
+    "target": "三年前的事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "叶洛亚",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "那些比你强的人…不都死掉了么…不管是三年前…还是十年前…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "叶洛亚是十年前战斗的幸存者。",
+      "task_id": "10178"
+    },
+    "target": "十年前的事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "十年前的事件",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "不管是三年前…还是十年前…",
+      "chapter": 1017801,
+      "confidence": "high",
+      "description": "十年前的事件发生在三年前的事件之前。",
+      "task_id": "10178"
+    },
+    "target": "三年前的事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "苍林之穗",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "前往战场南侧的阵地...激活苍林之穗",
+      "chapter": 1017801,
+      "confidence": "medium",
+      "description": "苍林之穗位于战场南侧区域。",
+      "task_id": "10178"
+    },
+    "target": "战场南侧的阵地",
+    "target_label": "Place"
+  },
+  {
+    "source": "德肋庇革劳诺之箭",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这座麦酒大厅就是围绕「德肋庇革劳诺之箭」建造的",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "德肋庇革劳诺之箭被安置在麦酒大厅内，大厅围绕其建造。",
+      "task_id": "10179"
+    },
+    "target": "麦酒大厅",
+    "target_label": "Place"
+  },
+  {
+    "source": "螺旋剑",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "有了你们带回来的「螺旋剑」，「德肋庇革劳诺之箭」也就成型了。",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "依赖: 螺旋剑是德肋庇革劳诺之箭成型并进入发射状态的关键组件（箭镞）。",
+      "task_id": "10179"
+    },
+    "target": "德肋庇革劳诺之箭",
+    "target_label": "Item"
+  },
+  {
+    "source": "圣嗣之血",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "命令三宝磨的力量臣服于我！拥有圣嗣之血的你一定能做到。",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "依赖: 操控三宝磨的力量需要拥有圣嗣之血。",
+      "task_id": "10179"
+    },
+    "target": "三宝磨",
+    "target_label": "Item"
+  },
+  {
+    "source": "德肋庇革劳诺之箭",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "用这传承至今的「弓矢」，将它彻底葬送吧！",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "德肋庇革劳诺之箭是击败教授（恶卵）的关键武器。",
+      "task_id": "10179"
+    },
+    "target": "击溃「恶卵」",
+    "target_label": "Event"
+  },
+  {
+    "source": "爱莉厄",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "想来是那位爱莉厄小姐在全力与之抗衡。...就由我为你的故事画上最后的句点吧。",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "爱莉厄在苦壑崖全力抗衡教授，并最终决定终结他。",
+      "task_id": "10179"
+    },
+    "target": "拉乌斯万格",
+    "target_label": "Character"
+  },
+  {
+    "source": "拉乌斯万格",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "为了在未来的某一天，彻底终结那不死的妖魔...由我们执灯人代代守护至今。",
+      "chapter": 1017900,
+      "confidence": "high",
+      "description": "教授是执灯人军团代代守护并试图终结的邪恶妖魔。",
+      "task_id": "10179"
+    },
+    "target": "执灯人军团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "螺旋剑",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "五百年前，铸灯者力有未逮...他们用古老的技术打造了这把「弓矢」",
+      "chapter": 1017900,
+      "confidence": "medium",
+      "description": "螺旋剑作为圣物，由古代的铸灯者打造。",
+      "task_id": "10179"
+    },
+    "target": "索洛维",
+    "target_label": "Character"
+  },
+  {
+    "source": "拉斯科尔尼科夫",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "是「拉斯科尔尼科夫中尉」，放尊重点，小贼。",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "拉斯科尔尼科夫是愚人众的中尉。",
+      "task_id": "10265"
+    },
+    "target": "愚人众",
+    "target_label": "Faction"
+  },
+  {
+    "source": "涅朵奇卡",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "意外轻易地进入了愚人众重兵把守的设施…",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "涅朵奇卡潜入该设施寻找宝物。",
+      "task_id": "10265"
+    },
+    "target": "月矩力实验设计局",
+    "target_label": "Place"
+  },
+  {
+    "source": "涅朵奇卡",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "「识者之证」不属于愚人众，这是我的使命，我必须把它夺回！",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "两人在识者之证的归属上存在敌对关系。",
+      "task_id": "10265"
+    },
+    "target": "拉斯科尔尼科夫",
+    "target_label": "Character"
+  },
+  {
+    "source": "涅朵奇卡",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "从那一刻起我就知道了自己的使命。",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "涅朵奇卡的行为动机源于对这本书中角色的崇拜。",
+      "task_id": "10265"
+    },
+    "target": "《大盗雷德·米勒传奇》",
+    "target_label": "Item"
+  },
+  {
+    "source": "识者之证",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我们只是听说集齐五个「识者之证」就可以找到被藏在月之东，日之西的「伟大财宝」",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "依赖: 集齐五个识者之证是找到伟大财宝的必要前提。",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Concept"
+  },
+  {
+    "source": "月导靴",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "哦，没想到「月导靴」这么快就能派上用场。上面就交给我啦，看我的！",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "月导靴在战斗中被用来飞檐走壁以取得优势。",
+      "task_id": "10265"
+    },
+    "target": "销毁车间之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "战斗就交给我们…交给Traveler好啦！",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "旅行者是战斗的主要参与者。",
+      "task_id": "10265"
+    },
+    "target": "销毁车间之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "拉斯科尔尼科夫",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我的任务是守卫并保证试验设计局的高效运转。",
+      "chapter": 1026500,
+      "confidence": "high",
+      "description": "拉斯科尔尼科夫负责守卫该设施。",
+      "task_id": "10265"
+    },
+    "target": "月矩力实验设计局",
+    "target_label": "Place"
+  },
+  {
+    "source": "丹尤莎·谢斯特宁",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "这两位是谢斯特宁夫妇",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "夫妻关系",
+      "task_id": "10265"
+    },
+    "target": "卓里克·谢斯特宁",
+    "target_label": "Character"
+  },
+  {
+    "source": "丹尤莎·谢斯特宁",
+    "source_label": "Character",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "难道说，丹尤莎是「扳手老爹」的女儿？",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "父女关系",
+      "task_id": "10265"
+    },
+    "target": "扳手老爹",
+    "target_label": "Character"
+  },
+  {
+    "source": "识者之证",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "我们只是听说集齐五个「识者之证」就可以找到被藏在月之东，日之西的「伟大财宝」",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "依赖: 集齐五个识者之证是找到伟大财宝的必要前提。",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Item"
+  },
+  {
+    "source": "卓里克·谢斯特宁",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "难道把「扳手老爹」推下船舷的人就是…",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "卓里克曾试图谋害扳手老爹",
+      "task_id": "10265"
+    },
+    "target": "扳手老爹",
+    "target_label": "Character"
+  },
+  {
+    "source": "铁鲸上校",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "这里的机械装置都是他为一个叫做蒂涅的孩子打造的",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "机械装置位于蓝珀湖",
+      "task_id": "10265"
+    },
+    "target": "蓝珀湖",
+    "target_label": "Place"
+  },
+  {
+    "source": "托尔芬",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "他也曾交代过，如果他不在了，这些东西都交由我处置",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "托尔芬是扳手老爹的朋友，并为其处理遗产",
+      "task_id": "10265"
+    },
+    "target": "扳手老爹",
+    "target_label": "Character"
+  },
+  {
+    "source": "海难",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "而导致他失去记忆的事故，多年之前的那场海难",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "因果: 海难导致扳手老爹失去记忆",
+      "task_id": "10265"
+    },
+    "target": "扳手老爹",
+    "target_label": "Character"
+  },
+  {
+    "source": "卓里克·谢斯特宁",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "那你们能把「伟大财宝」找来吗？",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "卓里克因贪图财宝而参与寻宝",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Concept"
+  },
+  {
+    "source": "卓里克·谢斯特宁",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "那你们能把「伟大财宝」找来吗？",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "卓里克因贪图财宝而参与寻宝",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Item"
+  },
+  {
+    "source": "海难",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "不过十年前的事…现在嘛…寻宝故事",
+      "chapter": 1026501,
+      "confidence": "high",
+      "description": "海难发生在寻找识者之证的寻宝游戏之前",
+      "task_id": "10265"
+    },
+    "target": "识者之证",
+    "target_label": "Item"
+  },
+  {
+    "source": "伊尔玛里",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "伊尔玛里：今天也是空手而归啊。",
+      "chapter": 1026502,
+      "confidence": "high",
+      "description": "伊尔玛里在刻拉蒂之眼附近钓鱼。",
+      "task_id": "10265"
+    },
+    "target": "刻拉蒂之眼",
+    "target_label": "Place"
+  },
+  {
+    "source": "奇怪的树",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "在刻拉蒂之眼发现了一棵奇怪的树…",
+      "chapter": 1026502,
+      "confidence": "high",
+      "description": "奇怪的树生长在刻拉蒂之眼。",
+      "task_id": "10265"
+    },
+    "target": "刻拉蒂之眼",
+    "target_label": "Place"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "继续在洞穴中探索... 设法收集月矩露滴",
+      "chapter": 1026502,
+      "confidence": "high",
+      "description": "旅行者是该探索事件的主动参与者。",
+      "task_id": "10265"
+    },
+    "target": "浪底的低语",
+    "target_label": "Event"
+  },
+  {
+    "source": "月矩露滴",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "刚才这棵树唰啦一下就亮起来了... 这么说来，中间那个东西就是它的根吗？",
+      "chapter": 1026502,
+      "confidence": "high",
+      "description": "使能: 投入月矩露滴使得奇怪的树重新亮起。",
+      "task_id": "10265"
+    },
+    "target": "奇怪的树",
+    "target_label": "Item"
+  },
+  {
+    "source": "伟大财宝",
+    "source_label": "Concept",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "集齐五个「识者之证」就可以找到被藏在月之东，日之西的「伟大财宝」",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "伟大财宝被埋藏在月之东，日之西。",
+      "task_id": "10265"
+    },
+    "target": "月之东，日之西",
+    "target_label": "Place"
+  },
+  {
+    "source": "伟大财宝",
+    "source_label": "Item",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "集齐五个「识者之证」就可以找到被藏在月之东，日之西的「伟大财宝」",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "伟大财宝被埋藏在月之东，日之西。",
+      "task_id": "10265"
+    },
+    "target": "月之东，日之西",
+    "target_label": "Place"
+  },
+  {
+    "source": "识者之证",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你们刚才捡到的玩意儿… 这个就是「识者之证」了吧？",
+      "chapter": 1026502,
+      "confidence": "high",
+      "description": "识者之证是在该事件中被发现的关键物品。",
+      "task_id": "10265"
+    },
+    "target": "浪底的低语",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "Traveler，要不然我们还是进去看看吧？",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "旅行者进入避难所进行调查。",
+      "task_id": "10265"
+    },
+    "target": "避难所",
+    "target_label": "Place"
+  },
+  {
+    "source": "格蕾兹娜",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "权限已更新：高级研究员格蕾兹娜",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "格蕾兹娜是避难所的高级研究员。",
+      "task_id": "10265"
+    },
+    "target": "避难所",
+    "target_label": "Place"
+  },
+  {
+    "source": "三宝磨",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "我的主人…霍德望教授…他已经用「三宝磨」将那可笑的世界焚作薪柴",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "三宝磨由霍德望教授持有并使用。",
+      "task_id": "10265"
+    },
+    "target": "霍德望",
+    "target_label": "Character"
+  },
+  {
+    "source": "三宝磨",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "他已经用「三宝磨」将那可笑的世界焚作薪柴",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "因果: 霍德望使用三宝磨直接导致了世界的焚毁。",
+      "task_id": "10265"
+    },
+    "target": "末日",
+    "target_label": "Event"
+  },
+  {
+    "source": "末缀之劫",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "是霍德望教授派你来的吗？我的主人是否饶恕了我？",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "末缀之劫效忠于霍德望，并期待其饶恕。",
+      "task_id": "10265"
+    },
+    "target": "霍德望",
+    "target_label": "Character"
+  },
+  {
+    "source": "末缀之劫",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "末缀之劫：格蕾兹娜…？你这可耻的叛徒",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "末缀之劫称格蕾兹娜为可耻的叛徒。",
+      "task_id": "10265"
+    },
+    "target": "格蕾兹娜",
+    "target_label": "Character"
+  },
+  {
+    "source": "深渊污染",
+    "source_label": "Concept",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "一号研究区：警告。检测到高浓度深渊污染。",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "避难所内部检测到极高浓度的深渊污染。",
+      "task_id": "10265"
+    },
+    "target": "避难所",
+    "target_label": "Place"
+  },
+  {
+    "source": "曼陀草",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "多亏了曼陀草。",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "曼陀草在战斗中起到了关键的辅助作用。",
+      "task_id": "10265"
+    },
+    "target": "监督办公室之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "末日",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "如果您正在听这段录音，那便意味着末日即将来临",
+      "chapter": 1026503,
+      "confidence": "high",
+      "description": "末日事件发生在旅行者进入避难所战斗之前。",
+      "task_id": "10265"
+    },
+    "target": "监督办公室之战",
+    "target_label": "Event"
+  },
+  {
+    "source": "托尔芬",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "派蒙：原来老奶奶是盗宝团的人？托尔芬也是？托尔芬：嗯，姑且算是吧。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "托尔芬承认自己姑且算是盗宝团的人。",
+      "task_id": "10265"
+    },
+    "target": "盗宝团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "海捷德",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "让他来继承盗宝团，总好过你这不出息的小子。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "海捷德是盗宝团的资深成员，并希望有人继承它。",
+      "task_id": "10265"
+    },
+    "target": "盗宝团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "雷德·米勒",
+    "source_label": "Character",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "那多半是盗宝团成立之前的事...留下这枚特别的「鸦印」的，应该就是艾维雷勒安了。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "雷德·米勒是盗宝团的创始人。",
+      "task_id": "10265"
+    },
+    "target": "盗宝团",
+    "target_label": "Faction"
+  },
+  {
+    "source": "海捷德",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我是回来探亲，在皮拉米达城有些琐事要办...这位就是我的祖母。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "海捷德居住在皮拉米达城。",
+      "task_id": "10265"
+    },
+    "target": "皮拉米达城",
+    "target_label": "Place"
+  },
+  {
+    "source": "雷德·米勒",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "总有一天，我要在这片从来就属于我们的土地上建起属于我们的乐园！",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "雷德·米勒的行为动机是建立属于饥贫之人的乐园。",
+      "task_id": "10265"
+    },
+    "target": "雷德·米勒的梦想",
+    "target_label": "Concept"
+  },
+  {
+    "source": "鸦印",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "鸦印也是由他那出身贵族的同学的家徽变形而来的。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "鸦印是由雷德·米勒及其同学设计的。",
+      "task_id": "10265"
+    },
+    "target": "雷德·米勒",
+    "target_label": "Character"
+  },
+  {
+    "source": "海捷德",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "要不是这臭小子偏偏就像那不成器的布莱赫，「识者之证」也不会四散各地这么久。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "海捷德对布莱赫持否定态度，认为其不成器。",
+      "task_id": "10265"
+    },
+    "target": "布莱赫",
+    "target_label": "Character"
+  },
+  {
+    "source": "铁钱",
+    "source_label": "Item",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "那这堆铁钱堆成的小山，的确可以称得上是「伟大财宝」了。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "伟大财宝的主要组成部分是大量的古老铁钱。",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Concept"
+  },
+  {
+    "source": "铁钱",
+    "source_label": "Item",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "那这堆铁钱堆成的小山，的确可以称得上是「伟大财宝」了。",
+      "chapter": 1026504,
+      "confidence": "high",
+      "description": "伟大财宝的主要组成部分是大量的古老铁钱。",
+      "task_id": "10265"
+    },
+    "target": "伟大财宝",
+    "target_label": "Item"
+  },
+  {
+    "source": "维娜",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "原来你真的是霜月之子的祭司吗！",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "维娜是霜月之子的执祭。",
+      "task_id": "10241"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "爱依菈",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "既然她穿的是霜月之子的衣服，菈乌玛肯定认识！",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "爱依菈穿着霜月之子的衣服，是该组织的祭司。",
+      "task_id": "10241"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "维娜",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我呢，正在执行一项秘密的任务，目的是让紊乱的月矩力恢复正常",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "维娜在雷图礁执行任务。",
+      "task_id": "10241"
+    },
+    "target": "雷图礁",
+    "target_label": "Place"
+  },
+  {
+    "source": "克莱卡三号",
+    "source_label": "Item",
+    "rel_type": "CREATED_BY",
+    "properties": {
+      "text_evidence": "因为刚才在调试克莱卡三号",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "维娜制造了这些机械装置。",
+      "task_id": "10241"
+    },
+    "target": "维娜",
+    "target_label": "Character"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "那两块大石头上萦绕着高强度的月矩力，所以这里的平衡才会被进一步搅乱。",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "因果: 月矩力的失衡直接导致了此次事件的发生。",
+      "task_id": "10241"
+    },
+    "target": "雷图礁月矩力紊乱事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "维娜",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "目的是让紊乱的月矩力恢复正常",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "维娜的行为动机是恢复月矩力的平衡。",
+      "task_id": "10241"
+    },
+    "target": "月矩力",
+    "target_label": "Concept"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "可靠的Traveler和派蒙，就拜托你们帮忙啦！",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "旅行者协助维娜寻找碎片并投掷。",
+      "task_id": "10241"
+    },
+    "target": "雷图礁月矩力紊乱事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "盈月之镜",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "从盈月之镜里取出最后一枚碎片，解决紊乱的问题吧！",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "盈月之镜作为存放碎片的关键道具参与了事件。",
+      "task_id": "10241"
+    },
+    "target": "雷图礁月矩力紊乱事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "初谕之庭封锁",
+    "source_label": "Event",
+    "rel_type": "TEMPORAL_BEFORE",
+    "properties": {
+      "text_evidence": "初谕之庭早在五百年前就被封锁起来了",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "封锁事件发生在五百年前，早于当前的紊乱事件。",
+      "task_id": "10241"
+    },
+    "target": "雷图礁月矩力紊乱事件",
+    "target_label": "Event"
+  },
+  {
+    "source": "维娜",
+    "source_label": "Character",
+    "rel_type": "OPPOSED_TO",
+    "properties": {
+      "text_evidence": "冒牌货，快把东西交出来！...果然又是个伪装成祭司的骗子吧",
+      "chapter": 1024100,
+      "confidence": "high",
+      "description": "维娜认为眼前的爱依菈是冒牌货和骗子。",
+      "task_id": "10241"
+    },
+    "target": "爱依菈",
+    "target_label": "Character"
+  },
+  {
+    "source": "卡夏",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "卡夏：欢迎哥哥姐姐来到霜月之坊！",
+      "chapter": 1024101,
+      "confidence": "high",
+      "description": "卡夏居住并出现在霜月之坊。",
+      "task_id": "10241"
+    },
+    "target": "霜月之坊",
+    "target_label": "Place"
+  },
+  {
+    "source": "卡夏",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "卡夏：只要找到漂亮的石头...然后像雷德·米勒拐走妖精小姐那样，把我从这里带走了吧？",
+      "chapter": 1024101,
+      "confidence": "high",
+      "description": "卡夏的行为（寻找石头收买人）是受到这个故事的启发。",
+      "task_id": "10241"
+    },
+    "target": "大盗雷德·米勒与妖精公主的故事",
+    "target_label": "Concept"
+  },
+  {
+    "source": "漂亮的石头",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "卡夏：将这块石头，放回那里？",
+      "chapter": 1024101,
+      "confidence": "high",
+      "description": "漂亮的石头是该事件的核心交互物品。",
+      "task_id": "10241"
+    },
+    "target": "将碎片安放到石头上",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "卡夏：Traveler哥哥，能帮我试一下吗？",
+      "chapter": 1024101,
+      "confidence": "high",
+      "description": "旅行者是执行安放动作的主动方。",
+      "task_id": "10241"
+    },
+    "target": "将碎片安放到石头上",
+    "target_label": "Event"
+  },
+  {
+    "source": "漂亮的石头",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "卡夏：虽然确实是很漂亮的石头，但总觉得它好像在被这块大石头吸引呢…",
+      "chapter": 1024101,
+      "confidence": "medium",
+      "description": "使能: 获得漂亮的石头是触发安放事件的前提条件。",
+      "task_id": "10241"
+    },
+    "target": "将碎片安放到石头上",
+    "target_label": "Event"
+  },
+  {
+    "source": "佩卡尼",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我充其量也就只能算半个霜月之子",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "佩卡尼自称是半个霜月之子。",
+      "task_id": "10241"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "佩卡尼",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我的钓技分明是希汐岛第一",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "佩卡尼在希汐岛钓鱼。",
+      "task_id": "10241"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "拜托你们两位，帮我调查一下这附近的水域",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "玩家接受佩卡尼的委托参与调查。",
+      "task_id": "10241"
+    },
+    "target": "调查钓鱼干扰",
+    "target_label": "Event"
+  },
+  {
+    "source": "派蒙",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "看在报酬的份上，我们就在附近看看吧",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "派蒙随同玩家一起参与调查。",
+      "task_id": "10241"
+    },
+    "target": "调查钓鱼干扰",
+    "target_label": "Event"
+  },
+  {
+    "source": "调查钓鱼干扰",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "帮我调查一下这附近的水域",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "调查事件发生在希汐岛附近水域。",
+      "task_id": "10241"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "刻拉蒂之眼",
+    "source_label": "Place",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "就像是受诅的刻拉蒂之眼那样，这里的水下也一定有什么东西在影响鱼群。",
+      "chapter": 1024102,
+      "confidence": "medium",
+      "description": "因果: 佩卡尼认为类似刻拉蒂之眼的东西导致了鱼群不上钩，从而引发了调查。",
+      "task_id": "10241"
+    },
+    "target": "调查钓鱼干扰",
+    "target_label": "Event"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "ORIGINATES_FROM",
+    "properties": {
+      "text_evidence": "就是个不会用月矩力的普通人。",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "月矩力是霜月之子成员所使用的力量。",
+      "task_id": "10241"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "调查钓鱼干扰",
+    "source_label": "Event",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "来，这是说好的报酬！",
+      "chapter": 1024102,
+      "confidence": "high",
+      "description": "因果: 调查任务的完成使得玩家获得了佩卡尼提供的报酬。",
+      "task_id": "10241"
+    },
+    "target": "旅行者",
+    "target_label": "Character"
+  },
+  {
+    "source": "初谕之庭",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "在希汐岛...想要打开圣所的维娜琴卡",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "圣所位于希汐岛。",
+      "task_id": "10241"
+    },
+    "target": "希汐岛",
+    "target_label": "Place"
+  },
+  {
+    "source": "仪式",
+    "source_label": "Event",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "我将黄金城的圣徒以月光锻造的最后一柄剑留在永不枯竭的白泉中",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "仪式剑被爱依菈留在了初谕之庭的白泉中。",
+      "task_id": "10241"
+    },
+    "target": "初谕之庭",
+    "target_label": "Place"
+  },
+  {
+    "source": "月矩力",
+    "source_label": "Concept",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "既然圣所也是由月矩力封锁起来的",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "依赖: 圣所的封印依赖月矩力维持。",
+      "task_id": "10241"
+    },
+    "target": "初谕之庭",
+    "target_label": "Place"
+  },
+  {
+    "source": "仪式",
+    "source_label": "Event",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "为您斩杀不死之蛇的勇士...我将...最后一柄剑留在...白泉中",
+      "chapter": 1024103,
+      "confidence": "medium",
+      "description": "仪式剑是预言中用于斩杀毒蛇的武器。",
+      "task_id": "10241"
+    },
+    "target": "消灭不死的毒蛇",
+    "target_label": "Event"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "那不死的毒蛇已经被Traveler解决掉了，对吧？",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "旅行者被认为是预言中消灭毒蛇的英雄。",
+      "task_id": "10241"
+    },
+    "target": "消灭不死的毒蛇",
+    "target_label": "Event"
+  },
+  {
+    "source": "娄维娅",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "娄维娅是在五百年前...的霜月领袖",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "娄维娅曾是霜月之子的领袖。",
+      "task_id": "10241"
+    },
+    "target": "霜月之子",
+    "target_label": "Faction"
+  },
+  {
+    "source": "爱依菈",
+    "source_label": "Character",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "爱依菈大人封闭圣所前",
+      "chapter": 1024103,
+      "confidence": "high",
+      "description": "因果: 爱依菈封闭了圣所。",
+      "task_id": "10241"
+    },
+    "target": "初谕之庭",
+    "target_label": "Place"
+  },
+  {
+    "source": "梅蒂",
+    "source_label": "Character",
+    "rel_type": "MEMBER_OF",
+    "properties": {
+      "text_evidence": "我，梅蒂·维利乌，其实是「海螺帮」的人",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "梅蒂是海螺帮的成员。",
+      "task_id": "10241"
+    },
+    "target": "海螺帮",
+    "target_label": "Faction"
+  },
+  {
+    "source": "蟹沙皇",
+    "source_label": "Character",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "深藏在下方蟹沙皇的宫殿中",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "蟹沙皇居住并统治着地底宫殿。",
+      "task_id": "10241"
+    },
+    "target": "蟹沙皇的宫殿",
+    "target_label": "Place"
+  },
+  {
+    "source": "欲望之石",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "直到不久前，它不知从什么地方找来了那块石头...从那以后，它的性子就变得特别…要命。邪恶、残忍、暴躁",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "因果: 欲望之石导致蟹沙皇性格变得邪恶残暴。",
+      "task_id": "10241"
+    },
+    "target": "蟹沙皇",
+    "target_label": "Character"
+  },
+  {
+    "source": "梅蒂",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "这就是我要找的宝藏。深藏在下方蟹沙皇的宫殿中最珍贵的秘宝",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "梅蒂进入宫殿的主要动机是寻找并夺取欲望之石。",
+      "task_id": "10241"
+    },
+    "target": "欲望之石",
+    "target_label": "Item"
+  },
+  {
+    "source": "旅行者",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "【条件：已开始「寻找蟹沙皇的踪迹」】",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "旅行者是该事件的核心参与者。",
+      "task_id": "10241"
+    },
+    "target": "寻找蟹沙皇的踪迹",
+    "target_label": "Event"
+  },
+  {
+    "source": "梅蒂",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "好，话不多说，咱们一起下去吧。",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "梅蒂与旅行者合作参与了寻找蟹沙皇的行动。",
+      "task_id": "10241"
+    },
+    "target": "寻找蟹沙皇的踪迹",
+    "target_label": "Event"
+  },
+  {
+    "source": "爱依菈",
+    "source_label": "Character",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "向镜子下方看去吧。镜面破碎的时刻，你们应当就会寻得那腐化人心的受诅之物",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "爱依菈在事件中多次出现并提供指引。",
+      "task_id": "10241"
+    },
+    "target": "寻找蟹沙皇的踪迹",
+    "target_label": "Event"
+  },
+  {
+    "source": "欲望之石",
+    "source_label": "Item",
+    "rel_type": "INVOLVED_IN",
+    "properties": {
+      "text_evidence": "你们来这里，应该也是为了蟹沙皇的宝藏吧。",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "欲望之石是事件的核心目标物。",
+      "task_id": "10241"
+    },
+    "target": "寻找蟹沙皇的踪迹",
+    "target_label": "Event"
+  },
+  {
+    "source": "斯佩兰扎餐厅",
+    "source_label": "Place",
+    "rel_type": "LOCATED_AT",
+    "properties": {
+      "text_evidence": "去那夏镇的斯佩兰扎餐厅吃饭的时候",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "餐厅位于那夏镇。",
+      "task_id": "10241"
+    },
+    "target": "那夏镇",
+    "target_label": "Place"
+  },
+  {
+    "source": "梅蒂",
+    "source_label": "Character",
+    "rel_type": "MOTIVATED_BY",
+    "properties": {
+      "text_evidence": "梅蒂·维利乌，大盗雷德·米勒的继承人。...这就是你在月下世界选择追随的名字吗？",
+      "chapter": 1024104,
+      "confidence": "high",
+      "description": "梅蒂追随雷德·米勒的名号和规矩。",
+      "task_id": "10241"
+    },
+    "target": "雷德·米勒",
+    "target_label": "Character"
+  },
+  {
+    "source": "欲望之石",
+    "source_label": "Item",
+    "rel_type": "LEADS_TO",
+    "properties": {
+      "text_evidence": "没想到那块石头居然直接飞走了…既然沙皇老爷如今又再度变得温顺了",
+      "chapter": 1024104,
+      "confidence": "medium",
+      "description": "使能: 欲望之石的飞走使得蟹沙皇恢复了冷静。",
+      "task_id": "10241"
+    },
+    "target": "寻找蟹沙皇的踪迹",
+    "target_label": "Event"
+  }
+]
