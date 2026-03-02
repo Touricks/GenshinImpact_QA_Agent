@@ -5,6 +5,10 @@
 [![Python 3.14](https://img.shields.io/badge/python-3.14-blue.svg)](https://www.python.org/downloads/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-1.0+-green.svg)](https://langchain-ai.github.io/langgraph/)
 
+## Demo
+
+[Demo.mp4](Demo.mp4)
+
 ## 项目概述
 
 针对原神游戏剧情的检索增强问答 Agent，解决"剧情太长记不住"的痛点。当前覆盖区域：**Nod-Krai（挪德卡莱）**。
@@ -20,8 +24,6 @@
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
-│                      Web UI (Streamlit)                        │
-├───────────────────────────────────────────────────────────────┤
 │              AgentV4Workflow (LangGraph StateGraph)            │
 │                                                               │
 │  START → solve_llm → [should_continue?]                       │
@@ -166,37 +168,6 @@ cp .env.example .env
 
 # 交互模式
 .venv/bin/python -m src.scripts.run_agent -i
-
-# Web UI
-.venv/bin/streamlit run src/ui/streamlit_app.py
-```
-
-## 评估
-
-### 数据集
-
-41 道 Nod-Krai 剧情问答题（`TestData/cleandata/Data_only_nodkrai/dataset.json`），按难度分为 Tier 1-5。
-
-### 运行评估
-
-```bash
-# 3 题快速验证
-.venv/bin/python -m src.scripts.run_eval --testset smoke
-
-# 7 题 Tier-1
-.venv/bin/python -m src.scripts.run_eval --testset basic --workers 3
-
-# 自选题目
-.venv/bin/python -m src.scripts.run_eval --ids NK-01 NK-07 NK-15
-
-# 全量 41 题
-.venv/bin/python -m src.scripts.run_eval --testset full --workers 1
-```
-
-### 准确度评估（LLM-as-Judge）
-
-```bash
-.venv/bin/python evaluation/scripts/eval_accuracy.py --from-eval logger/eval/*.json
 ```
 
 ## 技术栈
@@ -211,7 +182,6 @@ cp .env.example .env
 | 图数据库 | Neo4j 5 Community + APOC |
 | 框架 | LangChain Core, LlamaIndex (pipeline) |
 | 数据模型 | Pydantic v2 |
-| UI | Streamlit |
 
 ## 项目结构
 
@@ -248,28 +218,19 @@ AmberProject/
 │       └── cli_vector.py       # 向量操作
 ├── Data/
 │   └── exports/                # 预导出数据快照 (Neo4j + Qdrant)
-├── TestData/cleandata/         # 评估数据集 (41 题 + testsets)
-├── evaluation/                 # 准确度评估 (LLM-as-Judge)
 ├── docs/                       # 详细文档
-│   ├── PRD.md                  # 产品需求文档
 │   ├── agent/architecture.md   # v4 架构详解
 │   ├── agent/agent.md          # Agent API
-│   ├── tool_call/              # 工具文档
-│   ├── data_Ingestion/         # 数据管道文档
-│   └── logging/                # 日志追踪
+│   └── data_Ingestion/         # 数据管道文档
 └── docker-compose.yml          # Qdrant + Neo4j
 ```
 
 ## 文档
 
-详细文档见 [`docs/`](docs/README.md)：
-
 | 文档 | 内容 |
 |------|------|
-| [PRD](docs/PRD.md) | 产品需求文档 |
 | [Agent 架构](docs/agent/architecture.md) | v4 LangGraph StateGraph 详解 |
 | [Agent API](docs/agent/agent.md) | Agent 调用方法 |
-| [检索工具](docs/tool_call/graph_query_tool.md) | 7 个工具详细文档 |
 | [数据管道](docs/data_Ingestion/overview.md) | 双数据库灌入流程 |
 
 ## License
